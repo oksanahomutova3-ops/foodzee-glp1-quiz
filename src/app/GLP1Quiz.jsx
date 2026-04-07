@@ -184,8 +184,8 @@ function WeightScreen({title,sub,value,unit,min,max,onChange,onUnit,showBmi,heig
       <h2 style={{...tCss,fontSize:28}}>{title}</h2>
       <p style={{fontFamily:F,fontSize:14,color:C.sub,marginBottom:28}}>{sub}</p>
       {/* Unit toggle */}
-      <div style={{display:"inline-flex",borderRadius:24,overflow:"hidden",border:`1.5px solid ${C.green}`,marginBottom:20}}>
-        <button onClick={()=>onUnit("kg")} style={{padding:"8px 24px",border:"none",fontFamily:F,fontSize:15,fontWeight:600,cursor:"pointer",background:isKg?C.green:"transparent",color:isKg?C.white:C.sub,borderRadius:24,transition:`all .2s ${ease}`}}>кг</button>
+      <div style={{display:"inline-flex",borderRadius:24,overflow:"hidden",border:"1.5px solid #E0E0E0",marginBottom:20,background:"#F2F3F5"}}>
+        <button onClick={()=>onUnit("kg")} style={{padding:"8px 24px",border:"none",fontFamily:F,fontSize:15,fontWeight:600,cursor:"pointer",background:isKg?C.green:"transparent",color:isKg?C.white:C.sub,borderRadius:24,transition:`all .2s ${ease}`}}>kg</button>
         <button onClick={()=>onUnit("lbs")} style={{padding:"8px 24px",border:"none",fontFamily:F,fontSize:15,fontWeight:600,cursor:"pointer",background:!isKg?C.green:"transparent",color:!isKg?C.white:C.sub,borderRadius:24,transition:`all .2s ${ease}`}}>lbs</button>
       </div>
       {/* Big number */}
@@ -197,9 +197,9 @@ function WeightScreen({title,sub,value,unit,min,max,onChange,onUnit,showBmi,heig
         <div style={{background:C.card,borderRadius:16,padding:18,marginTop:24,textAlign:"left"}}>
           <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:8}}>
             <span style={{width:24,height:24,flexShrink:0,display:"flex",alignItems:"center",justifyContent:"center"}}><svg width="20" height="20" viewBox="0 0 16 16" fill="none"><path d="M8 11.33c.19 0 .35-.06.48-.19.12-.13.19-.29.19-.47V8c0-.19-.06-.35-.19-.47A.65.65 0 008 7.33a.65.65 0 00-.47.2.65.65 0 00-.2.47v2.67c0 .19.07.35.2.47.13.13.29.19.47.19zm0-5.33c.19 0 .35-.06.48-.19A.65.65 0 008.67 5.33a.65.65 0 00-.19-.47A.65.65 0 008 4.67a.65.65 0 00-.47.19.65.65 0 00-.2.47c0 .19.07.35.2.48.13.12.29.19.47.19zm0 8.67a6.63 6.63 0 01-2.6-.53 6.72 6.72 0 01-2.12-1.42 6.72 6.72 0 01-1.42-2.12A6.63 6.63 0 011.33 8c0-.92.18-1.79.53-2.6a6.72 6.72 0 011.42-2.12A6.72 6.72 0 015.4 1.86 6.63 6.63 0 018 1.33c.92 0 1.79.18 2.6.53.81.35 1.52.83 2.12 1.42.6.6 1.07 1.3 1.42 2.12.35.81.53 1.68.53 2.6s-.18 1.79-.53 2.6a6.72 6.72 0 01-1.42 2.12 6.72 6.72 0 01-2.12 1.42 6.63 6.63 0 01-2.6.53z" fill="#E768B0"/></svg></span>
-            <span style={{fontFamily:F,fontSize:15,fontWeight:700,color:C.black}}>Ваш ИМТ: {bmi} — недостаточный вес</span>
+            <span style={{fontFamily:F,fontSize:15,fontWeight:700,color:C.black}}>Your BMI: {bmi} — underweight</span>
           </div>
-          <p style={{fontFamily:F,fontSize:13,color:C.sub,lineHeight:1.5,margin:0}}>Впереди ещё есть над чем работать, но здорово, что вы делаете первый шаг. Мы используем ваш ИМТ для создания персональной программы.</p>
+          <p style={{fontFamily:F,fontSize:13,color:C.sub,lineHeight:1.5,margin:0}}>There's work ahead, but great that you're taking the first step. We use your BMI to create a personalized program.</p>
         </div>
       )}
     </div>
@@ -279,11 +279,11 @@ export default function GLP1Quiz(){
   const showNav=step>=S.STATUS&&step<=S.COOKING;
 
   const stickyLabel=()=>{
-    if(step===S.WELCOME)return"Начать тест";
-    if(step===S.TESTI)return"Продолжить";
-    if(step===S.PROJECTION)return"Получить мой план";
-    if(step===S.PAYWALL)return"Получить мой план";
-    return"Продолжить";
+    if(step===S.WELCOME)return"Start Quiz";
+    if(step===S.TESTI)return"Continue";
+    if(step===S.PROJECTION)return"Get My Plan";
+    if(step===S.PAYWALL)return"Get My Plan";
+    return"Continue";
   };
 
   const renderContent=()=>{
@@ -294,17 +294,17 @@ export default function GLP1Quiz(){
       <div style={{height:"100vh",display:"flex",flexDirection:"column",boxSizing:"border-box",paddingBottom:20}}>
         <div style={{textAlign:"center",paddingTop:52,flexShrink:0}}>
           <h1 style={{fontFamily:F,fontSize:32,fontWeight:800,color:C.black,lineHeight:1.1,letterSpacing:"-.04em",marginBottom:16,padding:"0 8px",whiteSpace:"pre-line"}}>
-            {"GLP-1 без правильного\nпитания — деньги\nна ветер"}
+            {"GLP-1 without proper\nnutrition is money\ndown the drain"}
           </h1>
           <p style={{fontFamily:F,fontSize:15,color:"#3F3F3F",lineHeight:1.5,margin:0,padding:"0 4px"}}>
-            Узнай свою норму белка, калорий{"\n"}и нутриентов — за 2 минуты
+            Find your protein, calorie{"\n"}and nutrient needs — in 2 minutes
           </p>
         </div>
         <div style={{flex:1,display:"flex",alignItems:"center",justifyContent:"center",marginTop:20,minHeight:0,overflow:"hidden"}}>
           <img src={GLP_CARD} alt="" style={{maxWidth:"100%",maxHeight:"100%",objectFit:"contain"}}/>
         </div>
         <div style={{flexShrink:0,marginTop:20}}>
-          <InlineBtn onClick={next}>Начать тест</InlineBtn>
+          <InlineBtn onClick={next}>Start Quiz</InlineBtn>
         </div>
       </div>
     );
@@ -312,14 +312,14 @@ export default function GLP1Quiz(){
     /* ═══ Q1: STATUS ═══ */
     case S.STATUS: return(
       <div style={{paddingTop:80}}>
-        <h2 style={{...tCss,fontSize:26}}>{"Какой у тебя текущий\nстатус с GLP-1?"}</h2>
-        <p style={{fontFamily:F,fontSize:14,color:C.sub,textAlign:"center",marginBottom:24}}>Это поможет персонализировать план</p>
+        <h2 style={{...tCss,fontSize:26}}>{"What is your current\nGLP-1 status?"}</h2>
+        <p style={{fontFamily:F,fontSize:14,color:C.sub,textAlign:"center",marginBottom:24}}>This helps personalize your plan</p>
         <div style={{display:"flex",flexDirection:"column",gap:10}}>
           {[
-            {id:"plan",e:"💊",l:"Планирую начать",s:"Хочу подготовиться заранее"},
-            {id:"taking",e:"💉",l:"Принимаю сейчас",s:"Ozempic, Wegovy, Mounjaro и др."},
-            {id:"stopped",e:"⏸️",l:"Прекратила приём",s:"Или снижаю дозу"},
-            {id:"explore",e:"🤔",l:"Просто изучаю варианты",s:""},
+            {id:"plan",e:"💊",l:"Planning to start",s:"Want to prepare in advance"},
+            {id:"taking",e:"💉",l:"Currently taking",s:"Ozempic, Wegovy, Mounjaro, etc."},
+            {id:"stopped",e:"⏸️",l:"Stopped taking",s:"Or reducing dosage"},
+            {id:"explore",e:"🤔",l:"Just exploring options",s:""},
           ].map(s=><OptCard key={s.id} emoji={s.e} label={s.l} sub={s.s} selected={ans.status===s.id} onClick={()=>selNext("status",s.id==="explore"?"plan":s.id)}/>)}
         </div>
       </div>
@@ -328,13 +328,13 @@ export default function GLP1Quiz(){
     /* ═══ Q2: GOAL ═══ */
     case S.GOAL: return(
       <div style={{paddingTop:80}}>
-        <h2 style={{...tCss,fontSize:26}}>{"Какая твоя главная\nцель сейчас?"}</h2>
+        <h2 style={{...tCss,fontSize:26}}>{"What is your main\ngoal right now?"}</h2>
         <div style={{display:"flex",flexDirection:"column",gap:10,marginTop:24}}>
           {[
-            {id:"muscle",e:"💪",l:"Сбросить вес и сохранить мышцы"},
-            {id:"protein",e:"🥩",l:"Получать достаточно белка"},
-            {id:"plan",e:"🍽️",l:"Знать, что есть каждый день"},
-            {id:"side",e:"🌿",l:"Уменьшить побочные эффекты"},
+            {id:"muscle",e:"💪",l:"Lose weight and keep muscle"},
+            {id:"protein",e:"🥩",l:"Get enough protein"},
+            {id:"plan",e:"🍽️",l:"Know what to eat every day"},
+            {id:"side",e:"🌿",l:"Reduce side effects"},
           ].map(s=><OptCard key={s.id} emoji={s.e} label={s.l} selected={ans.goal===s.id} onClick={()=>selNext("goal",s.id)}/>)}
         </div>
       </div>
@@ -346,8 +346,8 @@ export default function GLP1Quiz(){
       const selAge=ans.age||35;
       return(
         <div style={{paddingTop:80,display:"flex",flexDirection:"column",alignItems:"center"}}>
-          <h2 style={{...tCss}}>{"Твой возраст?"}</h2>
-          <p style={{fontFamily:F,fontSize:15,color:C.sub,textAlign:"center",marginTop:12,marginBottom:48,lineHeight:1.5}}>Мы используем твой возраст, чтобы{"\n"}адаптировать план питания под{"\n"}твои метаболические потребности</p>
+          <h2 style={{...tCss}}>{"Your age?"}</h2>
+          <p style={{fontFamily:F,fontSize:15,color:C.sub,textAlign:"center",marginTop:12,marginBottom:48,lineHeight:1.5}}>We use your age to{"\n"}adapt the meal plan to{"\n"}your metabolic needs</p>
           <div ref={ageRef} style={{width:"100%",overflowX:"auto",WebkitOverflowScrolling:"touch",scrollbarWidth:"none",msOverflowStyle:"none"}}>
             <div style={{display:"inline-flex",alignItems:"center",height:120,paddingLeft:`calc(50% - ${AGE_ITEM_W/2}px)`,paddingRight:`calc(50% - ${AGE_ITEM_W/2}px)`}}>
               {ages.map(a=>{
@@ -370,28 +370,28 @@ export default function GLP1Quiz(){
     case S.BR1:{
       if(branch==="plan") return(
         <div style={{paddingTop:80}}>
-          <h2 style={{...tCss,fontSize:24}}>{"Что беспокоит тебя\nбольше всего?"}</h2>
+          <h2 style={{...tCss,fontSize:24}}>{"What worries you\nthe most?"}</h2>
           <div style={{display:"flex",flexDirection:"column",gap:10,marginTop:24}}>
             {[
-              {id:"nausea",e:"🤢",l:"Тошнота и побочные эффекты"},
-              {id:"hair",e:"💇‍♀️",l:"Выпадение волос"},
-              {id:"muscle",e:"💪",l:"Потеря мышц вместе с жиром"},
-              {id:"regain",e:"📈",l:"Возврат веса после прекращения"},
-              {id:"food",e:"😰",l:"Не понимаю, что есть"},
+              {id:"nausea",e:"🤢",l:"Nausea and side effects"},
+              {id:"hair",e:"💇‍♀️",l:"Hair loss"},
+              {id:"muscle",e:"💪",l:"Losing muscle along with fat"},
+              {id:"regain",e:"📈",l:"Weight regain after stopping"},
+              {id:"food",e:"😰",l:"Don't know what to eat"},
             ].map(s=><OptCard key={s.id} emoji={s.e} label={s.l} selected={ans.br1===s.id} onClick={()=>selNext("br1",s.id)}/>)}
           </div>
         </div>
       );
       if(branch==="taking") return(
         <div style={{paddingTop:80}}>
-          <h2 style={{...tCss,fontSize:24}}>{"Как давно ты\nпринимаешь препарат?"}</h2>
+          <h2 style={{...tCss,fontSize:24}}>{"How long have you\nbeen taking it?"}</h2>
           <div style={{display:"flex",flexDirection:"column",gap:10,marginTop:24}}>
             {[
-              {id:"<1m",e:"🌱",l:"Менее 1 месяца"},
-              {id:"1-3m",e:"📅",l:"1–3 месяца"},
-              {id:"3-6m",e:"📊",l:"3–6 месяцев"},
-              {id:"6-12m",e:"📈",l:"6–12 месяцев"},
-              {id:">1y",e:"⭐",l:"Более 1 года"},
+              {id:"<1m",e:"🌱",l:"Less than 1 month"},
+              {id:"1-3m",e:"📅",l:"1–3 months"},
+              {id:"3-6m",e:"📊",l:"3–6 months"},
+              {id:"6-12m",e:"📈",l:"6–12 months"},
+              {id:">1y",e:"⭐",l:"More than 1 year"},
             ].map(s=><OptCard key={s.id} emoji={s.e} label={s.l} selected={ans.br1===s.id} onClick={()=>selNext("br1",s.id)}/>)}
           </div>
         </div>
@@ -399,14 +399,14 @@ export default function GLP1Quiz(){
       // stopped
       return(
         <div style={{paddingTop:80}}>
-          <h2 style={{...tCss,fontSize:24}}>{"Почему ты прекратила\nприём?"}</h2>
+          <h2 style={{...tCss,fontSize:24}}>{"Why did you stop\ntaking it?"}</h2>
           <div style={{display:"flex",flexDirection:"column",gap:10,marginTop:24}}>
             {[
-              {id:"cost",e:"💰",l:"Слишком дорого"},
-              {id:"side",e:"🤢",l:"Побочные эффекты"},
-              {id:"goal",e:"✅",l:"Достигла целевого веса"},
-              {id:"insurance",e:"🔄",l:"Страховка перестала покрывать"},
-              {id:"other",e:"🤔",l:"Другие причины"},
+              {id:"cost",e:"💰",l:"Too expensive"},
+              {id:"side",e:"🤢",l:"Side effects"},
+              {id:"goal",e:"✅",l:"Reached target weight"},
+              {id:"insurance",e:"🔄",l:"Insurance stopped covering"},
+              {id:"other",e:"🤔",l:"Other reasons"},
             ].map(s=><OptCard key={s.id} emoji={s.e} label={s.l} selected={ans.br1===s.id} onClick={()=>selNext("br1",s.id)}/>)}
           </div>
         </div>
@@ -417,27 +417,27 @@ export default function GLP1Quiz(){
     case S.BR2:{
       if(branch==="plan") return(
         <div style={{paddingTop:80}}>
-          <h2 style={{...tCss,fontSize:24}}>{"Как бы ты описала\nсвоё текущее питание?"}</h2>
+          <h2 style={{...tCss,fontSize:24}}>{"How would you describe\nyour current diet?"}</h2>
           <div style={{display:"flex",flexDirection:"column",gap:10,marginTop:24}}>
             {[
-              {id:"healthy",e:"🥗",l:"Здоровое, но без структуры"},
-              {id:"better",e:"🍕",l:"Честно — могло бы быть лучше"},
-              {id:"track",e:"📊",l:"Уже отслеживаю калории"},
-              {id:"lost",e:"🤷‍♀️",l:"Не знаю, с чего начать"},
+              {id:"healthy",e:"🥗",l:"Healthy, but no structure"},
+              {id:"better",e:"🍕",l:"Honestly — could be better"},
+              {id:"track",e:"📊",l:"Already tracking calories"},
+              {id:"lost",e:"🤷‍♀️",l:"Don't know where to start"},
             ].map(s=><OptCard key={s.id} emoji={s.e} label={s.l} selected={ans.br2===s.id} onClick={()=>selNext("br2",s.id)}/>)}
           </div>
         </div>
       );
       if(branch==="taking") return(
         <div style={{paddingTop:80}}>
-          <h2 style={{...tCss,fontSize:24}}>{"Главная проблема\nс питанием сейчас?"}</h2>
+          <h2 style={{...tCss,fontSize:24}}>{"Main nutrition problem\nright now?"}</h2>
           <div style={{display:"flex",flexDirection:"column",gap:10,marginTop:24}}>
             {[
-              {id:"protein",e:"🥩",l:"Не хватает белка"},
-              {id:"nausea",e:"🤢",l:"Тошнота и ЖКТ-проблемы"},
-              {id:"portions",e:"🍽️",l:"Не знаю, что есть маленькими порциями"},
-              {id:"fatigue",e:"😴",l:"Усталость и низкая энергия"},
-              {id:"hair",e:"💇‍♀️",l:"Выпадение волос / дефициты"},
+              {id:"protein",e:"🥩",l:"Not enough protein"},
+              {id:"nausea",e:"🤢",l:"Nausea and GI issues"},
+              {id:"portions",e:"🍽️",l:"Don't know what to eat in small portions"},
+              {id:"fatigue",e:"😴",l:"Fatigue and low energy"},
+              {id:"hair",e:"💇‍♀️",l:"Hair loss / дефициты"},
             ].map(s=><OptCard key={s.id} emoji={s.e} label={s.l} selected={ans.br2===s.id} onClick={()=>selNext("br2",s.id)}/>)}
           </div>
         </div>
@@ -445,13 +445,13 @@ export default function GLP1Quiz(){
       // stopped
       return(
         <div style={{paddingTop:80}}>
-          <h2 style={{...tCss,fontSize:24}}>{"Ты замечаешь возврат\nвеса?"}</h2>
+          <h2 style={{...tCss,fontSize:24}}>{"Are you noticing weight\nregain?"}</h2>
           <div style={{display:"flex",flexDirection:"column",gap:10,marginTop:24}}>
             {[
-              {id:"fast",e:"📈",l:"Да, вес быстро возвращается"},
-              {id:"little",e:"📊",l:"Немного"},
-              {id:"no",e:"💪",l:"Нет, удерживаю результат"},
-              {id:"fear",e:"😰",l:"Боюсь, что начнётся"},
+              {id:"fast",e:"📈",l:"Yes, weight is coming back fast"},
+              {id:"little",e:"📊",l:"A little"},
+              {id:"no",e:"💪",l:"No, maintaining results"},
+              {id:"fear",e:"😰",l:"Afraid it will start"},
             ].map(s=><OptCard key={s.id} emoji={s.e} label={s.l} selected={ans.br2===s.id} onClick={()=>selNext("br2",s.id)}/>)}
           </div>
         </div>
@@ -464,10 +464,10 @@ export default function GLP1Quiz(){
         <div style={{height:"100vh",display:"flex",flexDirection:"column",boxSizing:"border-box",paddingBottom:100}}>
           <div style={{textAlign:"center",paddingTop:52,flexShrink:0}}>
             <h1 style={{fontFamily:F,fontSize:64,fontWeight:800,color:C.black,lineHeight:1.05,letterSpacing:"-.04em",marginBottom:16}}>
-              {"А ты\nзнала?"}
+              {"Did you\nknow?"}
             </h1>
             <p style={{fontFamily:F,fontSize:15,color:C.black,lineHeight:1.5,margin:0,padding:"0 4px"}}>
-              Женщины, которые подготовили{"\n"}питание ДО начала GLP-1,{"\n"}испытывают до 60% меньше{"\n"}побочных эффектов
+              Women who prepared their{"\n"}nutrition BEFORE starting GLP-1{"\n"}experience up to 60% fewer{"\n"}side effects
             </p>
           </div>
           <div style={{flex:1,display:"flex",alignItems:"center",justifyContent:"center",marginTop:20,minHeight:0,overflow:"hidden"}}>
@@ -479,10 +479,10 @@ export default function GLP1Quiz(){
         <div style={{height:"100vh",display:"flex",flexDirection:"column",boxSizing:"border-box",paddingBottom:100}}>
           <div style={{textAlign:"center",paddingTop:52,flexShrink:0}}>
             <h1 style={{fontFamily:F,fontSize:64,fontWeight:800,color:C.black,lineHeight:1.05,letterSpacing:"-.04em",marginBottom:16}}>
-              {"Что врачи\nне говорят"}
+              {"What doctors\ndon't tell you"}
             </h1>
             <p style={{fontFamily:F,fontSize:15,color:C.black,lineHeight:1.5,margin:0,padding:"0 4px"}}>
-              Среднее потребление белка{"\n"}на GLP-1 — всего 77г/день.{"\n"}Но тебе нужно 80–120г, чтобы{"\n"}защитить мышцы.{"\n\n"}До 39% потерянного веса{"\n"}может быть мышцами.
+              Average protein intake{"\n"}on GLP-1 is only 77g/day.{"\n"}But you need 80–120g to{"\n"}protect your muscles.{"\n\n"}Up to 39% of lost weight{"\n"}can be muscle.
             </p>
           </div>
           <div style={{flex:1,display:"flex",alignItems:"center",justifyContent:"center",marginTop:20,minHeight:0,overflow:"hidden"}}>
@@ -494,10 +494,10 @@ export default function GLP1Quiz(){
         <div style={{height:"100vh",display:"flex",flexDirection:"column",boxSizing:"border-box",paddingBottom:100}}>
           <div style={{textAlign:"center",paddingTop:52,flexShrink:0}}>
             <h1 style={{fontFamily:F,fontSize:64,fontWeight:800,color:C.black,lineHeight:1.05,letterSpacing:"-.04em",marginBottom:16}}>
-              {"Ты не одна —\nи это не\nтвоя вина"}
+              {"You're not alone —\nand it's not\nyour fault"}
             </h1>
             <p style={{fontFamily:F,fontSize:15,color:C.black,lineHeight:1.5,margin:0,padding:"0 4px"}}>
-              Исследования показывают: без{"\n"}структурированных пищевых привычек{"\n"}большинство людей набирают{"\n"}вес обратно.{"\n\n"}Но женщины, которые выработали{"\n"}привычку отслеживать питание,{"\n"}сохранили значительно больше{"\n"}результатов.
+              Research shows: without{"\n"}structured eating habits{"\n"}most people regain{"\n"}the weight back.{"\n\n"}But women who developed{"\n"}the habit of tracking nutrition{"\n"}retained significantly more{"\n"}results.
             </p>
           </div>
           <div style={{flex:1,display:"flex",alignItems:"center",justifyContent:"center",marginTop:20,minHeight:0,overflow:"hidden"}}>
@@ -508,21 +508,21 @@ export default function GLP1Quiz(){
     }
 
     /* ═══ WEIGHT ═══ */
-    case S.WEIGHT: return(<WeightScreen title="Какой у тебя вес?" sub="Введите значение от 30 до 200 кг" value={ans.weight||60} unit={ans.weightUnit||"kg"} min={30} max={200} onChange={v=>set("weight",v)} onUnit={u=>set("weightUnit",u)} showBmi height={ans.height}/>);
+    case S.WEIGHT: return(<WeightScreen title="What is your weight?" sub="Enter a value from 30 to 200 kg" value={ans.weight||60} unit={ans.weightUnit||"kg"} min={30} max={200} onChange={v=>set("weight",v)} onUnit={u=>set("weightUnit",u)} showBmi height={ans.height}/>);
 
     /* ═══ GOAL WEIGHT ═══ */
-    case S.GOAL_W: return(<WeightScreen title="Твой целевой вес?" sub="Какой вес ты хочешь достичь?" value={ans.goalW||55} unit={ans.weightUnit||"kg"} min={30} max={200} onChange={v=>set("goalW",v)} onUnit={u=>set("weightUnit",u)}/>);
+    case S.GOAL_W: return(<WeightScreen title="Your goal weight?" sub="What weight do you want to reach?" value={ans.goalW||55} unit={ans.weightUnit||"kg"} min={30} max={200} onChange={v=>set("goalW",v)} onUnit={u=>set("weightUnit",u)}/>);
 
     /* ═══ ACTIVITY ═══ */
     case S.ACTIVITY: return(
       <div style={{paddingTop:80}}>
-        <h2 style={{...tCss,fontSize:24}}>{"Уровень активности?"}</h2>
+        <h2 style={{...tCss,fontSize:24}}>{"Activity level?"}</h2>
         <div style={{display:"flex",flexDirection:"column",gap:10,marginTop:24}}>
           {[
-            {id:"sedentary",e:"🛋️",l:"Малоподвижный",s:"Офис, минимум движения"},
-            {id:"light",e:"🚶‍♀️",l:"Лёгкая активность",s:"Прогулки, лёгкая работа по дому"},
-            {id:"moderate",e:"🏃‍♀️",l:"Средняя",s:"Тренировки 3–4 раза/неделю"},
-            {id:"active",e:"🏋️‍♀️",l:"Активная",s:"Тренировки 5+ раз/неделю"},
+            {id:"sedentary",e:"🛋️",l:"Sedentary",s:"Office, minimal movement"},
+            {id:"light",e:"🚶‍♀️",l:"Light activity",s:"Walking, light housework"},
+            {id:"moderate",e:"🏃‍♀️",l:"Moderate",s:"Training 3–4 times/week"},
+            {id:"active",e:"🏋️‍♀️",l:"Active",s:"Training 5+ times/week"},
           ].map(s=><OptCard key={s.id} emoji={s.e} label={s.l} sub={s.s} selected={ans.activity===s.id} onClick={()=>selNext("activity",s.id)}/>)}
         </div>
       </div>
@@ -531,14 +531,14 @@ export default function GLP1Quiz(){
     /* ═══ WATER ═══ */
     case S.WATER: return(
       <div style={{paddingTop:80}}>
-        <h2 style={{...tCss,fontSize:24}}>{"Сколько воды ты\nпьёшь в день?"}</h2>
-        <p style={{fontFamily:F,fontSize:14,color:C.sub,marginTop:8,marginBottom:24,lineHeight:1.5,textAlign:"center"}}>На GLP-1 важно пить достаточно воды для поддержки метаболизма и уменьшения побочных эффектов</p>
+        <h2 style={{...tCss,fontSize:24}}>{"How much water do\nyou drink per day?"}</h2>
+        <p style={{fontFamily:F,fontSize:14,color:C.sub,marginTop:8,marginBottom:24,lineHeight:1.5,textAlign:"center"}}>На GLP-1 важно пить достаточно воды для поддержки метаболизма и уменьшения side effects</p>
         <div style={{display:"flex",flexDirection:"column",gap:10}}>
           {[
-            {id:"low",e:"😕",l:"Менее 4 стаканов"},
-            {id:"medium",e:"😐",l:"4–6 стаканов"},
-            {id:"good",e:"🙂",l:"6–8 стаканов"},
-            {id:"great",e:"😋",l:"Больше 8 стаканов"},
+            {id:"low",e:"😕",l:"Less than 4 glasses"},
+            {id:"medium",e:"😐",l:"4–6 glasses"},
+            {id:"good",e:"🙂",l:"6–8 glasses"},
+            {id:"great",e:"😋",l:"More than 8 glasses"},
           ].map(s=><OptCard key={s.id} emoji={s.e} label={s.l} selected={ans.water===s.id} onClick={()=>selNext("water",s.id)}/>)}
         </div>
       </div>
@@ -547,14 +547,14 @@ export default function GLP1Quiz(){
     /* ═══ MEALS ═══ */
     case S.MEALS: return(
       <div style={{paddingTop:80}}>
-        <h2 style={{...tCss,fontSize:24}}>{"Сколько раз в день\nты обычно ешь?"}</h2>
-        <p style={{fontFamily:F,fontSize:14,color:C.sub,marginTop:8,marginBottom:24,lineHeight:1.5,textAlign:"center"}}>На GLP-1 частые маленькие порции помогают усвоить больше белка и снизить тошноту</p>
+        <h2 style={{...tCss,fontSize:24}}>{"How many times a day\ndo you usually eat?"}</h2>
+        <p style={{fontFamily:F,fontSize:14,color:C.sub,marginTop:8,marginBottom:24,lineHeight:1.5,textAlign:"center"}}>On GLP-1 frequent small meals help absorb more protein and reduce nausea</p>
         <div style={{display:"flex",flexDirection:"column",gap:10}}>
           {[
-            {id:"1-2",e:"🍏",l:"1–2 раза в день",s:"Крупные порции, мало приёмов"},
-            {id:"3",e:"🍽",l:"3 раза в день",s:"Классическое трёхразовое питание"},
-            {id:"4-5",e:"🥙",l:"4–5 раз маленькими порциями",s:"Дробное питание"},
-            {id:"irregular",e:"🤷‍♀️",l:"Нерегулярно",s:"Как получится"},
+            {id:"1-2",e:"🍏",l:"1–2 times a day",s:"Large portions, few meals"},
+            {id:"3",e:"🍽",l:"3 times a day",s:"Classic three meals a day"},
+            {id:"4-5",e:"🥙",l:"4–5 small portions",s:"Split meals"},
+            {id:"irregular",e:"🤷‍♀️",l:"Irregular",s:"Whenever possible"},
           ].map(s=><OptCard key={s.id} emoji={s.e} label={s.l} sub={s.s} selected={ans.meals===s.id} onClick={()=>selNext("meals",s.id)}/>)}
         </div>
       </div>
@@ -563,15 +563,15 @@ export default function GLP1Quiz(){
     /* ═══ DIET ═══ */
     case S.DIET: return(
       <div style={{paddingTop:80}}>
-        <h2 style={{...tCss,fontSize:24}}>{"Диетические\nпредпочтения?"}</h2>
+        <h2 style={{...tCss,fontSize:24}}>{"Dietary\npreferences?"}</h2>
         <div style={{display:"flex",flexDirection:"column",gap:10,marginTop:24}}>
           {[
-            {id:"none",e:"✅",l:"Нет ограничений"},
-            {id:"veg",e:"🥬",l:"Вегетарианка"},
-            {id:"vegan",e:"🌱",l:"Веган"},
-            {id:"gf",e:"🚫",l:"Без глютена"},
-            {id:"df",e:"🥛",l:"Без молочных"},
-            {id:"halal",e:"☪️",l:"Халяль"},
+            {id:"none",e:"✅",l:"No restrictions"},
+            {id:"veg",e:"🥬",l:"Vegetarian"},
+            {id:"vegan",e:"🌱",l:"Vegan"},
+            {id:"gf",e:"🚫",l:"Gluten-free"},
+            {id:"df",e:"🥛",l:"Dairy-free"},
+            {id:"halal",e:"☪️",l:"Halal"},
           ].map(s=><OptCard key={s.id} emoji={s.e} label={s.l} selected={ans.diet===s.id} onClick={()=>selNext("diet",s.id)}/>)}
         </div>
       </div>
@@ -580,13 +580,13 @@ export default function GLP1Quiz(){
     /* ═══ COOKING ═══ */
     case S.COOKING: return(
       <div style={{paddingTop:80}}>
-        <h2 style={{...tCss,fontSize:24}}>{"Сколько времени на\nготовку одного приёма?"}</h2>
+        <h2 style={{...tCss,fontSize:24}}>{"How much time for\ncooking one meal?"}</h2>
         <div style={{display:"flex",flexDirection:"column",gap:10,marginTop:24}}>
           {[
-            {id:"10",e:"⚡",l:"10 минут или меньше"},
-            {id:"20",e:"🍳",l:"15–20 минут"},
-            {id:"30",e:"👩‍🍳",l:"30+ минут"},
-            {id:"prep",e:"🛒",l:"Предпочитаю meal prep"},
+            {id:"10",e:"⚡",l:"10 minutes or less"},
+            {id:"20",e:"🍳",l:"15–20 minutes"},
+            {id:"30",e:"👩‍🍳",l:"30+ minutes"},
+            {id:"prep",e:"🛒",l:"Prefer meal prep"},
           ].map(s=><OptCard key={s.id} emoji={s.e} label={s.l} selected={ans.cooking===s.id} onClick={()=>{set("cooking",s.id);setTimeout(()=>goTo(S.TESTI),350);}}/>)}
         </div>
       </div>
@@ -595,9 +595,9 @@ export default function GLP1Quiz(){
     /* ═══ TESTIMONIAL ═══ */
     case S.TESTI:{
       const reviews=[
-        {img:REV1,name:"Мария, 42",text:"Мой белок вырос с 48г до 102г в день. Волосы перестали выпадать через 3 недели. Это приложение изменило мой опыт с GLP-1.",stars:5,detail:"−14 кг за 8 недель"},
-        {img:REV2,name:"Елена, 36",text:"Я чуть не бросила Mounjaro из-за тошноты. FoodZee показал, какие продукты избегать — тошнота ушла полностью.",stars:5,detail:"на Mounjaro 8 мес"},
-        {img:REV3,name:"Ирина, 55",text:"Прекратила GLP-1 6 месяцев назад и не набрала ни килограмма. FoodZee научил меня правильно есть — навсегда.",stars:5,detail:"Удерживает вес 6 мес"},
+        {img:REV1,name:"Maria, 42",text:"My protein went from 48g to 102g/day. Hair stopped falling out in 3 weeks. This app changed my GLP-1 experience.",stars:5,detail:"-14 kg in 8 weeks"},
+        {img:REV2,name:"Elena, 36",text:"I almost quit Mounjaro due to nausea. FoodZee showed me which foods to avoid — nausea disappeared completely.",stars:5,detail:"on Mounjaro 8 months"},
+        {img:REV3,name:"Irina, 55",text:"Stopped GLP-1 six months ago and haven't gained a pound. FoodZee taught me to eat right — forever.",stars:5,detail:"Maintaining weight 6 mo"},
       ];
       const doubled=[...reviews,...reviews,...reviews];
       const cardW=280;
@@ -605,7 +605,7 @@ export default function GLP1Quiz(){
       const setW=(cardW+gap)*reviews.length;
       return(
         <div style={{paddingTop:52,paddingBottom:100}}>
-          <h2 style={{...tCss,fontSize:40,marginBottom:24}}>{"Женщины как ты уже\nвидят результаты"}</h2>
+          <h2 style={{...tCss,fontSize:40,marginBottom:24}}>{"Women like you are\nalready seeing results"}</h2>
           <div style={{overflow:"hidden",margin:"0 -16px"}}>
             <div style={{display:"flex",gap:gap,animation:`marqueeScroll ${reviews.length*8}s linear infinite`,width:setW*3}}>
               {doubled.map((r,i)=>(
@@ -628,10 +628,10 @@ export default function GLP1Quiz(){
 
     /* ═══ SCAN (Magic Moment) ═══ */
     case S.SCAN:{
-      const lines=["Анализ метаболического профиля...","Расчёт оптимального белка...","Оценка риска дефицитов...","Построение плана питания...","Генерация персональных целей..."];
+      const lines=["Analyzing metabolic profile...","Calculating optimal protein...","Assessing deficiency risks...","Building meal plan...","Generating personal goals..."];
       return(
         <div style={{display:"flex",flexDirection:"column",alignItems:"center",paddingTop:80,minHeight:"80vh"}}>
-          <h2 style={{...tCss,fontSize:22,marginBottom:32}}>{"Анализируем твой\nпрофиль..."}</h2>
+          <h2 style={{...tCss,fontSize:22,marginBottom:32}}>{"Analyzing your\nprofile..."}</h2>
           <Ring pct={Math.min(100,scanPhase*20)} size={140} sw={8}>
             <span style={{fontFamily:F,fontSize:28,fontWeight:800,color:C.green}}>{Math.min(100,scanPhase*20)}%</span>
           </Ring>
@@ -647,8 +647,8 @@ export default function GLP1Quiz(){
     case S.PROJECTION:{
       return(
         <div style={{paddingTop:52,paddingBottom:100}}>
-          <h2 style={{...tCss,fontSize:36,marginBottom:16}}>{"Твой прогноз\nс FoodZee"}</h2>
-          <p style={{fontFamily:F,fontSize:16,color:C.black,textAlign:"center",marginBottom:28}}>На основе твоих данных{"\n"}и клинических исследований</p>
+          <h2 style={{...tCss,fontSize:36,marginBottom:16}}>{"Your projection\nwith FoodZee"}</h2>
+          <p style={{fontFamily:F,fontSize:16,color:C.black,textAlign:"center",marginBottom:28}}>Based on your data{"\n"}and clinical research</p>
           {/* Chart card - static image */}
           <img src={DIAGRAM_IMG} alt="" style={{width:"100%",borderRadius:20,display:"block"}}/>
         </div>
@@ -657,7 +657,7 @@ export default function GLP1Quiz(){
 
     /* ═══ PAYWALL ═══ */
     case S.PAYWALL:{
-      const titles={plan:"Твой персональный план\nпитания на GLP-1 готов",taking:"Твой персональный план\nпитания на GLP-1 готов",stopped:"Твой персональный план\nудержания веса готов"};
+      const titles={plan:"Your personal GLP-1\nnutrition plan is ready",taking:"Your personal GLP-1\nnutrition plan is ready",stopped:"Your personal weight\nmaintenance plan is ready"};
       return(
         <div style={{paddingTop:40,position:"relative"}}>
           <div style={{position:"absolute",top:-120,left:"50%",transform:"translateX(-50%)",width:420,height:360,borderRadius:"50%",background:"rgba(0,206,0,.55)",filter:"blur(100px)",zIndex:-1,pointerEvents:"none"}}/>
@@ -670,13 +670,13 @@ export default function GLP1Quiz(){
               <img src={BODY_IMG} alt="" style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}}/>
             </div>
             <div style={{flex:1,padding:16}}>
-              <h3 style={{fontFamily:F,fontSize:16,fontWeight:700,color:C.black,margin:"0 0 12px"}}>Твои персональные цели</h3>
+              <h3 style={{fontFamily:F,fontSize:16,fontWeight:700,color:C.black,margin:"0 0 12px"}}>Your personal goals</h3>
               {[
-                {label:"Калории",value:`${calories} ккал`},
-                {label:"Белок",value:`${protein}г/день`},
-                {label:"Метаболический тип",value:"Средний"},
-                {label:"Ключевые нутриенты",value:"D, B12, Mg"},
-                {label:"Гидратация",value:"2.4л/день"},
+                {label:"Calories",value:`${calories} kcal`},
+                {label:"Protein",value:`${protein}g/day`},
+                {label:"Metabolic type",value:"Средний"},
+                {label:"Key nutrients",value:"D, B12, Mg"},
+                {label:"Hydration",value:"2.4L/day"},
               ].map((t,i)=>(
                 <div key={i} style={{marginBottom:8}}>
                   <span style={{fontFamily:F,fontSize:11,color:C.sub,display:"block"}}>{t.label}</span>
@@ -688,9 +688,9 @@ export default function GLP1Quiz(){
           {/* Plan cards */}
           <div style={{marginBottom:40}}>
           {[
-            {id:"week",nm:"Недельный",pr:"$7.99",ps:"/нед",sb:"~$416/год",bd:null},
-            {id:"year",nm:"Годовой",pr:"$49.99",ps:"/год",sb:"$4.17/мес • Экономия 65%",bd:"🏆 Лучшая цена"},
-            {id:"month",nm:"Месячный",pr:"$14.99",ps:"/мес",sb:"$180/год",bd:null},
+            {id:"week",nm:"Weekly",pr:"$7.99",ps:"/нед",sb:"~$416/год",bd:null},
+            {id:"year",nm:"Annual",pr:"$49.99",ps:"/год",sb:"$4.17/мес • Save 65%",bd:"🏆 Best value"},
+            {id:"month",nm:"Monthly",pr:"$14.99",ps:"/мес",sb:"$180/год",bd:null},
           ].map(p=>{
             const sel=plan===p.id;
             return(
@@ -722,14 +722,14 @@ export default function GLP1Quiz(){
             <div style={{position:"relative",zIndex:2,padding:"0 20px 24px 20px",maxWidth:"85%"}}>
               <div style={{background:"rgba(255,255,255,0.95)",borderRadius:14,padding:"14px 16px",boxShadow:"0 4px 16px rgba(0,0,0,0.1)"}}>
                 <p style={{fontFamily:F,fontSize:14,color:C.black,lineHeight:1.55,margin:0}}>
-                  Исследования показывают: <strong>до 39% потерянного веса на GLP-1 — это мышцы</strong> без правильного питания. FoodZee решает именно эту проблему.
+                  Research shows: <strong>up to 39% of weight lost on GLP-1 is muscle</strong> without proper nutrition. FoodZee solves this problem.
                 </p>
               </div>
             </div>
           </div>
           {/* 7-day meal plan - blurred scrolling cards */}
           <div style={{marginBottom:40}}>
-            <h3 style={{fontFamily:F,fontSize:18,fontWeight:700,color:C.black,margin:"0 0 14px",textAlign:"center"}}>Твой 7-дневный план питания — Разблокируй после подписки</h3>
+            <h3 style={{fontFamily:F,fontSize:18,fontWeight:700,color:C.black,margin:"0 0 14px",textAlign:"center"}}>Your 7-day meal plan — Unlock after subscription</h3>
             <div style={{overflow:"hidden",margin:"0 -16px"}}>
               <div style={{display:"flex",gap:12,paddingLeft:16,paddingRight:16,animation:"mealScroll 20s linear infinite",width:"max-content"}}>
                 {[
@@ -767,23 +767,23 @@ export default function GLP1Quiz(){
           {/* Legal text */}
           <div style={{marginBottom:40,textAlign:"center"}}>
             <p style={{fontFamily:F,fontSize:12,color:C.muted,lineHeight:1.6,margin:"0 0 12px"}}>
-              Продолжая, я принимаю <span style={{textDecoration:"underline",color:C.sub}}>Политику конфиденциальности</span> и <span style={{textDecoration:"underline",color:C.sub}}>Условия использования</span>
+              By continuing, I accept the <span style={{textDecoration:"underline",color:C.sub}}>Privacy Policy</span> и <span style={{textDecoration:"underline",color:C.sub}}>Terms of Use</span>
             </p>
             <p style={{fontFamily:F,fontSize:11,color:C.muted,lineHeight:1.6,margin:0}}>
-              Месячный план действует 30 дней. Сегодня с вас будет списан $1 за 3-дневный пробный период, далее $14.99/мес после окончания триала. Отмените в любое время — следующий платёж не будет списан. Подробнее об отмене и возврате в Условиях использования. Для отмены свяжитесь с нами: support@foodzee.tech
+              Monthly план действует 30 дней. Сегодня с вас будет списан $1 for a 3-day trial, then $14.99/month after trial ends. Cancel anytime — next payment won't be charged. See Terms of Use for cancellation and refund details. To cancel contact: support@foodzee.tech
             </p>
           </div>
           {/* Diagram */}
           <img src={DIAGRAM_IMG} alt="" style={{width:"100%",borderRadius:20,display:"block",marginBottom:40,boxShadow:"0 4px 16px rgba(0,0,0,0.1)"}}/>
           {/* Trust block - 5 items with centered title */}
           <div style={{marginBottom:40}}>
-            <h2 style={{...tCss,fontSize:22,marginBottom:24}}>{"Что внутри вашего\nперсонального плана"}</h2>
+            <h2 style={{...tCss,fontSize:22,marginBottom:24}}>{"What's inside your\npersonal plan"}</h2>
             {[
-              {e:"💡",t:"Научный подход к питанию",d:"Наш метод анализирует ваши привычки, энергию и метаболизм, чтобы создать идеальный план."},
-              {e:"🌿",t:"100% персонализация",d:"Никаких шаблонов — ваш план построен полностью вокруг ваших уникальных потребностей на GLP-1."},
-              {e:"💫",t:"Создан для восстановления баланса",d:"Сочетая науку о питании и понимание организма, мы помогаем достичь гармонии с телом."},
-              {e:"🎯",t:"Умный трекер белка",d:"Отслеживайте потребление белка в каждом приёме пищи — 30г+ для защиты мышечной массы."},
-              {e:"🤖",t:"AI-нутрициолог 24/7",d:"Задайте любой вопрос о питании на GLP-1 и получите мгновенный персонализированный ответ."},
+              {e:"💡",t:"Science-based nutrition",d:"Our method analyzes your habits, energy, and metabolism to create the perfect plan."},
+              {e:"🌿",t:"100% personalization",d:"No templates — your plan is built around your unique GLP-1 needs."},
+              {e:"💫",t:"Designed to restore balance",d:"Combining nutrition science and body understanding, we help achieve harmony with your body."},
+              {e:"🎯",t:"Smart protein tracker",d:"Track protein intake in every meal — 30g+ to protect muscle mass."},
+              {e:"🤖",t:"AI nutritionist 24/7",d:"Ask any GLP-1 nutrition question and get an instant personalized answer."},
             ].map((item,i)=>(
               <div key={i} style={{display:"flex",gap:14,marginBottom:20,alignItems:"flex-start"}}>
                 <span style={{fontSize:32,lineHeight:1,flexShrink:0}}>{item.e}</span>
@@ -796,11 +796,11 @@ export default function GLP1Quiz(){
           </div>
           {/* Reviews block on green bg */}
           <div style={{background:"#A5F3A5",borderRadius:24,padding:"32px 16px",marginBottom:40}}>
-            <h2 style={{...tCss,fontSize:24,marginBottom:24}}>Пользователи любят наши планы</h2>
+            <h2 style={{...tCss,fontSize:24,marginBottom:24}}>Users love our plans</h2>
             {[
-              {text:"\"Эффективно и удобно! План питания на GLP-1 идеально вписался в мой плотный график. Побочные эффекты Оземпика стали минимальны, а белок теперь всегда в норме. Очень рекомендую!\" 💪",name:"Sara.Tara11"},
-              {text:"\"Настоящее спасение для женщин на GLP-1! Раньше я не знала, что есть на Mounjaro — тошнота была постоянной. С FoodZee я подобрала правильные продукты, и побочки практически ушли. Улучшилось самочувствие и появилась энергия. Обожаю!\" 💖",name:"Lindsey56"},
-              {text:"\"FoodZee превзошёл мои ожидания! Как женщина 40+, на Wegovy я теряла мышцы. Это приложение показало, как набирать 100г+ белка в день. Точные рецепты, удобный трекер и впечатляющие результаты. Теперь это мой must-have.\" 😊✨",name:"Dora Miller"},
+              {text:"\"Эффективно и удобно! План питания на GLP-1 идеально вписался в мой плотный график. Side effects Оземпика стали минимальны, а белок теперь всегда в норме. Очень рекомендую!\" 💪",name:"Sara.Tara11"},
+              {text:"\"A lifesaver for women on GLP-1! I used to not know what to eat on Mounjaro — nausea was constant. With FoodZee I found the right foods and side effects vanished. Energy improved. Love it!\" 💖",name:"Lindsey56"},
+              {text:"\"FoodZee exceeded expectations! As a 40+ woman on Wegovy I was losing muscle. This app showed how to get 100g+ protein daily. Precise recipes, handy tracker, impressive results. Now my must-have.\" 😊✨",name:"Dora Miller"},
             ].map((r,i)=>(
               <div key={i} style={{background:C.white,borderRadius:16,padding:"20px 18px",marginBottom:16,boxShadow:"0 2px 8px rgba(0,0,0,0.04)"}}>
                 <div style={{marginBottom:10}}>
@@ -815,7 +815,7 @@ export default function GLP1Quiz(){
           <div style={{background:"#F1F1F1",borderRadius:20,padding:"20px 24px",marginBottom:40,display:"flex",gap:16,alignItems:"flex-start"}}>
             <div style={{flex:1}}>
               <p style={{fontFamily:F,fontSize:22,fontWeight:700,color:C.black,margin:"0 0 4px"}}>50,000+</p>
-              <p style={{fontFamily:F,fontSize:14,color:C.sub,margin:0}}>женщин отслеживают питание на GLP-1</p>
+              <p style={{fontFamily:F,fontSize:14,color:C.sub,margin:0}}>women track nutrition on GLP-1</p>
             </div>
             <img src={FACES_IMG} alt="" style={{width:130,height:"auto",objectFit:"contain",flexShrink:0}}/>
           </div>
@@ -826,15 +826,15 @@ export default function GLP1Quiz(){
             </div>
             <h3 style={{fontFamily:F,fontSize:24,fontWeight:800,color:C.black,lineHeight:1.2,margin:"0 0 16px"}}>100% гарантия{"\n"}возврата денег</h3>
             <p style={{fontFamily:F,fontSize:14,color:C.sub,lineHeight:1.6,margin:"0 0 16px"}}>
-              В FoodZee мы тщательно разработали наш продукт и уверены в его качестве. Если вы не заметите прогресса после использования приложения хотя бы неделю, мы готовы сделать полный возврат в течение 21 дня.
+              At FoodZee we carefully designed our product. If you don't see progress after using the app for a week, we offer a full refund within 21 days.
             </p>
             <p style={{fontFamily:F,fontSize:13,color:C.sub,lineHeight:1.5,margin:0}}>
-              Подробнее об ограничениях в наших Условиях использования.
+              More details in our Terms of Use.
             </p>
           </div>
           {/* Green footer */}
           <div style={{background:"#A5F3A5",margin:"0 -16px",padding:"28px 24px",textAlign:"center"}}>
-            <p style={{fontFamily:F,fontSize:15,color:C.green,fontWeight:600,textDecoration:"underline",margin:"0 0 16px",cursor:"pointer"}}>Связаться с нами</p>
+            <p style={{fontFamily:F,fontSize:15,color:C.green,fontWeight:600,textDecoration:"underline",margin:"0 0 16px",cursor:"pointer"}}>Contact us</p>
             <p style={{fontFamily:F,fontSize:14,color:C.black,lineHeight:1.5,margin:"0 0 16px"}}>
               Thessalonikis 43, office/flat 301{"\n"}Thessaloniki Court, 3025 Limassol, Cyprus
             </p>
@@ -871,7 +871,7 @@ export default function GLP1Quiz(){
         </div>
       </div>
 
-      {showSticky&&<StickyBtn onClick={step===S.PAYWALL?()=>alert("→ Оплата"):next}>{stickyLabel()}</StickyBtn>}
+      {showSticky&&<StickyBtn onClick={step===S.PAYWALL?()=>alert("→ Payment"):next}>{stickyLabel()}</StickyBtn>}
       <style>{`@keyframes rainbowShift{0%{background-position:0% 50%}100%{background-position:200% 50%}}@keyframes dotPulse{0%,80%,100%{opacity:.3;transform:scale(.8)}40%{opacity:1;transform:scale(1.1)}}@keyframes mealScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}`}</style>
     </div>
   );
