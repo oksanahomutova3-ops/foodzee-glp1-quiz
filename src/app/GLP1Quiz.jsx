@@ -854,7 +854,8 @@ export default function GLP1Quiz(){
   const isTransition = step===S.WELCOME||step===S.BR_INFO||step===S.TESTI||step===S.PROJECTION;
 
   return(
-    <div style={{position:"relative",maxWidth:420,margin:"0 auto",minHeight:"100vh",fontFamily:F,background:isTransition?"#A5F3A5":C.white}}>
+    <div style={{minHeight:"100vh",background:isTransition?"#A5F3A5":C.white,fontFamily:F}}>
+    <div style={{position:"relative",maxWidth:420,margin:"0 auto",minHeight:"100vh"}}>
       {step!==S.SCAN&&!isTransition&&step!==S.PAYWALL&&<GradientBg/>}
 
       <div ref={scrollRef} style={{position:"relative",zIndex:1,height:"100vh",overflowY:"auto",padding:"0 16px",background:isTransition?"#A5F3A5":undefined}}>
@@ -872,6 +873,7 @@ export default function GLP1Quiz(){
       </div>
 
       {showSticky&&<StickyBtn onClick={step===S.PAYWALL?()=>alert("→ Payment"):next}>{stickyLabel()}</StickyBtn>}
+    </div>
       <style>{`@keyframes rainbowShift{0%{background-position:0% 50%}100%{background-position:200% 50%}}@keyframes dotPulse{0%,80%,100%{opacity:.3;transform:scale(.8)}40%{opacity:1;transform:scale(1.1)}}@keyframes mealScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}`}</style>
     </div>
   );
