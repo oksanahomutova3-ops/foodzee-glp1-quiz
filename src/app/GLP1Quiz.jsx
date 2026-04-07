@@ -292,7 +292,7 @@ export default function GLP1Quiz(){
 
     /* ═══ WELCOME ═══ */
     case S.WELCOME: return(
-      <div style={{height:"100vh",display:"flex",flexDirection:"column",boxSizing:"border-box",paddingBottom:20}}>
+      <div style={{height:"100vh",display:"flex",flexDirection:"column",boxSizing:"border-box",paddingBottom:100}}>
         <div style={{textAlign:"center",paddingTop:52,flexShrink:0}}>
           <h1 style={{fontFamily:F,fontSize:32,fontWeight:800,color:C.black,lineHeight:1.1,letterSpacing:"-.04em",marginBottom:16,padding:"0 8px",whiteSpace:"pre-line"}}>
             {"GLP-1 without proper\nnutrition is money\ndown the drain"}
@@ -304,9 +304,7 @@ export default function GLP1Quiz(){
         <div style={{flex:1,display:"flex",alignItems:"center",justifyContent:"center",marginTop:20,minHeight:0,overflow:"hidden"}}>
           <img src={GLP_CARD} alt="" style={{maxWidth:"100%",maxHeight:"100%",objectFit:"contain"}}/>
         </div>
-        <div style={{flexShrink:0,marginTop:20}}>
-          <InlineBtn onClick={next}>Start Quiz</InlineBtn>
-        </div>
+        
       </div>
     );
 
@@ -348,21 +346,25 @@ export default function GLP1Quiz(){
       return(
         <div style={{paddingTop:80,display:"flex",flexDirection:"column",alignItems:"center"}}>
           <h2 style={{...tCss}}>{"Your age?"}</h2>
-          <p style={{fontFamily:F,fontSize:15,color:C.sub,textAlign:"center",marginTop:12,marginBottom:48,lineHeight:1.5}}>We use your age to{"\n"}adapt the meal plan to{"\n"}your metabolic needs</p>
-          <div ref={ageRef} style={{width:"100%",overflowX:"auto",WebkitOverflowScrolling:"touch",scrollbarWidth:"none",msOverflowStyle:"none"}}>
-            <div style={{display:"inline-flex",alignItems:"center",height:120,paddingLeft:`calc(50% - ${AGE_ITEM_W/2}px)`,paddingRight:`calc(50% - ${AGE_ITEM_W/2}px)`}}>
+          <p style={{fontFamily:F,fontSize:15,color:C.sub,textAlign:"center",marginTop:12,marginBottom:32,lineHeight:1.5}}>We use your age to{"\n"}adapt the meal plan to{"\n"}your metabolic needs</p>
+          {/* Big centered number */}
+          <div style={{fontFamily:F,fontSize:72,fontWeight:800,color:C.green,lineHeight:1,marginBottom:24}}>{selAge}</div>
+          {/* Scrollable age strip */}
+          <div ref={ageRef} onScroll={()=>{if(!ageRef.current)return;const center=ageRef.current.scrollLeft+ageRef.current.clientWidth/2;const idx=Math.round(center/AGE_ITEM_W);const v=Math.max(18,Math.min(70,idx+18));if(v!==ans.age)set("age",v);}} style={{width:"100%",overflowX:"auto",WebkitOverflowScrolling:"touch",scrollbarWidth:"none",msOverflowStyle:"none",position:"relative"}}>
+            <div style={{display:"inline-flex",alignItems:"center",height:80,paddingLeft:`calc(50% - ${AGE_ITEM_W/2}px)`,paddingRight:`calc(50% - ${AGE_ITEM_W/2}px)`}}>
               {ages.map(a=>{
-                const isSel=a===selAge;
                 const dist=Math.abs(a-selAge);
-                const opacity=dist===0?1:dist===1?0.5:dist===2?0.3:0.15;
+                const opacity=dist===0?1:dist===1?0.55:dist===2?0.3:0.15;
+                const sz=dist===0?48:dist===1?36:32;
                 return(
                   <div key={a} onClick={()=>{set("age",a);setTimeout(()=>centerAge(a),50);}} style={{width:AGE_ITEM_W,flexShrink:0,textAlign:"center",cursor:"pointer",userSelect:"none"}}>
-                    <span style={{fontFamily:F,fontSize:isSel?64:40,fontWeight:800,color:C.green,opacity,transition:"all .15s ease"}}>{a}</span>
+                    <span style={{fontFamily:F,fontSize:sz,fontWeight:800,color:C.green,opacity,transition:"all .15s ease"}}>{a}</span>
                   </div>
                 );
               })}
             </div>
           </div>
+          <style>{`[class*=ageRef]::-webkit-scrollbar{display:none}`}</style>
         </div>
       );
     }
