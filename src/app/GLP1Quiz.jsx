@@ -104,11 +104,12 @@ function ScanLines({lines,phase}){
 /* ═══ Ruler Picker Component ═══ */
 function RulerPicker({value,min,max,onChange}){
   const ref=useRef(null);
-  const gap=12; // px per unit
+  const gap=16;
   const totalW=(max-min)*gap;
   const [dragging,setDragging]=useState(false);
   const startX=useRef(0);
   const startScroll=useRef(0);
+  const uid=useRef("rp-"+Math.random().toString(36).slice(2,8));
 
   useEffect(()=>{
     if(ref.current){
@@ -144,27 +145,27 @@ function RulerPicker({value,min,max,onChange}){
     const isMajor=i%5===0;
     ticks.push(
       <div key={i} style={{display:"flex",flexDirection:"column",alignItems:"center",width:gap,flexShrink:0}}>
-        <div style={{width:isMajor?2.5:1.5,height:isMajor?40:22,background:isMajor?"#B0B0B0":"#D5D5D5",borderRadius:1}}/>
-        {isMajor&&<span style={{fontFamily:F,fontSize:14,color:C.sub,marginTop:8,userSelect:"none"}}>{i}</span>}
+        <div style={{width:isMajor?2.5:1.5,height:isMajor?48:28,background:isMajor?"#C0C0C0":"#DCDCDC",borderRadius:1,transition:"height .1s ease"}}/>
+        {isMajor&&<span style={{fontFamily:F,fontSize:15,fontWeight:600,color:"#999",marginTop:10,userSelect:"none"}}>{i}</span>}
       </div>
     );
   }
 
   return(
-    <div style={{position:"relative",width:"100%",marginTop:8}}>
-      {/* Center indicator */}
-      <div style={{position:"absolute",top:0,left:"50%",transform:"translateX(-50%)",zIndex:2,display:"flex",flexDirection:"column",alignItems:"center"}}>
-        <div style={{width:3,height:44,background:C.green,borderRadius:2}}/>
-        <div style={{width:12,height:12,borderRadius:"50%",background:C.green,marginTop:-3}}/>
+    <div style={{position:"relative",width:"100%",marginTop:12}}>
+      {/* Center indicator — green line + dot */}
+      <div style={{position:"absolute",top:0,left:"50%",transform:"translateX(-50%)",zIndex:2,display:"flex",flexDirection:"column",alignItems:"center",pointerEvents:"none"}}>
+        <div style={{width:3,height:52,background:C.green,borderRadius:2}}/>
+        <div style={{width:14,height:14,borderRadius:"50%",background:C.green,marginTop:-4,boxShadow:"0 0 6px rgba(0,206,0,.4)"}}/>
       </div>
-      <div ref={ref} onScroll={handleScroll} onMouseDown={onDown} onMouseMove={onMove} onMouseUp={onUp} onMouseLeave={onUp}
+      <div ref={ref} className={uid.current} onScroll={handleScroll} onMouseDown={onDown} onMouseMove={onMove} onMouseUp={onUp} onMouseLeave={onUp}
         onTouchStart={onDown} onTouchMove={onMove} onTouchEnd={onUp}
         style={{overflowX:"auto",overflowY:"hidden",cursor:"grab",WebkitOverflowScrolling:"touch",scrollbarWidth:"none",msOverflowStyle:"none",paddingTop:4,paddingBottom:4}}>
-        <div style={{display:"flex",alignItems:"flex-end",width:totalW,paddingLeft:"50%",paddingRight:"50%",height:80}}>
+        <div style={{display:"flex",alignItems:"flex-end",width:totalW,paddingLeft:"50%",paddingRight:"50%",height:100}}>
           {ticks}
         </div>
       </div>
-      <style>{`.ruler-scroll::-webkit-scrollbar{display:none}`}</style>
+      <style>{`.${uid.current}::-webkit-scrollbar{display:none}`}</style>
     </div>
   );
 }
@@ -437,7 +438,7 @@ export default function GLP1Quiz(){
               {id:"nausea",e:"🤢",l:"Nausea and GI issues"},
               {id:"portions",e:"🍽️",l:"Don't know what to eat in small portions"},
               {id:"fatigue",e:"😴",l:"Fatigue and low energy"},
-              {id:"hair",e:"💇‍♀️",l:"Hair loss / дефициты"},
+              {id:"hair",e:"💇‍♀️",l:"Hair loss / deficiencies"},
             ].map(s=><OptCard key={s.id} emoji={s.e} label={s.l} selected={ans.br2===s.id} onClick={()=>selNext("br2",s.id)}/>)}
           </div>
         </div>
@@ -532,7 +533,7 @@ export default function GLP1Quiz(){
     case S.WATER: return(
       <div style={{paddingTop:80}}>
         <h2 style={{...tCss,fontSize:24}}>{"How much water do\nyou drink per day?"}</h2>
-        <p style={{fontFamily:F,fontSize:14,color:C.sub,marginTop:8,marginBottom:24,lineHeight:1.5,textAlign:"center"}}>На GLP-1 важно пить достаточно воды для поддержки метаболизма и уменьшения side effects</p>
+        <p style={{fontFamily:F,fontSize:14,color:C.sub,marginTop:8,marginBottom:24,lineHeight:1.5,textAlign:"center"}}>On GLP-1 it's important to drink enough water to support metabolism and reduce side effects</p>
         <div style={{display:"flex",flexDirection:"column",gap:10}}>
           {[
             {id:"low",e:"😕",l:"Less than 4 glasses"},
@@ -616,7 +617,7 @@ export default function GLP1Quiz(){
                     <span style={{fontSize:12,color:"#FFB800",flexShrink:0}}>{"⭐".repeat(r.stars)}</span>
                   </div>
                   <span style={{fontFamily:F,fontSize:12,color:C.green,fontWeight:600}}>{r.detail}</span>
-                  <p style={{fontFamily:F,fontSize:13,color:C.black,lineHeight:1.45,margin:"6px 0 0"}}>«{r.text}»</p>
+                  <p style={{fontFamily:F,fontSize:13,color:C.black,lineHeight:1.45,margin:"6px 0 0"}}>"{r.text}"</p>
                 </div>
               ))}
             </div>
@@ -674,7 +675,7 @@ export default function GLP1Quiz(){
               {[
                 {label:"Calories",value:`${calories} kcal`},
                 {label:"Protein",value:`${protein}g/day`},
-                {label:"Metabolic type",value:"Средний"},
+                {label:"Metabolic type",value:"Average"},
                 {label:"Key nutrients",value:"D, B12, Mg"},
                 {label:"Hydration",value:"2.4L/day"},
               ].map((t,i)=>(
@@ -688,9 +689,9 @@ export default function GLP1Quiz(){
           {/* Plan cards */}
           <div style={{marginBottom:40}}>
           {[
-            {id:"week",nm:"Weekly",pr:"$7.99",ps:"/нед",sb:"~$416/год",bd:null},
-            {id:"year",nm:"Annual",pr:"$49.99",ps:"/год",sb:"$4.17/мес • Save 65%",bd:"🏆 Best value"},
-            {id:"month",nm:"Monthly",pr:"$14.99",ps:"/мес",sb:"$180/год",bd:null},
+            {id:"week",nm:"Weekly",pr:"$7.99",ps:"/week",sb:"~$416/year",bd:null},
+            {id:"year",nm:"Annual",pr:"$49.99",ps:"/year",sb:"$4.17/mo • Save 65%",bd:"🏆 Best value"},
+            {id:"month",nm:"Monthly",pr:"$14.99",ps:"/month",sb:"$180/year",bd:null},
           ].map(p=>{
             const sel=plan===p.id;
             return(
@@ -767,10 +768,10 @@ export default function GLP1Quiz(){
           {/* Legal text */}
           <div style={{marginBottom:40,textAlign:"center"}}>
             <p style={{fontFamily:F,fontSize:12,color:C.muted,lineHeight:1.6,margin:"0 0 12px"}}>
-              By continuing, I accept the <span style={{textDecoration:"underline",color:C.sub}}>Privacy Policy</span> и <span style={{textDecoration:"underline",color:C.sub}}>Terms of Use</span>
+              By continuing, I accept the <span style={{textDecoration:"underline",color:C.sub}}>Privacy Policy</span> and <span style={{textDecoration:"underline",color:C.sub}}>Terms of Use</span>
             </p>
             <p style={{fontFamily:F,fontSize:11,color:C.muted,lineHeight:1.6,margin:0}}>
-              Monthly план действует 30 дней. Сегодня с вас будет списан $1 for a 3-day trial, then $14.99/month after trial ends. Cancel anytime — next payment won't be charged. See Terms of Use for cancellation and refund details. To cancel contact: support@foodzee.tech
+              Monthly plan lasts 30 days. Today you will be charged $1 for a 3-day trial, then $14.99/month after trial ends. Cancel anytime — next payment won't be charged. See Terms of Use for cancellation and refund details. To cancel contact: support@foodzee.tech
             </p>
           </div>
           {/* Diagram */}
@@ -798,7 +799,7 @@ export default function GLP1Quiz(){
           <div style={{background:"#A5F3A5",borderRadius:24,padding:"32px 16px",marginBottom:40}}>
             <h2 style={{...tCss,fontSize:24,marginBottom:24}}>Users love our plans</h2>
             {[
-              {text:"\"Эффективно и удобно! План питания на GLP-1 идеально вписался в мой плотный график. Side effects Оземпика стали минимальны, а белок теперь всегда в норме. Очень рекомендую!\" 💪",name:"Sara.Tara11"},
+              {text:"\"Effective and convenient! The GLP-1 meal plan fit perfectly into my busy schedule. Ozempic side effects became minimal, protein is always on track. Highly recommend!\" 💪",name:"Sara.Tara11"},
               {text:"\"A lifesaver for women on GLP-1! I used to not know what to eat on Mounjaro — nausea was constant. With FoodZee I found the right foods and side effects vanished. Energy improved. Love it!\" 💖",name:"Lindsey56"},
               {text:"\"FoodZee exceeded expectations! As a 40+ woman on Wegovy I was losing muscle. This app showed how to get 100g+ protein daily. Precise recipes, handy tracker, impressive results. Now my must-have.\" 😊✨",name:"Dora Miller"},
             ].map((r,i)=>(
@@ -824,7 +825,7 @@ export default function GLP1Quiz(){
             <div style={{marginBottom:12,display:"flex",justifyContent:"center"}}>
               <svg width="31" height="31" viewBox="0 0 31 31" fill="none"><path d="M15.51 6.95c.05-.75.3-1.48.72-2.1.42-.63.99-1.14 1.66-1.48a4.83 4.83 0 013.8.15c.07.05.13.11.17.19a.38.38 0 01-.04.42c-.07.07-.16.12-.26.16-1.1.5-2.04 1.31-2.7 2.32a6.88 6.88 0 00-1.01 3.42c0 .14 0 .28.01.42a.38.38 0 01-.28.52.38.38 0 01-.25-.07 4.82 4.82 0 01-1.68-1.74 4.84 4.84 0 01-.5-2.37zm13.55 12.5a2.9 2.9 0 01-1.65 2.66l-.05.02-4.7 2-.14.05-7.75 1.94a.97.97 0 01-.24.03H1.94a1.94 1.94 0 01-1.94-1.94v-4.84c0-.51.2-1 .57-1.37.36-.36.86-.57 1.37-.57h3.47l2.74-2.74a3.87 3.87 0 012.76-1.13h6.06a3.87 3.87 0 013.3 5.87l5.07-1.17a2.9 2.9 0 013.7 2.88zm-1.94 0a.97.97 0 00-1.42-.94l-.04.01-8.11 1.87a.97.97 0 01-.22.02h-3.88a.97.97 0 010-1.94h3.39a1.94 1.94 0 000-3.87h-6.06a1.94 1.94 0 00-1.37.57l-2.74 2.74v5.41h7.63l7.56-1.89 4.6-1.96a.97.97 0 00.55-.94v-.01zM20.34 10.17a4.36 4.36 0 108.72 0 4.36 4.36 0 00-8.72 0z" fill="#00CE00"/></svg>
             </div>
-            <h3 style={{fontFamily:F,fontSize:24,fontWeight:800,color:C.black,lineHeight:1.2,margin:"0 0 16px"}}>100% гарантия{"\n"}возврата денег</h3>
+            <h3 style={{fontFamily:F,fontSize:24,fontWeight:800,color:C.black,lineHeight:1.2,margin:"0 0 16px"}}>100% money-back{"\n"}guarantee</h3>
             <p style={{fontFamily:F,fontSize:14,color:C.sub,lineHeight:1.6,margin:"0 0 16px"}}>
               At FoodZee we carefully designed our product. If you don't see progress after using the app for a week, we offer a full refund within 21 days.
             </p>
