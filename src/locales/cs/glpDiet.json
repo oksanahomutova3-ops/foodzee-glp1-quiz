@@ -1,0 +1,10 @@
+{
+  "title": "Stravovací\\npreference?",
+  "subtitle": "Vyberte nejbližší možnost",
+  "options": {
+    "any": "Bez omezení",
+    "veg": "Vegetarián / Vegan",
+    "keto": "Keto / Low-carb",
+    "gf": "Bezlepkové"
+  }
+}

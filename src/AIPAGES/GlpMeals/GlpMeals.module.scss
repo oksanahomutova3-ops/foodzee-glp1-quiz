@@ -1,0 +1,45 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px 16px 60px;
+  background: #fff;
+  position: relative;
+}
+.back {
+  position: absolute;
+  top: 20px;
+  left: 16px;
+  cursor: pointer;
+  z-index: 10;
+}
+.wrapperInfo {
+  padding-top: 90px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+.title {
+  font-family: 'Inter', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: #1a1a1a;
+  line-height: 1.18;
+  letter-spacing: -0.04em;
+  margin: 0 0 10px;
+  white-space: pre-line;
+  text-align: center;
+}
+.description {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #888;
+  line-height: 1.5;
+  margin: 0;
+  text-align: center;
+  white-space: pre-line;
+}
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

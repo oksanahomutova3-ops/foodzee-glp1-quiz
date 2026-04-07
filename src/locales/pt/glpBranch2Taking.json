@@ -1,0 +1,10 @@
+{
+  "title": "O que mais te preocupa\\nagora?",
+  "subtitle": "",
+  "options": {
+    "nausea": "Náusea após comer",
+    "muscle": "Perda muscular",
+    "energy": "Falta de energia",
+    "food": "Não sei o que posso comer"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "title": "What concerns you most\\nbefore starting?",
+  "subtitle": "",
+  "options": {
+    "muscle": "Losing muscle mass",
+    "nausea": "Nausea and side effects",
+    "food": "Not knowing what to eat",
+    "regain": "Weight regain after stopping"
+  }
+}

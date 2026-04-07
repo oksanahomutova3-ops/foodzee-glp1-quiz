@@ -1,0 +1,10 @@
+{
+  "title": "Votre niveau\\nd'activité ?",
+  "subtitle": "À quelle fréquence faites-vous du sport",
+  "options": {
+    "none": "Très peu de mouvement",
+    "low": "1–2 fois par semaine",
+    "moderate": "3–4 fois par semaine",
+    "high": "5+ fois par semaine"
+  }
+}

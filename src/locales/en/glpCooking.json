@@ -1,0 +1,10 @@
+{
+  "title": "Time for\\ncooking?",
+  "subtitle": "Per meal on average",
+  "options": {
+    "15": "Up to 15 min",
+    "30": "15–30 min",
+    "60": "30–60 min",
+    "none": "I prefer ready meals"
+  }
+}

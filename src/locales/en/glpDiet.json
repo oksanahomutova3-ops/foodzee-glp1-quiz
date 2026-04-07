@@ -1,0 +1,10 @@
+{
+  "title": "Dietary\\npreferences?",
+  "subtitle": "Choose the closest option",
+  "options": {
+    "any": "No restrictions",
+    "veg": "Vegetarian / Vegan",
+    "keto": "Keto / Low-carb",
+    "gf": "Gluten-free"
+  }
+}

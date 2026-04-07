@@ -1,0 +1,8 @@
+{
+  "phases": {
+    "analyzing": "Analisi delle risposte",
+    "comparing": "Confronto con 50K+ profili",
+    "calculating": "Calcolo dei macros",
+    "building": "Creazione del piano"
+  }
+}

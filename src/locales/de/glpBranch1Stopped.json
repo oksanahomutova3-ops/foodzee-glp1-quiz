@@ -1,0 +1,11 @@
+{
+  "title": "Warum hast du\\nGLP-1 abgesetzt?",
+  "subtitle": "",
+  "options": {
+    "cost": "Zu teuer",
+    "side": "Nebenwirkungen",
+    "goal": "Zielgewicht erreicht",
+    "insurance": "Versicherung zahlt nicht mehr",
+    "other": "Andere Gründe"
+  }
+}

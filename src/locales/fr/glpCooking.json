@@ -1,0 +1,10 @@
+{
+  "title": "Temps pour\\ncuisiner ?",
+  "subtitle": "Par repas en moyenne",
+  "options": {
+    "15": "Jusqu'à 15 min",
+    "30": "15–30 min",
+    "60": "30–60 min",
+    "none": "Je préfère les plats préparés"
+  }
+}

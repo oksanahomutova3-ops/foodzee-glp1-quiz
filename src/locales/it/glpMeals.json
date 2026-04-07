@@ -1,0 +1,10 @@
+{
+  "title": "Quanti pasti\\nal giorno?",
+  "subtitle": "Inclusi gli spuntini",
+  "options": {
+    "2": "2 pasti",
+    "3": "3 pasti",
+    "4": "4 pasti",
+    "5": "5+ pasti"
+  }
+}

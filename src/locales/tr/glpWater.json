@@ -1,0 +1,9 @@
+{
+  "title": "Ne kadar su\\niçiyorsunuz?",
+  "subtitle": "Bardak (250ml) / gün",
+  "options": {
+    "low": "1–3 bardak",
+    "ok": "4–6 bardak",
+    "good": "7+ bardak"
+  }
+}

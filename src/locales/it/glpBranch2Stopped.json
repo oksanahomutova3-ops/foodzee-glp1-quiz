@@ -1,0 +1,10 @@
+{
+  "title": "Hai notato un\\nrecupero del peso?",
+  "subtitle": "",
+  "options": {
+    "fast": "Sì, il peso torna veloce",
+    "little": "Sì, un po'",
+    "no": "No, mantengo i risultati",
+    "fear": "Ho paura che inizi"
+  }
+}

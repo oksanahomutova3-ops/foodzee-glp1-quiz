@@ -1,0 +1,9 @@
+{
+  "title": "Jaký je váš\\nstatus GLP-1?",
+  "subtitle": "Vyberte možnost, která vás popisuje",
+  "options": {
+    "plan": "Plánuji začít s GLP-1",
+    "taking": "Aktuálně beru GLP-1",
+    "stopped": "Přestal/a jsem brát GLP-1"
+  }
+}

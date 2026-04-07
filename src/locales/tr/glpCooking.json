@@ -1,0 +1,10 @@
+{
+  "title": "Yemek\\npişirme süresi?",
+  "subtitle": "Öğün başına ortalama",
+  "options": {
+    "15": "15 dk'ya kadar",
+    "30": "15–30 dk",
+    "60": "30–60 dk",
+    "none": "Hazır yemekleri tercih ederim"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "title": "What concerns you\\nthe most right now?",
+  "subtitle": "",
+  "options": {
+    "nausea": "Nausea after eating",
+    "muscle": "Muscle loss",
+    "energy": "Lack of energy",
+    "food": "Don't know what I can eat"
+  }
+}

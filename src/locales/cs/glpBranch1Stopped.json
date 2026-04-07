@@ -1,0 +1,11 @@
+{
+  "title": "Proč jste přestal/a\\nbrát GLP-1?",
+  "subtitle": "",
+  "options": {
+    "cost": "Příliš drahé",
+    "side": "Vedlejší účinky",
+    "goal": "Dosažení cílové váhy",
+    "insurance": "Pojištění přestalo krýt",
+    "other": "Jiné důvody"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "title": "Wie viele Mahlzeiten\\npro Tag?",
+  "subtitle": "Inklusive Snacks",
+  "options": {
+    "2": "2 Mahlzeiten",
+    "3": "3 Mahlzeiten",
+    "4": "4 Mahlzeiten",
+    "5": "5+ Mahlzeiten"
+  }
+}

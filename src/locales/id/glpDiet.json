@@ -1,0 +1,10 @@
+{
+  "title": "Preferensi\\ndiet?",
+  "subtitle": "Pilih opsi yang paling dekat",
+  "options": {
+    "any": "Tanpa batasan",
+    "veg": "Vegetarian / Vegan",
+    "keto": "Keto / Rendah karbohidrat",
+    "gf": "Bebas gluten"
+  }
+}

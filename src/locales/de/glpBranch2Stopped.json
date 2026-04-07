@@ -1,0 +1,10 @@
+{
+  "title": "Bemerkst du eine\\nGewichtszunahme?",
+  "subtitle": "",
+  "options": {
+    "fast": "Ja, das Gewicht kommt schnell zurück",
+    "little": "Ja, ein wenig",
+    "no": "Nein, halte das Ergebnis",
+    "fear": "Habe Angst, dass es anfängt"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Your current\\nweight?",
+  "subtitle": "We'll calculate your ideal protein intake",
+  "cta": "Continue",
+  "bmiLabel": "BMI",
+  "bmi": {
+    "underweight": "Underweight",
+    "normal": "Normal",
+    "overweight": "Overweight",
+    "obese": "Obese"
+  }
+}

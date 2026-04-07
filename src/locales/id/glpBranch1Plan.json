@@ -1,0 +1,10 @@
+{
+  "title": "Kapan Anda berencana\\nmulai GLP-1?",
+  "subtitle": "",
+  "options": {
+    "days": "Beberapa hari ke depan",
+    "month": "Dalam sebulan",
+    "months": "Dalam 2–3 bulan",
+    "unsure": "Belum memutuskan"
+  }
+}

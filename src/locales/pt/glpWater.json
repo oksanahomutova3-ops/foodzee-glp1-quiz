@@ -1,0 +1,9 @@
+{
+  "title": "Quanta água\\nvocê bebe?",
+  "subtitle": "Copos (250ml) por dia",
+  "options": {
+    "low": "1–3 copos",
+    "ok": "4–6 copos",
+    "good": "7+ copos"
+  }
+}

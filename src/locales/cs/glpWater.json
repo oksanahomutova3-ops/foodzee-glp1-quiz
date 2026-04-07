@@ -1,0 +1,9 @@
+{
+  "title": "Kolik vody\\npijete?",
+  "subtitle": "Sklenic (250ml) denně",
+  "options": {
+    "low": "1–3 sklenice",
+    "ok": "4–6 sklenic",
+    "good": "7+ sklenic"
+  }
+}

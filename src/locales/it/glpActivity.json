@@ -1,0 +1,10 @@
+{
+  "title": "Il tuo livello\\ndi attività?",
+  "subtitle": "Quanto spesso fai esercizio",
+  "options": {
+    "none": "Quasi nessun movimento",
+    "low": "1–2 volte a settimana",
+    "moderate": "3–4 volte a settimana",
+    "high": "5+ volte a settimana"
+  }
+}

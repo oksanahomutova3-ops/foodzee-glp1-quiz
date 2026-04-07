@@ -1,0 +1,98 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px 16px 60px;
+  background: #fff;
+  position: relative;
+}
+.back {
+  position: absolute;
+  top: 20px;
+  left: 16px;
+  cursor: pointer;
+  z-index: 10;
+}
+.wrapperInfo {
+  padding-top: 90px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+.title {
+  font-family: 'Inter', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: #1a1a1a;
+  line-height: 1.18;
+  letter-spacing: -0.04em;
+  margin: 0 0 10px;
+  white-space: pre-line;
+  text-align: center;
+}
+.description {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #888;
+  line-height: 1.5;
+  margin: 0;
+  text-align: center;
+  white-space: pre-line;
+}
+.pickerWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+}
+.picker {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+.btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #e5e7eb;
+  background: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a1a1a;
+  &:active { background: #f2f3f5; }
+}
+.value { text-align: center; }
+.num {
+  font-family: 'Inter', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  color: #1a1a1a;
+}
+.unit {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #888;
+  margin-top: 4px;
+}
+.slider {
+  width: 100%;
+  max-width: 300px;
+  accent-color: #00ce00;
+}
+.sliderLabels {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 300px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 4px;
+}
+.btnWrap {
+  margin-top: auto;
+  text-align: center;
+}

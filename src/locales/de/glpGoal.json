@@ -1,0 +1,10 @@
+{
+  "title": "Was ist dein\\nHauptziel?",
+  "subtitle": "Wähle deinen Fokus",
+  "options": {
+    "muscle": "Abnehmen & Muskeln erhalten",
+    "protein": "Genug Protein bekommen",
+    "plan": "Wissen, was man täglich isst",
+    "side": "Nebenwirkungen reduzieren"
+  }
+}

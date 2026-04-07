@@ -1,0 +1,9 @@
+{
+  "title": "Berapa banyak air\\nyang Anda minum?",
+  "subtitle": "Gelas (250ml) per hari",
+  "options": {
+    "low": "1–3 gelas",
+    "ok": "4–6 gelas",
+    "good": "7+ gelas"
+  }
+}

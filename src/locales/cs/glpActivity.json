@@ -1,0 +1,10 @@
+{
+  "title": "Vaše úroveň\\naktivity?",
+  "subtitle": "Jak často cvičíte",
+  "options": {
+    "none": "Téměř žádný pohyb",
+    "low": "1–2× týdně",
+    "moderate": "3–4× týdně",
+    "high": "5+× týdně"
+  }
+}

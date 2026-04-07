@@ -1,0 +1,9 @@
+{
+  "title": "GLP-1\\ndurumunuz nedir?",
+  "subtitle": "Sizi tanımlayan seçeneği seçin",
+  "options": {
+    "plan": "GLP-1 başlamayı planlıyorum",
+    "taking": "Şu anda GLP-1 alıyorum",
+    "stopped": "GLP-1 almayı bıraktım"
+  }
+}

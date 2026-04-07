@@ -1,0 +1,10 @@
+{
+  "title": "Depuis combien de temps\\nprenez-vous du GLP-1 ?",
+  "subtitle": "",
+  "options": {
+    "<1m": "Moins d'1 mois",
+    "1-3m": "1–3 mois",
+    "3-6m": "3–6 mois",
+    ">6m": "Plus de 6 mois"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "title": "Preferências\\nalimentares?",
+  "subtitle": "Escolha a opção mais próxima",
+  "options": {
+    "any": "Sem restrições",
+    "veg": "Vegetariano / Vegano",
+    "keto": "Keto / Low-carb",
+    "gf": "Sem glúten"
+  }
+}

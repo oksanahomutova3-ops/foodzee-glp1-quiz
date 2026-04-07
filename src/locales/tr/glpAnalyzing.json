@@ -1,0 +1,8 @@
+{
+  "phases": {
+    "analyzing": "Yanıtlarınız analiz ediliyor",
+    "comparing": "50K+ profille eşleştiriliyor",
+    "calculating": "Makrolar hesaplanıyor",
+    "building": "Planınız oluşturuluyor"
+  }
+}

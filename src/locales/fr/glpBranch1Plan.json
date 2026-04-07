@@ -1,0 +1,10 @@
+{
+  "title": "Quand prévoyez-vous\\nde commencer le GLP-1 ?",
+  "subtitle": "",
+  "options": {
+    "days": "Dans les prochains jours",
+    "month": "Dans un mois",
+    "months": "Dans 2–3 mois",
+    "unsure": "Pas encore décidé"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "title": "Aktivite\\nseviyeniz?",
+  "subtitle": "Ne sıklıkla egzersiz yapıyorsunuz",
+  "options": {
+    "none": "Neredeyse hiç hareket yok",
+    "low": "Haftada 1–2 kez",
+    "moderate": "Haftada 3–4 kez",
+    "high": "Haftada 5+ kez"
+  }
+}

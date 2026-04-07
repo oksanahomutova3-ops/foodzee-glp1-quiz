@@ -1,0 +1,10 @@
+{
+  "title": "Qual è il tuo\\nobbiettivo principale?",
+  "subtitle": "Scegli la tua priorità",
+  "options": {
+    "muscle": "Perdere peso e mantenere i muscoli",
+    "protein": "Assumere abbastanza proteine",
+    "plan": "Sapere cosa mangiare ogni giorno",
+    "side": "Ridurre gli effetti collaterali"
+  }
+}

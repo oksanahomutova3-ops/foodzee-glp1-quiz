@@ -1,0 +1,10 @@
+{
+  "title": "Qu'est-ce qui vous préoccupe\\nle plus en ce moment ?",
+  "subtitle": "",
+  "options": {
+    "nausea": "Nausées après manger",
+    "muscle": "Perte musculaire",
+    "energy": "Manque d'énergie",
+    "food": "Ne sais pas quoi manger"
+  }
+}

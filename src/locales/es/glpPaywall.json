@@ -1,0 +1,83 @@
+{
+  "title": "Your personalized\\nGLP-1 nutrition plan is ready!",
+  "dashboard": {
+    "title": "Your personal goals",
+    "calories": "Calories",
+    "caloriesValue": "?? kcal",
+    "protein": "Protein",
+    "proteinValue": "??g/day",
+    "metabolic": "Metabolic type",
+    "metabolicValue": "Average",
+    "nutrients": "Key nutrients",
+    "nutrientsValue": "D, B12, Mg",
+    "hydration": "Hydration",
+    "hydrationValue": "2.4L/day"
+  },
+  "plans": {
+    "weekName": "Weekly",
+    "weekSub": "~$416/year",
+    "weekPrice": "$7.99",
+    "weekPeriod": "/wk",
+    "yearName": "Annual",
+    "yearSub": "$4.17/mo",
+    "yearPrice": "$49.99",
+    "yearPeriod": "/yr",
+    "yearTag": "🏆 Best value",
+    "monthName": "Monthly",
+    "monthSub": "$180/year",
+    "monthPrice": "$14.99",
+    "monthPeriod": "/mo"
+  },
+  "doctor": {
+    "name": "Dr. Sarah Mitchell",
+    "role": "FoodZee Nutritional Advisor, PhD",
+    "quote": "Studies show: up to 39% of weight lost on GLP-1 is muscle without proper nutrition. FoodZee solves exactly this problem."
+  },
+  "meals": {
+    "title": "Your 7-day meal plan — Unlock after subscription"
+  },
+  "features": {
+    "title": "What's inside your\\npersonalized plan",
+    "f1": "Science-based nutrition",
+    "f1Desc": "Our method analyzes your habits, energy, and metabolism to create the perfect plan.",
+    "f1Icon": "💡",
+    "f2": "100% personalization",
+    "f2Desc": "No templates — your plan is built entirely around your unique GLP-1 needs.",
+    "f2Icon": "🌿",
+    "f3": "Built to restore balance",
+    "f3Desc": "Combining nutrition science and body understanding, we help achieve harmony.",
+    "f3Icon": "💫",
+    "f4": "Smart protein tracker",
+    "f4Desc": "Track protein intake in every meal — 30g+ to protect muscle mass.",
+    "f4Icon": "🎯",
+    "f5": "AI nutritionist 24/7",
+    "f5Desc": "Ask any question about GLP-1 nutrition and get an instant personalized answer.",
+    "f5Icon": "🤖"
+  },
+  "reviews": {
+    "title": "Users love our plans",
+    "r1Text": "\"Effective and convenient! The GLP-1 meal plan fits perfectly into my busy schedule. Side effects became minimal, protein always on track!\" 💪",
+    "r1Name": "Sara.Tara11",
+    "r2Text": "\"A game-changer for women on GLP-1! Nausea was constant. With FoodZee I found the right foods and side effects disappeared!\" 💖",
+    "r2Name": "Lindsey56",
+    "r3Text": "\"FoodZee exceeded my expectations! As a 40+ woman on Wegovy, I was losing muscle. This app showed me how to get 100g+ protein daily.\" 😊✨",
+    "r3Name": "Dora Miller"
+  },
+  "social": {
+    "number": "50,000+",
+    "label": "women track their GLP-1 nutrition"
+  },
+  "guarantee": {
+    "title": "100% money-back\\nguarantee",
+    "text": "At FoodZee we carefully developed our product. If you don't notice progress after using the app for at least a week, we offer a full refund within 21 days."
+  },
+  "cta": "Get my plan",
+  "legal": {
+    "accept": "By continuing, I accept the Privacy Policy and Terms of Use",
+    "terms": "Monthly plan valid 30 days. $1 for 3-day trial, then $14.99/mo. Cancel anytime. support@foodzee.tech"
+  },
+  "footer": {
+    "contact": "Contact us",
+    "address": "Thessalonikis 43, office/flat 301\\nThessaloniki Court, 3025 Limassol, Cyprus"
+  }
+}

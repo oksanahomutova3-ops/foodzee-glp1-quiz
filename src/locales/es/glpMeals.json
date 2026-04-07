@@ -1,0 +1,10 @@
+{
+  "title": "¿Cuántas comidas\\nal día?",
+  "subtitle": "Incluyendo snacks",
+  "options": {
+    "2": "2 comidas",
+    "3": "3 comidas",
+    "4": "4 comidas",
+    "5": "5+ comidas"
+  }
+}

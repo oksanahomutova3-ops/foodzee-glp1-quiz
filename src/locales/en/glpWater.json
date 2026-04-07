@@ -1,0 +1,9 @@
+{
+  "title": "How much water\\ndo you drink?",
+  "subtitle": "Glasses (250ml) per day",
+  "options": {
+    "low": "1–3 glasses",
+    "ok": "4–6 glasses",
+    "good": "7+ glasses"
+  }
+}

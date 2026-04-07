@@ -1,0 +1,11 @@
+{
+  "title": "Why did you stop\\ntaking GLP-1?",
+  "subtitle": "",
+  "options": {
+    "cost": "Too expensive",
+    "side": "Side effects",
+    "goal": "Reached target weight",
+    "insurance": "Insurance stopped covering",
+    "other": "Other reasons"
+  }
+}

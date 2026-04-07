@@ -1,0 +1,9 @@
+{
+  "title": "Wie viel Wasser\\ntrinkst du?",
+  "subtitle": "Gläser (250ml) pro Tag",
+  "options": {
+    "low": "1–3 Gläser",
+    "ok": "4–6 Gläser",
+    "good": "7+ Gläser"
+  }
+}

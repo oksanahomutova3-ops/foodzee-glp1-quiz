@@ -1,0 +1,10 @@
+{
+  "title": "Ernährungs-\\npräferenzen?",
+  "subtitle": "Wähle die passendste Option",
+  "options": {
+    "any": "Keine Einschränkungen",
+    "veg": "Vegetarisch / Vegan",
+    "keto": "Keto / Low-Carb",
+    "gf": "Glutenfrei"
+  }
+}

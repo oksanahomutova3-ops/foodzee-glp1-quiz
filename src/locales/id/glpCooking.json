@@ -1,0 +1,10 @@
+{
+  "title": "Waktu untuk\\nmemasak?",
+  "subtitle": "Per makanan rata-rata",
+  "options": {
+    "15": "Hingga 15 menit",
+    "30": "15–30 menit",
+    "60": "30–60 menit",
+    "none": "Saya lebih suka makanan siap saji"
+  }
+}

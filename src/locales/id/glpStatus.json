@@ -1,0 +1,9 @@
+{
+  "title": "Apa status\\nGLP-1 Anda?",
+  "subtitle": "Pilih opsi yang menggambarkan Anda",
+  "options": {
+    "plan": "Berencana mulai GLP-1",
+    "taking": "Saat ini menggunakan GLP-1",
+    "stopped": "Berhenti menggunakan GLP-1"
+  }
+}

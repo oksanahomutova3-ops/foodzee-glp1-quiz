@@ -1,0 +1,10 @@
+{
+  "title": "Kilo geri\\nalımı fark ettiniz mi?",
+  "subtitle": "",
+  "options": {
+    "fast": "Evet, kilo hızla geri geliyor",
+    "little": "Evet, biraz",
+    "no": "Hayır, sonuçları koruyorum",
+    "fear": "Başlamasından korkuyorum"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "title": "Dein\\nAktivitätslevel?",
+  "subtitle": "Wie oft trainierst du",
+  "options": {
+    "none": "Kaum Bewegung",
+    "low": "1–2 Mal pro Woche",
+    "moderate": "3–4 Mal pro Woche",
+    "high": "5+ Mal pro Woche"
+  }
+}

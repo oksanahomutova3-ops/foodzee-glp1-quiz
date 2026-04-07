@@ -1,0 +1,10 @@
+{
+  "title": "Co vás nejvíce\\nznepokojuje?",
+  "subtitle": "",
+  "options": {
+    "muscle": "Ztráta svalové hmoty",
+    "nausea": "Nevolnost a vedlejší účinky",
+    "food": "Nevědět, co jíst",
+    "regain": "Návrat váhy po vysazení"
+  }
+}

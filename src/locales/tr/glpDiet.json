@@ -1,0 +1,10 @@
+{
+  "title": "Diyet\\ntercihleri?",
+  "subtitle": "En yakın seçeneği seçin",
+  "options": {
+    "any": "Kısıtlama yok",
+    "veg": "Vejetaryen / Vegan",
+    "keto": "Keto / Düşük karbonhidrat",
+    "gf": "Glutensiz"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Dein aktuelles\\nGewicht?",
+  "subtitle": "Wir berechnen deine ideale Proteinzufuhr",
+  "cta": "Weiter",
+  "bmiLabel": "BMI",
+  "bmi": {
+    "underweight": "Underweight",
+    "normal": "Normal",
+    "overweight": "Overweight",
+    "obese": "Obese"
+  }
+}

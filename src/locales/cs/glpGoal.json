@@ -1,0 +1,10 @@
+{
+  "title": "Jaký je váš\\nhlavní cíl?",
+  "subtitle": "Zvolte svou hlavní prioritu",
+  "options": {
+    "muscle": "Zhubnout a udržet svaly",
+    "protein": "Získat dostatek bílkovin",
+    "plan": "Vědět, co jíst každý den",
+    "side": "Snížit vedlejší účinky"
+  }
+}

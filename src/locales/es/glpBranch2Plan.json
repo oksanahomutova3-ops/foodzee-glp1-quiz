@@ -1,0 +1,10 @@
+{
+  "title": "¿Qué te preocupa más\\nantes de empezar?",
+  "subtitle": "",
+  "options": {
+    "muscle": "Perder masa muscular",
+    "nausea": "Náuseas y efectos secundarios",
+    "food": "No saber qué comer",
+    "regain": "Recuperar peso al dejarlo"
+  }
+}

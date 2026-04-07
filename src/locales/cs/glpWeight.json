@@ -1,0 +1,12 @@
+{
+  "title": "Vaše současná\\nváha?",
+  "subtitle": "Vypočítáme váš ideální příjem bílkovin",
+  "cta": "Pokračovat",
+  "bmiLabel": "BMI",
+  "bmi": {
+    "underweight": "Underweight",
+    "normal": "Normal",
+    "overweight": "Overweight",
+    "obese": "Obese"
+  }
+}

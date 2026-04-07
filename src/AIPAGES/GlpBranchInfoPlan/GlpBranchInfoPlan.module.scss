@@ -1,0 +1,54 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #a5f3a5;
+  padding: 60px 16px 20px;
+  position: relative;
+}
+.back {
+  position: absolute;
+  top: 20px;
+  left: 16px;
+  cursor: pointer;
+  z-index: 10;
+}
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.title {
+  font-family: 'Inter', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: #1a1a1a;
+  line-height: 1.18;
+  letter-spacing: -0.04em;
+  margin: 0 0 16px;
+  white-space: pre-line;
+  text-align: center;
+}
+.subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #1a1a1a;
+  opacity: 0.7;
+  line-height: 1.5;
+  margin: 0 0 24px;
+  white-space: pre-line;
+  text-align: center;
+}
+.image {
+  width: 80%;
+  max-width: 280px;
+  aspect-ratio: 1;
+  margin: 0 auto 24px;
+  border-radius: 20px;
+  background-size: contain;
+  object-fit: contain;
+}
+.btnWrap { text-align: center; }

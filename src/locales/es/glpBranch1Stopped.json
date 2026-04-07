@@ -1,0 +1,11 @@
+{
+  "title": "¿Por qué dejaste\\nde tomar GLP-1?",
+  "subtitle": "",
+  "options": {
+    "cost": "Demasiado caro",
+    "side": "Efectos secundarios",
+    "goal": "Alcancé mi peso objetivo",
+    "insurance": "El seguro dejó de cubrir",
+    "other": "Otras razones"
+  }
+}

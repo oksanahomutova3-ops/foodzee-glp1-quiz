@@ -1,0 +1,12 @@
+{
+  "title": "Berat badan\\nAnda saat ini?",
+  "subtitle": "Kami akan menghitung asupan protein ideal Anda",
+  "cta": "Lanjutkan",
+  "bmiLabel": "BMI",
+  "bmi": {
+    "underweight": "Underweight",
+    "normal": "Normal",
+    "overweight": "Overweight",
+    "obese": "Obese"
+  }
+}

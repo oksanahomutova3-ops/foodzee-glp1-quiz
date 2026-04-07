@@ -1,0 +1,9 @@
+{
+  "title": "¿Cuál es tu\\nestado con GLP-1?",
+  "subtitle": "Selecciona la opción que te describe",
+  "options": {
+    "plan": "Planeo empezar GLP-1",
+    "taking": "Actualmente tomo GLP-1",
+    "stopped": "Dejé de tomar GLP-1"
+  }
+}

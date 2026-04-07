@@ -1,0 +1,10 @@
+{
+  "title": "Apakah Anda melihat\\nkenaikan berat badan?",
+  "subtitle": "",
+  "options": {
+    "fast": "Ya, berat naik cepat",
+    "little": "Ya, sedikit",
+    "no": "Tidak, menjaga hasil",
+    "fear": "Takut akan mulai"
+  }
+}

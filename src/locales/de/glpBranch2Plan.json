@@ -1,0 +1,10 @@
+{
+  "title": "Was besorgt dich am meisten\\nvor dem Start?",
+  "subtitle": "",
+  "options": {
+    "muscle": "Muskelverlust",
+    "nausea": "Übelkeit und Nebenwirkungen",
+    "food": "Nicht wissen, was man essen soll",
+    "regain": "Gewichtszunahme nach dem Absetzen"
+  }
+}

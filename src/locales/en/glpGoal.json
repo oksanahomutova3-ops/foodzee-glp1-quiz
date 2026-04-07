@@ -1,0 +1,10 @@
+{
+  "title": "What is your\\nmain goal?",
+  "subtitle": "Choose your primary focus",
+  "options": {
+    "muscle": "Lose weight & keep muscle",
+    "protein": "Get enough protein",
+    "plan": "Know what to eat daily",
+    "side": "Reduce side effects"
+  }
+}

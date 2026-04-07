@@ -1,0 +1,10 @@
+{
+  "title": "Ana hedefiniz\\nnedir?",
+  "subtitle": "Önceliğinizi seçin",
+  "options": {
+    "muscle": "Kilo verip kas korumak",
+    "protein": "Yeterli protein almak",
+    "plan": "Her gün ne yiyeceğimi bilmek",
+    "side": "Yan etkileri azaltmak"
+  }
+}

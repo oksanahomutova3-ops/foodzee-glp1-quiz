@@ -1,0 +1,12 @@
+{
+  "title": "¿Tu peso\\nactual?",
+  "subtitle": "Calcularemos tu ingesta ideal de proteínas",
+  "cta": "Continuar",
+  "bmiLabel": "BMI",
+  "bmi": {
+    "underweight": "Underweight",
+    "normal": "Normal",
+    "overweight": "Overweight",
+    "obese": "Obese"
+  }
+}

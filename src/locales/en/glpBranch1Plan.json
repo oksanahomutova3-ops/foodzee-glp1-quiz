@@ -1,0 +1,10 @@
+{
+  "title": "When are you planning\\nto start GLP-1?",
+  "subtitle": "",
+  "options": {
+    "days": "In the next few days",
+    "month": "Within a month",
+    "months": "In 2–3 months",
+    "unsure": "Not decided yet"
+  }
+}

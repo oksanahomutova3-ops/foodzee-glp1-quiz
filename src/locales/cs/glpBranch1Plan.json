@@ -1,0 +1,10 @@
+{
+  "title": "Kdy plánujete\\nzačít s GLP-1?",
+  "subtitle": "",
+  "options": {
+    "days": "V příštích dnech",
+    "month": "Do měsíce",
+    "months": "Za 2–3 měsíce",
+    "unsure": "Ještě nerozhodnuto"
+  }
+}

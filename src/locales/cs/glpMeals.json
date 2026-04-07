@@ -1,0 +1,10 @@
+{
+  "title": "Kolik jídel\\ndenně?",
+  "subtitle": "Včetně svačin",
+  "options": {
+    "2": "2 jídla",
+    "3": "3 jídla",
+    "4": "4 jídla",
+    "5": "5+ jídel"
+  }
+}

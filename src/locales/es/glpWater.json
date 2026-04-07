@@ -1,0 +1,9 @@
+{
+  "title": "¿Cuánta agua\\nbebes?",
+  "subtitle": "Vasos (250ml) por día",
+  "options": {
+    "low": "1–3 vasos",
+    "ok": "4–6 vasos",
+    "good": "7+ vasos"
+  }
+}

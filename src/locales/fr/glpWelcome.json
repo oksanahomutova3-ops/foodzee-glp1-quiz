@@ -1,0 +1,14 @@
+{
+  "title": "Votre plan\\nnutrition GLP-1",
+  "subtitle": "Faites un quiz de 2 minutes et obtenez\\nun plan alimentaire personnalisé",
+  "stats": {
+    "time": "2 min",
+    "timeLabel": "quiz",
+    "users": "50K+",
+    "usersLabel": "femmes",
+    "accuracy": "94%",
+    "accuracyLabel": "précision"
+  },
+  "privacy": "Vos données sont anonymes et sécurisées 🔒",
+  "cta": "Commencer le quiz"
+}

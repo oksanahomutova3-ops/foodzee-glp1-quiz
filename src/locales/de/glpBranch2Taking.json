@@ -1,0 +1,10 @@
+{
+  "title": "Was besorgt dich\\ngerade am meisten?",
+  "subtitle": "",
+  "options": {
+    "nausea": "Übelkeit nach dem Essen",
+    "muscle": "Muskelverlust",
+    "energy": "Energiemangel",
+    "food": "Weiß nicht, was ich essen kann"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Mevcut\\nkilonuz?",
+  "subtitle": "İdeal protein alımınızı hesaplayacağız",
+  "cta": "Devam et",
+  "bmiLabel": "BMI",
+  "bmi": {
+    "underweight": "Underweight",
+    "normal": "Normal",
+    "overweight": "Overweight",
+    "obese": "Obese"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "title": "Quantas refeições\\npor dia?",
+  "subtitle": "Incluindo lanches",
+  "options": {
+    "2": "2 refeições",
+    "3": "3 refeições",
+    "4": "4 refeições",
+    "5": "5+ refeições"
+  }
+}

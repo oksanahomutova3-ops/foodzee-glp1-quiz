@@ -1,0 +1,11 @@
+{
+  "title": "GLP-1'i neden\\nbıraktınız?",
+  "subtitle": "",
+  "options": {
+    "cost": "Çok pahalı",
+    "side": "Yan etkiler",
+    "goal": "Hedef kiloya ulaştım",
+    "insurance": "Sigorta artık karşılamıyor",
+    "other": "Diğer nedenler"
+  }
+}

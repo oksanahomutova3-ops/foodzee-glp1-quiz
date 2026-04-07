@@ -1,0 +1,10 @@
+{
+  "title": "Şu anda sizi\\nen çok ne endişelendiriyor?",
+  "subtitle": "",
+  "options": {
+    "nausea": "Yemekten sonra mide bulantısı",
+    "muscle": "Kas kaybı",
+    "energy": "Enerji eksikliği",
+    "food": "Ne yiyebileceğimi bilmiyorum"
+  }
+}

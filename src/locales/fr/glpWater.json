@@ -1,0 +1,9 @@
+{
+  "title": "Combien d'eau\\nbuvez-vous ?",
+  "subtitle": "Verres (250ml) par jour",
+  "options": {
+    "low": "1–3 verres",
+    "ok": "4–6 verres",
+    "good": "7+ verres"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Votre poids\\nactuel ?",
+  "subtitle": "Nous calculerons votre apport idéal en protéines",
+  "cta": "Continuer",
+  "bmiLabel": "BMI",
+  "bmi": {
+    "underweight": "Underweight",
+    "normal": "Normal",
+    "overweight": "Overweight",
+    "obese": "Obese"
+  }
+}

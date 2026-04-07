@@ -1,0 +1,11 @@
+{
+  "title": "Mengapa Anda berhenti\\nmenggunakan GLP-1?",
+  "subtitle": "",
+  "options": {
+    "cost": "Terlalu mahal",
+    "side": "Efek samping",
+    "goal": "Mencapai berat target",
+    "insurance": "Asuransi berhenti menanggung",
+    "other": "Alasan lain"
+  }
+}

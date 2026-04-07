@@ -1,0 +1,10 @@
+{
+  "title": "Zaznamenali jste\\nnávrat váhy?",
+  "subtitle": "",
+  "options": {
+    "fast": "Ano, váha se rychle vrací",
+    "little": "Ano, trochu",
+    "no": "Ne, udržuji výsledky",
+    "fear": "Bojím se, že to začne"
+  }
+}

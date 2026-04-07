@@ -1,0 +1,10 @@
+{
+  "title": "Combien de repas\\npar jour ?",
+  "subtitle": "Y compris les collations",
+  "options": {
+    "2": "2 repas",
+    "3": "3 repas",
+    "4": "4 repas",
+    "5": "5+ repas"
+  }
+}

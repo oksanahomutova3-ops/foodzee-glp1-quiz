@@ -1,0 +1,10 @@
+{
+  "title": "Berapa kali makan\\nper hari?",
+  "subtitle": "Termasuk camilan",
+  "options": {
+    "2": "2 kali",
+    "3": "3 kali",
+    "4": "4 kali",
+    "5": "5+ kali"
+  }
+}

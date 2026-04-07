@@ -1,0 +1,10 @@
+{
+  "title": "Tingkat\\naktivitas Anda?",
+  "subtitle": "Seberapa sering Anda berolahraga",
+  "options": {
+    "none": "Hampir tidak bergerak",
+    "low": "1–2 kali seminggu",
+    "moderate": "3–4 kali seminggu",
+    "high": "5+ kali seminggu"
+  }
+}

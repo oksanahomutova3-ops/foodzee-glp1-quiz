@@ -1,0 +1,10 @@
+{
+  "title": "Co vás nejvíce\\ntrápí nyní?",
+  "subtitle": "",
+  "options": {
+    "nausea": "Nevolnost po jídle",
+    "muscle": "Ztráta svalů",
+    "energy": "Nedostatek energie",
+    "food": "Nevím, co mohu jíst"
+  }
+}

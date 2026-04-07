@@ -1,0 +1,12 @@
+{
+  "title": "Il tuo peso\\nattuale?",
+  "subtitle": "Calcoleremo il tuo apporto proteico ideale",
+  "cta": "Continua",
+  "bmiLabel": "BMI",
+  "bmi": {
+    "underweight": "Underweight",
+    "normal": "Normal",
+    "overweight": "Overweight",
+    "obese": "Obese"
+  }
+}

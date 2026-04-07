@@ -1,0 +1,10 @@
+{
+  "title": "Your activity\\nlevel?",
+  "subtitle": "How often do you exercise",
+  "options": {
+    "none": "Barely move",
+    "low": "1–2 times a week",
+    "moderate": "3–4 times a week",
+    "high": "5+ times a week"
+  }
+}

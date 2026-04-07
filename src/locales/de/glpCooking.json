@@ -1,0 +1,10 @@
+{
+  "title": "Zeit zum\\nKochen?",
+  "subtitle": "Pro Mahlzeit im Durchschnitt",
+  "options": {
+    "15": "Bis 15 Min",
+    "30": "15–30 Min",
+    "60": "30–60 Min",
+    "none": "Ich bevorzuge Fertiggerichte"
+  }
+}

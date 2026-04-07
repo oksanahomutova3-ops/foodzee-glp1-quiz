@@ -1,0 +1,10 @@
+{
+  "title": "Avez-vous remarqué\\nune reprise de poids ?",
+  "subtitle": "",
+  "options": {
+    "fast": "Oui, le poids revient vite",
+    "little": "Oui, un peu",
+    "no": "Non, je maintiens les résultats",
+    "fear": "J'ai peur que ça commence"
+  }
+}
