@@ -178,7 +178,7 @@ function WeightScreen({title,sub,value,unit,min,max,onChange,onUnit,showBmi,heig
   const displayMax=isKg?max:Math.round(max*2.205);
   const scrollMin=isKg?min:Math.round(min*2.205);
   const scrollMax=isKg?max:Math.round(max*2.205);
-  const ITEM_W=90;
+  const ITEM_W=isKg?90:110;
   const wRef=useRef(null);
 
   const bmi=showBmi&&height?Math.round(value/((height/100)**2)):null;
@@ -215,12 +215,11 @@ function WeightScreen({title,sub,value,unit,min,max,onChange,onUnit,showBmi,heig
       <h2 style={{...tCss,fontSize:28}}>{title}</h2>
       <p style={{fontFamily:F,fontSize:14,color:C.sub,marginBottom:20}}>Please enter a value from {displayMin} to {displayMax} {isKg?"kg":"lbs"}</p>
       {/* Unit toggle */}
-      <div style={{display:"inline-flex",borderRadius:28,overflow:"hidden",border:"1.5px solid #E0E0E0",marginBottom:12,background:"#F2F3F5"}}>
+      <div style={{display:"inline-flex",borderRadius:28,overflow:"hidden",border:"1.5px solid #E0E0E0",marginBottom:40,background:"#F2F3F5"}}>
         <button onClick={()=>onUnit("kg")} style={{padding:"10px 28px",border:"none",fontFamily:F,fontSize:15,fontWeight:600,cursor:"pointer",background:isKg?C.green:"transparent",color:isKg?C.white:C.sub,borderRadius:28,transition:`all .2s ${ease}`}}>kg</button>
         <button onClick={()=>onUnit("lbs")} style={{padding:"10px 28px",border:"none",fontFamily:F,fontSize:15,fontWeight:600,cursor:"pointer",background:!isKg?C.green:"transparent",color:!isKg?C.white:C.sub,borderRadius:28,transition:`all .2s ${ease}`}}>lbs</button>
       </div>
-      {/* Big centered number */}
-      <div style={{fontFamily:F,fontSize:72,fontWeight:800,color:C.green,lineHeight:1,marginBottom:16}}>{displayVal}</div>
+
       {/* Scrollable number strip */}
       <div ref={wRef} onScroll={handleWScroll} style={{width:"100%",overflowX:"auto",WebkitOverflowScrolling:"touch",scrollbarWidth:"none",msOverflowStyle:"none"}}>
         <div style={{display:"inline-flex",alignItems:"center",height:140,paddingLeft:`calc(50% - ${ITEM_W/2}px)`,paddingRight:`calc(50% - ${ITEM_W/2}px)`}}>
@@ -706,7 +705,7 @@ export default function GLP1Quiz(){
         <div style={{paddingTop:40,position:"relative"}}>
           <div style={{position:"absolute",top:-120,left:"50%",transform:"translateX(-50%)",width:420,height:360,borderRadius:"50%",background:"rgba(0,206,0,.55)",filter:"blur(100px)",zIndex:-1,pointerEvents:"none"}}/>
           <div style={{textAlign:"center",marginBottom:16,position:"relative",zIndex:1}}>
-            <h2 style={{...tCss,fontSize:26,whiteSpace:"pre-line",color:C.white}}>{titles[branch]||titles.taking}</h2>
+            <h2 style={{...tCss,fontSize:26,whiteSpace:"pre-line"}}>{(()=>{const t=(titles[branch]||titles.taking);const parts=t.split("\n");return parts.map((line,i)=>{if(i===0)return <span key={i}><span style={{color:C.black}}>Your </span><span style={{color:C.white}}>{line.replace("Your ","")}</span></span>;if(i===1)return <span key={i}><br/><span style={{color:C.white}}>{line.replace(" is ready","")}</span><span style={{color:C.black}}> is ready</span></span>;return <span key={i}><br/><span style={{color:C.white}}>{line}</span></span>;});})()}</h2>
           </div>
           {/* Profile block - 2 columns */}
           <div style={{background:C.card,borderRadius:16,marginBottom:40,display:"flex",overflow:"hidden"}}>
