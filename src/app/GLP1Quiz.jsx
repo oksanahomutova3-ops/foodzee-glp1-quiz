@@ -551,10 +551,10 @@ export default function GLP1Quiz(){
     }
 
     /* ═══ WEIGHT ═══ */
-    case S.WEIGHT: return(<WeightScreen title="What is your weight?" sub="Enter a value from 30 to 200 kg" value={ans.weight||60} unit={ans.weightUnit||"kg"} min={30} max={200} onChange={v=>set("weight",v)} onUnit={u=>set("weightUnit",u)} showBmi height={ans.height}/>);
+    case S.WEIGHT: return(<WeightScreen key="weight" title="What is your weight?" sub="Enter a value from 30 to 200 kg" value={ans.weight||60} unit={ans.weightUnit||"kg"} min={30} max={200} onChange={v=>set("weight",v)} onUnit={u=>set("weightUnit",u)} showBmi height={ans.height}/>);
 
     /* ═══ GOAL WEIGHT ═══ */
-    case S.GOAL_W: return(<WeightScreen title="Your goal weight?" sub="What weight do you want to reach?" value={ans.goalW||55} unit={ans.weightUnit||"kg"} min={30} max={200} onChange={v=>set("goalW",v)} onUnit={u=>set("weightUnit",u)}/>);
+    case S.GOAL_W: return(<WeightScreen key="goalw" title="Your goal weight?" sub="What weight do you want to reach?" value={ans.goalW||55} unit={ans.weightUnit||"kg"} min={30} max={200} onChange={v=>set("goalW",v)} onUnit={u=>set("weightUnit",u)}/>);
 
     /* ═══ ACTIVITY ═══ */
     case S.ACTIVITY: return(
