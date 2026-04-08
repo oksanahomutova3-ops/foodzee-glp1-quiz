@@ -229,7 +229,7 @@ function WeightScreen({title,sub,value,unit,min,max,onChange,onUnit,showBmi,heig
             const sz=dist===0?72:dist===1?44:36;
             return(
               <div key={v} style={{width:ITEM_W,flexShrink:0,textAlign:"center",cursor:"pointer",userSelect:"none"}} onClick={()=>{const kgV=isKg?v:Math.round(v/2.205);onChange(kgV);setTimeout(()=>{if(wRef.current)wRef.current.scrollTo({left:(v-scrollMin)*ITEM_W,behavior:"smooth"});},50);}}>
-                <span style={{fontFamily:F,fontSize:sz,fontWeight:700,color:C.green,opacity,transition:"all .1s ease"}}>{v}</span>
+                <span style={{fontFamily:F,fontSize:sz,fontWeight:800,color:C.green,opacity,transition:"all .15s ease"}}>{v}</span>
               </div>
             );
           })}
