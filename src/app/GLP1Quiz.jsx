@@ -178,7 +178,7 @@ function WeightScreen({title,sub,value,unit,min,max,onChange,onUnit,showBmi,heig
   const displayMax=isKg?max:Math.round(max*2.205);
   const scrollMin=isKg?min:Math.round(min*2.205);
   const scrollMax=isKg?max:Math.round(max*2.205);
-  const ITEM_W=60;
+  const ITEM_W=90;
   const wRef=useRef(null);
 
   const bmi=showBmi&&height?Math.round(value/((height/100)**2)):null;
@@ -223,11 +223,11 @@ function WeightScreen({title,sub,value,unit,min,max,onChange,onUnit,showBmi,heig
       <div style={{fontFamily:F,fontSize:72,fontWeight:800,color:C.green,lineHeight:1,marginBottom:16}}>{displayVal}</div>
       {/* Scrollable number strip */}
       <div ref={wRef} onScroll={handleWScroll} style={{width:"100%",overflowX:"auto",WebkitOverflowScrolling:"touch",scrollbarWidth:"none",msOverflowStyle:"none"}}>
-        <div style={{display:"inline-flex",alignItems:"center",height:60,paddingLeft:`calc(50% - ${ITEM_W/2}px)`,paddingRight:`calc(50% - ${ITEM_W/2}px)`}}>
+        <div style={{display:"inline-flex",alignItems:"center",height:140,paddingLeft:`calc(50% - ${ITEM_W/2}px)`,paddingRight:`calc(50% - ${ITEM_W/2}px)`}}>
           {items.map(v=>{
             const dist=Math.abs(v-displayVal);
-            const opacity=dist===0?1:dist<=2?0.5:dist<=4?0.3:0.12;
-            const sz=dist===0?28:dist<=2?22:18;
+            const opacity=dist===0?1:dist===1?0.5:dist===2?0.3:0.15;
+            const sz=dist===0?72:dist===1?44:36;
             return(
               <div key={v} style={{width:ITEM_W,flexShrink:0,textAlign:"center",cursor:"pointer",userSelect:"none"}} onClick={()=>{const kgV=isKg?v:Math.round(v/2.205);onChange(kgV);setTimeout(()=>{if(wRef.current)wRef.current.scrollTo({left:(v-scrollMin)*ITEM_W,behavior:"smooth"});},50);}}>
                 <span style={{fontFamily:F,fontSize:sz,fontWeight:700,color:C.green,opacity,transition:"all .1s ease"}}>{v}</span>
