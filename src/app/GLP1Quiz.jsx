@@ -259,13 +259,11 @@ export default function GLP1Quiz(){
   const centerAge=useCallback((age)=>{
     if(!ageRef.current)return;
     const idx=age-18;
-    const containerW=ageRef.current.clientWidth;
-    const target=idx*AGE_ITEM_W - containerW/2 + AGE_ITEM_W/2;
-    ageRef.current.scrollTo({left:target,behavior:"smooth"});
+    ageRef.current.scrollTo({left:idx*AGE_ITEM_W,behavior:"smooth"});
   },[]);
   useEffect(()=>{
     if(step===S.AGE){
-      const t=setTimeout(()=>{if(!ageRef.current)return;const idx=(ans.age||35)-18;const cw=ageRef.current.clientWidth;ageRef.current.scrollTo({left:idx*AGE_ITEM_W-cw/2+AGE_ITEM_W/2,behavior:"instant"});},50);
+      const t=setTimeout(()=>{if(!ageRef.current)return;const idx=(ans.age||35)-18;ageRef.current.scrollTo({left:idx*AGE_ITEM_W,behavior:"instant"});},50);
       return()=>clearTimeout(t);
     }
   },[step]);
@@ -350,7 +348,7 @@ export default function GLP1Quiz(){
           <h2 style={{...tCss}}>{"Your age?"}</h2>
           <p style={{fontFamily:F,fontSize:15,color:C.sub,textAlign:"center",marginTop:12,marginBottom:48,lineHeight:1.5}}>We use your age to{"\n"}adapt the meal plan to{"\n"}your metabolic needs</p>
           {/* Scrollable age strip - center item is always big */}
-          <div ref={ageRef} onScroll={()=>{if(!ageRef.current)return;const center=ageRef.current.scrollLeft+ageRef.current.clientWidth/2;const idx=Math.round(center/AGE_ITEM_W);const v=Math.max(18,Math.min(70,idx+18));if(v!==ans.age)set("age",v);}} style={{width:"100%",overflowX:"auto",WebkitOverflowScrolling:"touch",scrollbarWidth:"none",msOverflowStyle:"none"}}>
+          <div ref={ageRef} onScroll={()=>{if(!ageRef.current)return;const idx=Math.round(ageRef.current.scrollLeft/AGE_ITEM_W);const v=Math.max(18,Math.min(70,idx+18));if(v!==ans.age)set("age",v);}} style={{width:"100%",overflowX:"auto",WebkitOverflowScrolling:"touch",scrollbarWidth:"none",msOverflowStyle:"none"}}>
             <div style={{display:"inline-flex",alignItems:"center",height:140,paddingLeft:`calc(50% - ${AGE_ITEM_W/2}px)`,paddingRight:`calc(50% - ${AGE_ITEM_W/2}px)`}}>
               {ages.map(a=>{
                 const dist=Math.abs(a-selAge);
