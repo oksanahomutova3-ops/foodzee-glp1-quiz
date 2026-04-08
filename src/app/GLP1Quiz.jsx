@@ -725,7 +725,7 @@ export default function GLP1Quiz(){
               <circle cx="320" cy="150" r="7" fill="#00CE00" style={{opacity:0,animation:"fadeIn .3s ease forwards 2.2s"}}/>
               {/* Labels */}
               <text x="50" y="25" textAnchor="middle" style={{fontFamily:"Inter",fontSize:13,fontWeight:700,fill:"#1A1A1A"}}>{wDisplay} {unitLabel}</text>
-              <text x="320" y="148" textAnchor="end" style={{fontFamily:"Inter",fontSize:13,fontWeight:700,fill:"#00CE00",opacity:0,animation:"fadeIn .3s ease forwards 2.2s"}}>{gwDisplay} {unitLabel}</text>
+              <text x="320" y="135" textAnchor="end" style={{fontFamily:"Inter",fontSize:13,fontWeight:700,fill:"#00CE00",opacity:0,animation:"fadeIn .3s ease forwards 2.2s"}}>{gwDisplay} {unitLabel}</text>
               <text x="50" y="190" textAnchor="middle" style={{fontFamily:"Inter",fontSize:12,fill:"#888"}}>Now</text>
               <text x="320" y="190" textAnchor="end" style={{fontFamily:"Inter",fontSize:12,fill:"#888"}}>{targetMonth.split(" ")[0].slice(0,3)} {targetDate.getFullYear()}</text>
             </svg>
@@ -737,6 +737,14 @@ export default function GLP1Quiz(){
 
     /* ═══ PAYWALL ═══ */
     case S.PAYWALL:{
+      const targetDate=new Date();
+      targetDate.setDate(targetDate.getDate()+weeks*7);
+      const monthNames=["January","February","March","April","May","June","July","August","September","October","November","December"];
+      const targetMonth=monthNames[targetDate.getMonth()]+" "+targetDate.getFullYear();
+      const isKgProj=(ans.weightUnit||"kg")==="kg";
+      const wDisplay=isKgProj?w:Math.round(w*2.205);
+      const gwDisplay=isKgProj?gw:Math.round(gw*2.205);
+      const unitLabel=isKgProj?"kg":"lbs";
       const titles={plan:"Your personal GLP-1\nnutrition plan is ready",taking:"Your personal GLP-1\nnutrition plan is ready",stopped:"Your personal weight\nmaintenance plan is ready"};
       return(
         <div style={{paddingTop:40,position:"relative"}}>
@@ -854,7 +862,24 @@ export default function GLP1Quiz(){
             </p>
           </div>
           {/* Diagram */}
-          <img src={DIAGRAM_IMG} alt="" style={{width:"100%",borderRadius:20,display:"block",marginBottom:40,boxShadow:"0 4px 16px rgba(0,0,0,0.1)"}}/>
+          <div style={{background:C.white,borderRadius:20,padding:"28px 20px 20px",marginBottom:40,boxShadow:"0 4px 16px rgba(0,0,0,0.1)"}}>
+            <p style={{fontFamily:F,fontSize:15,color:C.sub,textAlign:"center",margin:"0 0 6px"}}>You can reach your goal of</p>
+            <p style={{fontFamily:F,fontSize:24,fontWeight:800,textAlign:"center",margin:"0 0 24px"}}><span style={{color:C.green}}>{gwDisplay} {unitLabel}</span> <span style={{color:C.black}}>by {targetMonth}</span></p>
+            <svg viewBox="0 0 340 200" style={{width:"100%",height:"auto",display:"block"}}>
+              <line x1="50" y1="30" x2="50" y2="170" stroke="#E8E8E8" strokeWidth="1" strokeDasharray="4,4"/>
+              <line x1="145" y1="30" x2="145" y2="170" stroke="#E8E8E8" strokeWidth="1" strokeDasharray="4,4"/>
+              <line x1="240" y1="30" x2="240" y2="170" stroke="#E8E8E8" strokeWidth="1" strokeDasharray="4,4"/>
+              <line x1="320" y1="30" x2="320" y2="170" stroke="#00CE00" strokeWidth="1.5" strokeDasharray="4,4"/>
+              <defs><linearGradient id="lineGrad2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stopColor="#FF6B35"/><stop offset="40%" stopColor="#FFB800"/><stop offset="100%" stopColor="#00CE00"/></linearGradient></defs>
+              <path d="M50,40 C120,42 160,80 200,100 C240,120 290,148 320,150" fill="none" stroke="url(#lineGrad2)" strokeWidth="3.5" strokeLinecap="round"/>
+              <circle cx="50" cy="40" r="7" fill="#FF6B35"/>
+              <circle cx="320" cy="150" r="7" fill="#00CE00"/>
+              <text x="50" y="25" textAnchor="middle" style={{fontFamily:"Inter",fontSize:13,fontWeight:700,fill:"#1A1A1A"}}>{wDisplay} {unitLabel}</text>
+              <text x="320" y="135" textAnchor="end" style={{fontFamily:"Inter",fontSize:13,fontWeight:700,fill:"#00CE00"}}>{gwDisplay} {unitLabel}</text>
+              <text x="50" y="190" textAnchor="middle" style={{fontFamily:"Inter",fontSize:12,fill:"#888"}}>Now</text>
+              <text x="320" y="190" textAnchor="end" style={{fontFamily:"Inter",fontSize:12,fill:"#888"}}>{targetMonth.split(" ")[0].slice(0,3)} {targetDate.getFullYear()}</text>
+            </svg>
+          </div>
           {/* Trust block - 5 items with centered title */}
           <div style={{marginBottom:40}}>
             <h2 style={{...tCss,fontSize:22,marginBottom:24}}>{"What's inside your\npersonal plan"}</h2>
