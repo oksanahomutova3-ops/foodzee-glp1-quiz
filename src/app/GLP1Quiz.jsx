@@ -259,11 +259,13 @@ export default function GLP1Quiz(){
   const centerAge=useCallback((age)=>{
     if(!ageRef.current)return;
     const idx=age-18;
-    ageRef.current.scrollTo({left:idx*AGE_ITEM_W,behavior:"smooth"});
+    const containerW=ageRef.current.clientWidth;
+    const target=idx*AGE_ITEM_W - containerW/2 + AGE_ITEM_W/2;
+    ageRef.current.scrollTo({left:target,behavior:"smooth"});
   },[]);
   useEffect(()=>{
     if(step===S.AGE){
-      const t=setTimeout(()=>centerAge(ans.age||35),100);
+      const t=setTimeout(()=>{if(!ageRef.current)return;const idx=(ans.age||35)-18;const cw=ageRef.current.clientWidth;ageRef.current.scrollTo({left:idx*AGE_ITEM_W-cw/2+AGE_ITEM_W/2,behavior:"instant"});},50);
       return()=>clearTimeout(t);
     }
   },[step]);
