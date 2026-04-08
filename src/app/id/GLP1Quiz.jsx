@@ -213,7 +213,7 @@ function WeightScreen({title,sub,value,unit,min,max,onChange,onUnit,showBmi,heig
   return(
     <div style={{paddingTop:80,textAlign:"center"}}>
       <h2 style={{...tCss,fontSize:28}}>{title}</h2>
-      <p style={{fontFamily:F,fontSize:14,color:C.sub,marginBottom:20}}>Please enter a value from {displayMin} to {displayMax} {isKg?"kg":"lbs"}</p>
+      <p style={{fontFamily:F,fontSize:14,color:C.sub,marginBottom:20}}>Masukkan nilai dari {displayMin} to {displayMax} {isKg?"kg":"lbs"}</p>
       {/* Unit toggle */}
       <div style={{display:"inline-flex",borderRadius:28,overflow:"hidden",border:"1.5px solid #E0E0E0",marginBottom:40,background:"#F2F3F5"}}>
         <button onClick={()=>onUnit("kg")} style={{padding:"10px 28px",border:"none",fontFamily:F,fontSize:15,fontWeight:600,cursor:"pointer",background:isKg?C.green:"transparent",color:isKg?C.white:C.sub,borderRadius:28,transition:`all .2s ${ease}`}}>kg</button>
@@ -241,9 +241,9 @@ function WeightScreen({title,sub,value,unit,min,max,onChange,onUnit,showBmi,heig
         <div style={{background:C.card,borderRadius:16,padding:18,marginTop:24,textAlign:"left"}}>
           <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:8}}>
             <span style={{width:24,height:24,flexShrink:0,display:"flex",alignItems:"center",justifyContent:"center"}}><svg width="20" height="20" viewBox="0 0 16 16" fill="none"><path d="M8 11.33c.19 0 .35-.06.48-.19.12-.13.19-.29.19-.47V8c0-.19-.06-.35-.19-.47A.65.65 0 008 7.33a.65.65 0 00-.47.2.65.65 0 00-.2.47v2.67c0 .19.07.35.2.47.13.13.29.19.47.19zm0-5.33c.19 0 .35-.06.48-.19A.65.65 0 008.67 5.33a.65.65 0 00-.19-.47A.65.65 0 008 4.67a.65.65 0 00-.47.19.65.65 0 00-.2.47c0 .19.07.35.2.48.13.12.29.19.47.19zm0 8.67a6.63 6.63 0 01-2.6-.53 6.72 6.72 0 01-2.12-1.42 6.72 6.72 0 01-1.42-2.12A6.63 6.63 0 011.33 8c0-.92.18-1.79.53-2.6a6.72 6.72 0 011.42-2.12A6.72 6.72 0 015.4 1.86 6.63 6.63 0 018 1.33c.92 0 1.79.18 2.6.53.81.35 1.52.83 2.12 1.42.6.6 1.07 1.3 1.42 2.12.35.81.53 1.68.53 2.6s-.18 1.79-.53 2.6a6.72 6.72 0 01-1.42 2.12 6.72 6.72 0 01-2.12 1.42 6.63 6.63 0 01-2.6.53z" fill="#E768B0"/></svg></span>
-            <span style={{fontFamily:F,fontSize:15,fontWeight:700,color:C.black}}>Your BMI: {bmi} — underweight</span>
+            <span style={{fontFamily:F,fontSize:15,fontWeight:700,color:C.black}}>BMI Anda: {bmi} — berat badan kurang</span>
           </div>
-          <p style={{fontFamily:F,fontSize:13,color:C.sub,lineHeight:1.5,margin:0}}>There's work ahead, but great that you're taking the first step. We use your BMI to create a personalized program.</p>
+          <p style={{fontFamily:F,fontSize:13,color:C.sub,lineHeight:1.5,margin:0}}>Masih ada pekerjaan di depan, tapi hebat bahwa Anda mengambil langkah pertama. Kami menggunakan BMI Anda untuk membuat program personal.</p>
         </div>
       )}
     </div>
@@ -323,11 +323,11 @@ export default function GLP1Quiz(){
   const showNav=step>=S.STATUS&&step<=S.COOKING;
 
   const stickyLabel=()=>{
-    if(step===S.WELCOME)return"Start Quiz";
-    if(step===S.TESTI)return"Continue";
-    if(step===S.PROJECTION)return"Get My Plan";
-    if(step===S.PAYWALL)return"Get My Plan";
-    return"Continue";
+    if(step===S.WELCOME)return"Mulai Kuis";
+    if(step===S.TESTI)return"Lanjutkan";
+    if(step===S.PROJECTION)return"Dapatkan Rencana Saya";
+    if(step===S.PAYWALL)return"Dapatkan Rencana Saya";
+    return"Lanjutkan";
   };
 
   const renderContent=()=>{
@@ -338,10 +338,10 @@ export default function GLP1Quiz(){
       <div style={{height:"100vh",display:"flex",flexDirection:"column",boxSizing:"border-box",paddingBottom:100}}>
         <div style={{textAlign:"center",paddingTop:52,flexShrink:0}}>
           <h1 style={{fontFamily:F,fontSize:32,fontWeight:800,color:C.black,lineHeight:1.1,letterSpacing:"-.04em",marginBottom:16,padding:"0 8px",whiteSpace:"pre-line"}}>
-            {"GLP-1 without proper\nnutrition is money\ndown the drain"}
+            {"GLP-1 tanpa nutrisi\nyang tepat adalah\npemborosan uang"}
           </h1>
           <p style={{fontFamily:F,fontSize:15,color:"#3F3F3F",lineHeight:1.5,margin:0,padding:"0 4px"}}>
-            Find your protein, calorie{"\n"}and nutrient needs — in 2 minutes
+            Temukan kebutuhan protein, kalori{"\n"}dan nutrisi Anda — dalam 2 menit
           </p>
         </div>
         <div style={{flex:1,display:"flex",alignItems:"center",justifyContent:"center",marginTop:20,minHeight:0,overflow:"hidden"}}>
@@ -354,14 +354,14 @@ export default function GLP1Quiz(){
     /* ═══ Q1: STATUS ═══ */
     case S.STATUS: return(
       <div style={{paddingTop:80}}>
-        <h2 style={{...tCss,fontSize:26}}>{"What is your current\nGLP-1 status?"}</h2>
-        <p style={{fontFamily:F,fontSize:14,color:C.sub,textAlign:"center",marginBottom:24}}>This helps personalize your plan</p>
+        <h2 style={{...tCss,fontSize:26}}>{"Apa status GLP-1\nAnda saat ini?"}</h2>
+        <p style={{fontFamily:F,fontSize:14,color:C.sub,textAlign:"center",marginBottom:24}}>Ini membantu mempersonalisasi rencana Anda</p>
         <div style={{display:"flex",flexDirection:"column",gap:10}}>
           {[
-            {id:"plan",e:"💊",l:"Planning to start",s:"Want to prepare in advance"},
-            {id:"taking",e:"💉",l:"Currently taking",s:"Ozempic, Wegovy, Mounjaro, etc."},
-            {id:"stopped",e:"⏸️",l:"Stopped taking",s:"Or reducing dosage"},
-            {id:"explore",e:"🤔",l:"Just exploring options",s:""},
+            {id:"plan",e:"💊",l:"Berencana memulai",s:"Ingin mempersiapkan diri lebih awal"},
+            {id:"taking",e:"💉",l:"Sedang mengonsumsi",s:"Ozempic, Wegovy, Mounjaro, dll."},
+            {id:"stopped",e:"⏸️",l:"Berhenti mengonsumsi",s:"Atau mengurangi dosis"},
+            {id:"explore",e:"🤔",l:"Hanya menjelajahi opsi",s:""},
           ].map(s=><OptCard key={s.id} emoji={s.e} label={s.l} sub={s.s} selected={ans.status===s.id} onClick={()=>selNext("status",s.id==="explore"?"plan":s.id)}/>)}
         </div>
       </div>
@@ -370,13 +370,13 @@ export default function GLP1Quiz(){
     /* ═══ Q2: GOAL ═══ */
     case S.GOAL: return(
       <div style={{paddingTop:80}}>
-        <h2 style={{...tCss,fontSize:26}}>{"What is your main\ngoal right now?"}</h2>
+        <h2 style={{...tCss,fontSize:26}}>{"Apa tujuan utama\nAnda saat ini?"}</h2>
         <div style={{display:"flex",flexDirection:"column",gap:10,marginTop:24}}>
           {[
-            {id:"muscle",e:"💪",l:"Lose weight and keep muscle"},
-            {id:"protein",e:"🥩",l:"Get enough protein"},
-            {id:"plan",e:"🍽️",l:"Know what to eat every day"},
-            {id:"side",e:"🌿",l:"Reduce side effects"},
+            {id:"muscle",e:"💪",l:"Menurunkan berat badan dan menjaga otot"},
+            {id:"protein",e:"🥩",l:"Mendapatkan cukup protein"},
+            {id:"plan",e:"🍽️",l:"Tahu apa yang harus dimakan setiap hari"},
+            {id:"side",e:"🌿",l:"Mengurangi efek samping"},
           ].map(s=><OptCard key={s.id} emoji={s.e} label={s.l} selected={ans.goal===s.id} onClick={()=>selNext("goal",s.id)}/>)}
         </div>
       </div>
@@ -388,8 +388,8 @@ export default function GLP1Quiz(){
       const selAge=ans.age||35;
       return(
         <div style={{paddingTop:80,display:"flex",flexDirection:"column",alignItems:"center"}}>
-          <h2 style={{...tCss}}>{"Your age?"}</h2>
-          <p style={{fontFamily:F,fontSize:15,color:C.sub,textAlign:"center",marginTop:12,marginBottom:48,lineHeight:1.5}}>We use your age to{"\n"}adapt the meal plan to{"\n"}your metabolic needs</p>
+          <h2 style={{...tCss}}>{"Usia Anda?"}</h2>
+          <p style={{fontFamily:F,fontSize:15,color:C.sub,textAlign:"center",marginTop:12,marginBottom:48,lineHeight:1.5}}>Kami menggunakan usia Anda untuk{"\n"}menyesuaikan rencana makan dengan{"\n"}kebutuhan metabolisme Anda</p>
           {/* Scrollable age strip - center item is always big */}
           <div ref={ageRef} onScroll={()=>{if(!ageRef.current)return;const idx=Math.round(ageRef.current.scrollLeft/AGE_ITEM_W);const v=Math.max(18,Math.min(70,idx+18));if(v!==ans.age)set("age",v);}} style={{width:"100%",overflowX:"auto",WebkitOverflowScrolling:"touch",scrollbarWidth:"none",msOverflowStyle:"none"}}>
             <div style={{display:"inline-flex",alignItems:"center",height:140,paddingLeft:`calc(50% - ${AGE_ITEM_W/2}px)`,paddingRight:`calc(50% - ${AGE_ITEM_W/2}px)`}}>
@@ -413,28 +413,28 @@ export default function GLP1Quiz(){
     case S.BR1:{
       if(branch==="plan") return(
         <div style={{paddingTop:80}}>
-          <h2 style={{...tCss,fontSize:24}}>{"What worries you\nthe most?"}</h2>
+          <h2 style={{...tCss,fontSize:24}}>{"Apa yang paling\nmembuat Anda khawatir?"}</h2>
           <div style={{display:"flex",flexDirection:"column",gap:10,marginTop:24}}>
             {[
-              {id:"nausea",e:"🤢",l:"Nausea and side effects"},
-              {id:"hair",e:"💇‍♀️",l:"Hair loss"},
-              {id:"muscle",e:"💪",l:"Losing muscle along with fat"},
-              {id:"regain",e:"📈",l:"Weight regain after stopping"},
-              {id:"food",e:"😰",l:"Don't know what to eat"},
+              {id:"nausea",e:"🤢",l:"Mual dan efek samping"},
+              {id:"hair",e:"💇‍♀️",l:"Kerontokan rambut"},
+              {id:"muscle",e:"💪",l:"Kehilangan otot bersamaan dengan lemak"},
+              {id:"regain",e:"📈",l:"Kenaikan berat badan setelah berhenti"},
+              {id:"food",e:"😰",l:"Tidak tahu apa yang harus dimakan"},
             ].map(s=><OptCard key={s.id} emoji={s.e} label={s.l} selected={ans.br1===s.id} onClick={()=>selNext("br1",s.id)}/>)}
           </div>
         </div>
       );
       if(branch==="taking") return(
         <div style={{paddingTop:80}}>
-          <h2 style={{...tCss,fontSize:24}}>{"How long have you\nbeen taking it?"}</h2>
+          <h2 style={{...tCss,fontSize:24}}>{"Sudah berapa lama\nAnda mengonsumsinya?"}</h2>
           <div style={{display:"flex",flexDirection:"column",gap:10,marginTop:24}}>
             {[
-              {id:"<1m",e:"🌱",l:"Less than 1 month"},
-              {id:"1-3m",e:"📅",l:"1–3 months"},
-              {id:"3-6m",e:"📊",l:"3–6 months"},
-              {id:"6-12m",e:"📈",l:"6–12 months"},
-              {id:">1y",e:"⭐",l:"More than 1 year"},
+              {id:"<1m",e:"🌱",l:"Kurang dari 1 bulan"},
+              {id:"1-3m",e:"📅",l:"1–3 bulan"},
+              {id:"3-6m",e:"📊",l:"3–6 bulan"},
+              {id:"6-12m",e:"📈",l:"6–12 bulan"},
+              {id:">1y",e:"⭐",l:"Lebih dari 1 tahun"},
             ].map(s=><OptCard key={s.id} emoji={s.e} label={s.l} selected={ans.br1===s.id} onClick={()=>selNext("br1",s.id)}/>)}
           </div>
         </div>
@@ -442,14 +442,14 @@ export default function GLP1Quiz(){
       // stopped
       return(
         <div style={{paddingTop:80}}>
-          <h2 style={{...tCss,fontSize:24}}>{"Why did you stop\ntaking it?"}</h2>
+          <h2 style={{...tCss,fontSize:24}}>{"Mengapa Anda berhenti\nmengonsumsinya?"}</h2>
           <div style={{display:"flex",flexDirection:"column",gap:10,marginTop:24}}>
             {[
-              {id:"cost",e:"💰",l:"Too expensive"},
-              {id:"side",e:"🤢",l:"Side effects"},
-              {id:"goal",e:"✅",l:"Reached target weight"},
-              {id:"insurance",e:"🔄",l:"Insurance stopped covering"},
-              {id:"other",e:"🤔",l:"Other reasons"},
+              {id:"cost",e:"💰",l:"Terlalu mahal"},
+              {id:"side",e:"🤢",l:"Efek samping"},
+              {id:"goal",e:"✅",l:"Mencapai berat badan target"},
+              {id:"insurance",e:"🔄",l:"Asuransi berhenti menanggung"},
+              {id:"other",e:"🤔",l:"Alasan lain"},
             ].map(s=><OptCard key={s.id} emoji={s.e} label={s.l} selected={ans.br1===s.id} onClick={()=>selNext("br1",s.id)}/>)}
           </div>
         </div>
@@ -460,27 +460,27 @@ export default function GLP1Quiz(){
     case S.BR2:{
       if(branch==="plan") return(
         <div style={{paddingTop:80}}>
-          <h2 style={{...tCss,fontSize:24}}>{"How would you describe\nyour current diet?"}</h2>
+          <h2 style={{...tCss,fontSize:24}}>{"Bagaimana Anda menggambarkan\npola makan Anda saat ini?"}</h2>
           <div style={{display:"flex",flexDirection:"column",gap:10,marginTop:24}}>
             {[
-              {id:"healthy",e:"🥗",l:"Healthy, but no structure"},
-              {id:"better",e:"🍕",l:"Honestly — could be better"},
-              {id:"track",e:"📊",l:"Already tracking calories"},
-              {id:"lost",e:"🤷‍♀️",l:"Don't know where to start"},
+              {id:"healthy",e:"🥗",l:"Sehat, tapi tanpa struktur"},
+              {id:"better",e:"🍕",l:"Jujur — bisa lebih baik"},
+              {id:"track",e:"📊",l:"Sudah melacak kalori"},
+              {id:"lost",e:"🤷‍♀️",l:"Tidak tahu harus mulai dari mana"},
             ].map(s=><OptCard key={s.id} emoji={s.e} label={s.l} selected={ans.br2===s.id} onClick={()=>selNext("br2",s.id)}/>)}
           </div>
         </div>
       );
       if(branch==="taking") return(
         <div style={{paddingTop:80}}>
-          <h2 style={{...tCss,fontSize:24}}>{"Main nutrition problem\nright now?"}</h2>
+          <h2 style={{...tCss,fontSize:24}}>{"Masalah nutrisi utama\nsaat ini?"}</h2>
           <div style={{display:"flex",flexDirection:"column",gap:10,marginTop:24}}>
             {[
-              {id:"protein",e:"🥩",l:"Not enough protein"},
-              {id:"nausea",e:"🤢",l:"Nausea and GI issues"},
-              {id:"portions",e:"🍽️",l:"Don't know what to eat in small portions"},
-              {id:"fatigue",e:"😴",l:"Fatigue and low energy"},
-              {id:"hair",e:"💇‍♀️",l:"Hair loss / deficiencies"},
+              {id:"protein",e:"🥩",l:"Protein tidak cukup"},
+              {id:"nausea",e:"🤢",l:"Mual dan masalah pencernaan"},
+              {id:"portions",e:"🍽️",l:"Tidak tahu apa yang harus dimakan in small portions"},
+              {id:"fatigue",e:"😴",l:"Kelelahan dan energi rendah"},
+              {id:"hair",e:"💇‍♀️",l:"Kerontokan rambut / deficiencies"},
             ].map(s=><OptCard key={s.id} emoji={s.e} label={s.l} selected={ans.br2===s.id} onClick={()=>selNext("br2",s.id)}/>)}
           </div>
         </div>
@@ -488,13 +488,13 @@ export default function GLP1Quiz(){
       // stopped
       return(
         <div style={{paddingTop:80}}>
-          <h2 style={{...tCss,fontSize:24}}>{"Are you noticing weight\nregain?"}</h2>
+          <h2 style={{...tCss,fontSize:24}}>{"Apakah Anda melihat\nkenaikan berat badan?"}</h2>
           <div style={{display:"flex",flexDirection:"column",gap:10,marginTop:24}}>
             {[
-              {id:"fast",e:"📈",l:"Yes, weight is coming back fast"},
-              {id:"little",e:"📊",l:"A little"},
-              {id:"no",e:"💪",l:"No, maintaining results"},
-              {id:"fear",e:"😰",l:"Afraid it will start"},
+              {id:"fast",e:"📈",l:"Ya, berat badan naik dengan cepat"},
+              {id:"little",e:"📊",l:"Sedikit"},
+              {id:"no",e:"💪",l:"Tidak, menjaga hasil"},
+              {id:"fear",e:"😰",l:"Takut akan mulai naik"},
             ].map(s=><OptCard key={s.id} emoji={s.e} label={s.l} selected={ans.br2===s.id} onClick={()=>selNext("br2",s.id)}/>)}
           </div>
         </div>
@@ -507,10 +507,10 @@ export default function GLP1Quiz(){
         <div style={{height:"100vh",display:"flex",flexDirection:"column",boxSizing:"border-box",paddingBottom:100}}>
           <div style={{textAlign:"center",paddingTop:52,flexShrink:0}}>
             <h1 style={{fontFamily:F,fontSize:64,fontWeight:800,color:C.black,lineHeight:1.05,letterSpacing:"-.04em",marginBottom:16}}>
-              {"Did you\nknow?"}
+              {"Tahukah\nAnda?"}
             </h1>
             <p style={{fontFamily:F,fontSize:15,color:C.black,lineHeight:1.5,margin:0,padding:"0 4px"}}>
-              Women who prepared their{"\n"}nutrition BEFORE starting GLP-1{"\n"}experience up to 60% fewer{"\n"}side effects
+              Wanita yang mempersiapkan{"\n"}nutrisi SEBELUM memulai GLP-1{"\n"}mengalami hingga 60% lebih sedikit{"\n"}efek samping
             </p>
           </div>
           <div style={{flex:1,display:"flex",alignItems:"center",justifyContent:"center",marginTop:20,minHeight:0,overflow:"hidden"}}>
@@ -522,10 +522,10 @@ export default function GLP1Quiz(){
         <div style={{height:"100vh",display:"flex",flexDirection:"column",boxSizing:"border-box",paddingBottom:100}}>
           <div style={{textAlign:"center",paddingTop:52,flexShrink:0}}>
             <h1 style={{fontFamily:F,fontSize:64,fontWeight:800,color:C.black,lineHeight:1.05,letterSpacing:"-.04em",marginBottom:16}}>
-              {"What doctors\ndon't tell you"}
+              {"Apa yang dokter\ntidak katakan"}
             </h1>
             <p style={{fontFamily:F,fontSize:15,color:C.black,lineHeight:1.5,margin:0,padding:"0 4px"}}>
-              Average protein intake{"\n"}on GLP-1 is only 77g/day.{"\n"}But you need 80–120g to{"\n"}protect your muscles.{"\n\n"}Up to 39% of lost weight{"\n"}can be muscle.
+              Rata-rata asupan protein{"\n"}pada GLP-1 hanya 77g/hari.{"\n"}Tapi Anda butuh 80–120g untuk{"\n"}melindungi otot Anda.{"\n\n"}Hingga 39% berat yang hilang{"\n"}bisa berupa otot.
             </p>
           </div>
           <div style={{flex:1,display:"flex",alignItems:"center",justifyContent:"center",marginTop:20,minHeight:0,overflow:"hidden"}}>
@@ -537,10 +537,10 @@ export default function GLP1Quiz(){
         <div style={{height:"100vh",display:"flex",flexDirection:"column",boxSizing:"border-box",paddingBottom:100}}>
           <div style={{textAlign:"center",paddingTop:52,flexShrink:0}}>
             <h1 style={{fontFamily:F,fontSize:64,fontWeight:800,color:C.black,lineHeight:1.05,letterSpacing:"-.04em",marginBottom:16}}>
-              {"You're not alone —\nand it's not\nyour fault"}
+              {"Anda tidak sendirian —\ndan ini bukan\nsalah Anda"}
             </h1>
             <p style={{fontFamily:F,fontSize:15,color:C.black,lineHeight:1.5,margin:0,padding:"0 4px"}}>
-              Research shows: without{"\n"}structured eating habits{"\n"}most people regain{"\n"}the weight back.{"\n\n"}But women who developed{"\n"}the habit of tracking nutrition{"\n"}retained significantly more{"\n"}results.
+              Penelitian menunjukkan: tanpa{"\n"}kebiasaan makan terstruktur{"\n"}kebanyakan orang kembali menaikkan{"\n"}berat badan.{"\n\n"}Tapi wanita yang mengembangkan{"\n"}kebiasaan melacak nutrisi{"\n"}mempertahankan jauh lebih banyak{"\n"}hasil.
             </p>
           </div>
           <div style={{flex:1,display:"flex",alignItems:"center",justifyContent:"center",marginTop:20,minHeight:0,overflow:"hidden"}}>
@@ -551,21 +551,21 @@ export default function GLP1Quiz(){
     }
 
     /* ═══ WEIGHT ═══ */
-    case S.WEIGHT: return(<WeightScreen key="weight" title="What is your weight?" sub="Enter a value from 30 to 200 kg" value={ans.weight||60} unit={ans.weightUnit||"kg"} min={30} max={200} onChange={v=>set("weight",v)} onUnit={u=>set("weightUnit",u)} showBmi height={ans.height}/>);
+    case S.WEIGHT: return(<WeightScreen key="weight" title="Berapa berat badan Anda?" sub="Enter a value from 30 to 200 kg" value={ans.weight||60} unit={ans.weightUnit||"kg"} min={30} max={200} onChange={v=>set("weight",v)} onUnit={u=>set("weightUnit",u)} showBmi height={ans.height}/>);
 
     /* ═══ GOAL WEIGHT ═══ */
-    case S.GOAL_W: return(<WeightScreen key="goalw" title="Your goal weight?" sub="What weight do you want to reach?" value={ans.goalW||55} unit={ans.weightUnit||"kg"} min={30} max={200} onChange={v=>set("goalW",v)} onUnit={u=>set("weightUnit",u)}/>);
+    case S.GOAL_W: return(<WeightScreen key="goalw" title="Berat badan impian Anda?" sub="What weight do you want to reach?" value={ans.goalW||55} unit={ans.weightUnit||"kg"} min={30} max={200} onChange={v=>set("goalW",v)} onUnit={u=>set("weightUnit",u)}/>);
 
     /* ═══ ACTIVITY ═══ */
     case S.ACTIVITY: return(
       <div style={{paddingTop:80}}>
-        <h2 style={{...tCss,fontSize:24}}>{"Activity level?"}</h2>
+        <h2 style={{...tCss,fontSize:24}}>{"Tingkat aktivitas?"}</h2>
         <div style={{display:"flex",flexDirection:"column",gap:10,marginTop:24}}>
           {[
-            {id:"sedentary",e:"🛋️",l:"Sedentary",s:"Office, minimal movement"},
-            {id:"light",e:"🚶‍♀️",l:"Light activity",s:"Walking, light housework"},
-            {id:"moderate",e:"🏃‍♀️",l:"Moderate",s:"Training 3–4 times/week"},
-            {id:"active",e:"🏋️‍♀️",l:"Active",s:"Training 5+ times/week"},
+            {id:"sedentary",e:"🛋️",l:"Tidak aktif",s:"Kantor, gerakan minimal"},
+            {id:"light",e:"🚶‍♀️",l:"Aktivitas ringan",s:"Jalan kaki, pekerjaan rumah ringan"},
+            {id:"moderate",e:"🏃‍♀️",l:"Sedang",s:"Latihan 3–4 kali/minggu"},
+            {id:"active",e:"🏋️‍♀️",l:"Aktif",s:"Latihan 5+ kali/minggu"},
           ].map(s=><OptCard key={s.id} emoji={s.e} label={s.l} sub={s.s} selected={ans.activity===s.id} onClick={()=>selNext("activity",s.id)}/>)}
         </div>
       </div>
@@ -574,14 +574,14 @@ export default function GLP1Quiz(){
     /* ═══ WATER ═══ */
     case S.WATER: return(
       <div style={{paddingTop:80}}>
-        <h2 style={{...tCss,fontSize:24}}>{"How much water do\nyou drink per day?"}</h2>
-        <p style={{fontFamily:F,fontSize:14,color:C.sub,marginTop:8,marginBottom:24,lineHeight:1.5,textAlign:"center"}}>On GLP-1 it's important to drink enough water to support metabolism and reduce side effects</p>
+        <h2 style={{...tCss,fontSize:24}}>{"Berapa banyak air yang\nAnda minum per hari?"}</h2>
+        <p style={{fontFamily:F,fontSize:14,color:C.sub,marginTop:8,marginBottom:24,lineHeight:1.5,textAlign:"center"}}>On GLP-1 it's important to drink enough water to support metabolism and reduce efek samping</p>
         <div style={{display:"flex",flexDirection:"column",gap:10}}>
           {[
-            {id:"low",e:"😕",l:"Less than 4 glasses"},
-            {id:"medium",e:"😐",l:"4–6 glasses"},
-            {id:"good",e:"🙂",l:"6–8 glasses"},
-            {id:"great",e:"😋",l:"More than 8 glasses"},
+            {id:"low",e:"😕",l:"Kurang dari 4 gelas"},
+            {id:"medium",e:"😐",l:"4–6 gelas"},
+            {id:"good",e:"🙂",l:"6–8 gelas"},
+            {id:"great",e:"😋",l:"Lebih dari 8 gelas"},
           ].map(s=><OptCard key={s.id} emoji={s.e} label={s.l} selected={ans.water===s.id} onClick={()=>selNext("water",s.id)}/>)}
         </div>
       </div>
@@ -590,14 +590,14 @@ export default function GLP1Quiz(){
     /* ═══ MEALS ═══ */
     case S.MEALS: return(
       <div style={{paddingTop:80}}>
-        <h2 style={{...tCss,fontSize:24}}>{"How many times a day\ndo you usually eat?"}</h2>
-        <p style={{fontFamily:F,fontSize:14,color:C.sub,marginTop:8,marginBottom:24,lineHeight:1.5,textAlign:"center"}}>On GLP-1 frequent small meals help absorb more protein and reduce nausea</p>
+        <h2 style={{...tCss,fontSize:24}}>{"Berapa kali sehari\nAnda biasanya makan?"}</h2>
+        <p style={{fontFamily:F,fontSize:14,color:C.sub,marginTop:8,marginBottom:24,lineHeight:1.5,textAlign:"center"}}>Pada GLP-1 makan porsi kecil yang sering membantu menyerap lebih banyak protein dan mengurangi mual</p>
         <div style={{display:"flex",flexDirection:"column",gap:10}}>
           {[
-            {id:"1-2",e:"🍏",l:"1–2 times a day",s:"Large portions, few meals"},
-            {id:"3",e:"🍽",l:"3 times a day",s:"Classic three meals a day"},
-            {id:"4-5",e:"🥙",l:"4–5 small portions",s:"Split meals"},
-            {id:"irregular",e:"🤷‍♀️",l:"Irregular",s:"Whenever possible"},
+            {id:"1-2",e:"🍏",l:"1–2 kali sehari",s:"Porsi besar, sedikit makan"},
+            {id:"3",e:"🍽",l:"3 kali sehari",s:"Tiga kali makan klasik sehari"},
+            {id:"4-5",e:"🥙",l:"4–5 porsi kecil",s:"Makan terbagi"},
+            {id:"irregular",e:"🤷‍♀️",l:"Tidak teratur",s:"Kapan saja bisa"},
           ].map(s=><OptCard key={s.id} emoji={s.e} label={s.l} sub={s.s} selected={ans.meals===s.id} onClick={()=>selNext("meals",s.id)}/>)}
         </div>
       </div>
@@ -606,14 +606,14 @@ export default function GLP1Quiz(){
     /* ═══ DIET ═══ */
     case S.DIET: return(
       <div style={{paddingTop:80}}>
-        <h2 style={{...tCss,fontSize:24}}>{"Dietary\npreferences?"}</h2>
+        <h2 style={{...tCss,fontSize:24}}>{"Preferensi\ndiet?"}</h2>
         <div style={{display:"flex",flexDirection:"column",gap:10,marginTop:24}}>
           {[
-            {id:"none",e:"✅",l:"No restrictions"},
+            {id:"none",e:"✅",l:"Tanpa batasan"},
             {id:"veg",e:"🥬",l:"Vegetarian"},
             {id:"vegan",e:"🌱",l:"Vegan"},
-            {id:"gf",e:"🚫",l:"Gluten-free"},
-            {id:"df",e:"🥛",l:"Dairy-free"},
+            {id:"gf",e:"🚫",l:"Bebas gluten"},
+            {id:"df",e:"🥛",l:"Bebas susu"},
             {id:"halal",e:"☪️",l:"Halal"},
           ].map(s=><OptCard key={s.id} emoji={s.e} label={s.l} selected={ans.diet===s.id} onClick={()=>selNext("diet",s.id)}/>)}
         </div>
@@ -623,13 +623,13 @@ export default function GLP1Quiz(){
     /* ═══ COOKING ═══ */
     case S.COOKING: return(
       <div style={{paddingTop:80}}>
-        <h2 style={{...tCss,fontSize:24}}>{"How much time for\ncooking one meal?"}</h2>
+        <h2 style={{...tCss,fontSize:24}}>{"Berapa lama waktu untuk\nmemasak satu kali makan?"}</h2>
         <div style={{display:"flex",flexDirection:"column",gap:10,marginTop:24}}>
           {[
-            {id:"10",e:"⚡",l:"10 minutes or less"},
-            {id:"20",e:"🍳",l:"15–20 minutes"},
-            {id:"30",e:"👩‍🍳",l:"30+ minutes"},
-            {id:"prep",e:"🛒",l:"Prefer meal prep"},
+            {id:"10",e:"⚡",l:"10 menit atau kurang"},
+            {id:"20",e:"🍳",l:"15–20 menit"},
+            {id:"30",e:"👩‍🍳",l:"30+ menit"},
+            {id:"prep",e:"🛒",l:"Lebih suka meal prep"},
           ].map(s=><OptCard key={s.id} emoji={s.e} label={s.l} selected={ans.cooking===s.id} onClick={()=>{set("cooking",s.id);setTimeout(()=>goTo(S.TESTI),350);}}/>)}
         </div>
       </div>
@@ -638,9 +638,9 @@ export default function GLP1Quiz(){
     /* ═══ TESTIMONIAL ═══ */
     case S.TESTI:{
       const reviews=[
-        {img:REV1,name:"Maria, 42",text:"My protein went from 48g to 102g/day. Hair stopped falling out in 3 weeks. This app changed my GLP-1 experience.",stars:5,detail:"-14 kg in 8 weeks"},
-        {img:REV2,name:"Elena, 36",text:"I almost quit Mounjaro due to nausea. FoodZee showed me which foods to avoid — nausea disappeared completely.",stars:5,detail:"on Mounjaro 8 months"},
-        {img:REV3,name:"Irina, 55",text:"Stopped GLP-1 six months ago and haven't gained a pound. FoodZee taught me to eat right — forever.",stars:5,detail:"Maintaining weight 6 mo"},
+        {img:REV1,name:"Maria, 42",text:"Protein saya naik dari 48g ke 102g/hari. Rambut berhenti rontok dalam 3 minggu. Aplikasi ini mengubah pengalaman GLP-1 saya.",stars:5,detail:"-14 kg dalam 8 minggu"},
+        {img:REV2,name:"Elena, 36",text:"Saya hampir berhenti Mounjaro karena mual. FoodZee menunjukkan makanan yang harus dihindari — mual hilang sepenuhnya.",stars:5,detail:"di Mounjaro 8 bulan"},
+        {img:REV3,name:"Irina, 55",text:"Berhenti GLP-1 enam bulan lalu dan tidak naik berat badan. FoodZee mengajarkan saya makan dengan benar — selamanya.",stars:5,detail:"Menjaga berat 6 bln"},
       ];
       const doubled=[...reviews,...reviews,...reviews];
       const cardW=280;
@@ -648,7 +648,7 @@ export default function GLP1Quiz(){
       const setW=(cardW+gap)*reviews.length;
       return(
         <div style={{paddingTop:52,paddingBottom:100}}>
-          <h2 style={{...tCss,fontSize:40,marginBottom:24}}>{"Women like you are\nalready seeing results"}</h2>
+          <h2 style={{...tCss,fontSize:40,marginBottom:24}}>{"Wanita seperti Anda sudah\nmelihat hasil"}</h2>
           <div style={{overflow:"hidden",margin:"0 -16px"}}>
             <div style={{display:"flex",gap:gap,animation:`marqueeScroll ${reviews.length*8}s linear infinite`,width:setW*3}}>
               {doubled.map((r,i)=>(
@@ -671,10 +671,10 @@ export default function GLP1Quiz(){
 
     /* ═══ SCAN (Magic Moment) ═══ */
     case S.SCAN:{
-      const lines=["Analyzing metabolic profile...","Calculating optimal protein...","Assessing deficiency risks...","Building meal plan...","Generating personal goals..."];
+      const lines=["Menganalisis profil metabolisme...","Menghitung protein optimal...","Menilai risiko defisiensi...","Membangun rencana makan...","Menghasilkan tujuan personal..."];
       return(
         <div style={{display:"flex",flexDirection:"column",alignItems:"center",paddingTop:80,minHeight:"80vh"}}>
-          <h2 style={{...tCss,fontSize:22,marginBottom:32}}>{"Analyzing your\nprofile..."}</h2>
+          <h2 style={{...tCss,fontSize:22,marginBottom:32}}>{"Menganalisis\nprofil Anda..."}</h2>
           <Ring pct={Math.min(100,scanPhase*20)} size={140} sw={8}>
             <span style={{fontFamily:F,fontSize:28,fontWeight:800,color:C.green}}>{Math.min(100,scanPhase*20)}%</span>
           </Ring>
@@ -698,10 +698,10 @@ export default function GLP1Quiz(){
       const unitLabel=isKgProj?"kg":"lbs";
       return(
         <div style={{paddingTop:52,paddingBottom:100}}>
-          <h2 style={{...tCss,fontSize:36,marginBottom:16}}>{"Your projection\nwith FoodZee"}</h2>
-          <p style={{fontFamily:F,fontSize:16,color:C.black,textAlign:"center",marginBottom:28}}>Based on your data{"\n"}and clinical research</p>
+          <h2 style={{...tCss,fontSize:36,marginBottom:16}}>{"Proyeksi Anda\ndengan FoodZee"}</h2>
+          <p style={{fontFamily:F,fontSize:16,color:C.black,textAlign:"center",marginBottom:28}}>Berdasarkan data Anda{"\n"}dan penelitian klinis</p>
           <div style={{background:C.white,borderRadius:20,padding:"28px 20px 20px",boxShadow:"0 2px 16px rgba(0,0,0,.06)"}}>
-            <p style={{fontFamily:F,fontSize:15,color:C.sub,textAlign:"center",margin:"0 0 6px"}}>You can reach your goal of</p>
+            <p style={{fontFamily:F,fontSize:15,color:C.sub,textAlign:"center",margin:"0 0 6px"}}>Anda bisa mencapai tujuan</p>
             <p style={{fontFamily:F,fontSize:24,fontWeight:800,textAlign:"center",margin:"0 0 24px"}}><span style={{color:C.green}}>{gwDisplay} {unitLabel}</span> <span style={{color:C.black}}>by {targetMonth}</span></p>
             <svg viewBox="0 0 340 200" style={{width:"100%",height:"auto",display:"block"}}>
               {/* Grid lines */}
@@ -745,7 +745,7 @@ export default function GLP1Quiz(){
       const wDisplay=isKgProj?w:Math.round(w*2.205);
       const gwDisplay=isKgProj?gw:Math.round(gw*2.205);
       const unitLabel=isKgProj?"kg":"lbs";
-      const titles={plan:"Your personal GLP-1\nnutrition plan is ready",taking:"Your personal GLP-1\nnutrition plan is ready",stopped:"Your personal weight\nmaintenance plan is ready"};
+      const titles={plan:"Rencana nutrisi GLP-1\npersonal Anda sudah siap",taking:"Rencana nutrisi GLP-1\npersonal Anda sudah siap",stopped:"Rencana menjaga berat\nbadan Anda sudah siap"};
       return(
         <div style={{paddingTop:40,position:"relative"}}>
           <div style={{position:"absolute",top:-120,left:"50%",transform:"translateX(-50%)",width:420,height:360,borderRadius:"50%",background:"rgba(0,206,0,.55)",filter:"blur(100px)",zIndex:-1,pointerEvents:"none"}}/>
@@ -758,13 +758,13 @@ export default function GLP1Quiz(){
               <img src={BODY_IMG} alt="" style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}}/>
             </div>
             <div style={{flex:1,padding:16}}>
-              <h3 style={{fontFamily:F,fontSize:16,fontWeight:700,color:C.black,margin:"0 0 12px"}}>Your personal goals</h3>
+              <h3 style={{fontFamily:F,fontSize:16,fontWeight:700,color:C.black,margin:"0 0 12px"}}>Tujuan personal Anda</h3>
               {[
-                {label:"Calories",value:`${calories} kcal`},
+                {label:"Kalori",value:`${calories} kcal`},
                 {label:"Protein",value:`${protein}g/day`},
-                {label:"Metabolic type",value:"Average"},
-                {label:"Key nutrients",value:"D, B12, Mg"},
-                {label:"Hydration",value:"2.4L/day"},
+                {label:"Tipe metabolisme",value:"Rata-rata"},
+                {label:"Nutrisi kunci",value:"D, B12, Mg"},
+                {label:"Hidrasi",value:"2.4L/day"},
               ].map((t,i)=>(
                 <div key={i} style={{marginBottom:8}}>
                   <span style={{fontFamily:F,fontSize:11,color:C.sub,display:"block"}}>{t.label}</span>
@@ -776,9 +776,9 @@ export default function GLP1Quiz(){
           {/* Plan cards */}
           <div style={{marginBottom:40}}>
           {[
-            {id:"week",nm:"Weekly",pr:"$7.99",ps:"/week",sb:"~$416/year",bd:null},
-            {id:"year",nm:"Annual",pr:"$49.99",ps:"/year",sb:"$4.17/mo • Save 65%",bd:"🏆 Best value"},
-            {id:"month",nm:"Monthly",pr:"$14.99",ps:"/month",sb:"$180/year",bd:null},
+            {id:"week",nm:"Mingguan",pr:"$7.99",ps:"/week",sb:"~$416/year",bd:null},
+            {id:"year",nm:"Tahunan",pr:"$49.99",ps:"/year",sb:"$4.17/mo • Hemat 65%",bd:"🏆 Nilai terbaik"},
+            {id:"month",nm:"Bulanan",pr:"$14.99",ps:"/month",sb:"$180/year",bd:null},
           ].map(p=>{
             const sel=plan===p.id;
             return(
@@ -810,14 +810,14 @@ export default function GLP1Quiz(){
             <div style={{position:"relative",zIndex:2,padding:"0 20px 24px 20px",maxWidth:"85%"}}>
               <div style={{background:"rgba(255,255,255,0.95)",borderRadius:14,padding:"14px 16px",boxShadow:"0 4px 16px rgba(0,0,0,0.1)"}}>
                 <p style={{fontFamily:F,fontSize:14,color:C.black,lineHeight:1.55,margin:0}}>
-                  Research shows: <strong>up to 39% of weight lost on GLP-1 is muscle</strong> without proper nutrition. FoodZee solves this problem.
+                  Penelitian menunjukkan: <strong>hingga 39% berat yang hilang pada GLP-1 adalah otot</strong> tanpa nutrisi yang tepat. FoodZee menyelesaikan masalah ini.
                 </p>
               </div>
             </div>
           </div>
           {/* 7-day meal plan - blurred scrolling cards */}
           <div style={{marginBottom:40}}>
-            <h3 style={{fontFamily:F,fontSize:18,fontWeight:700,color:C.black,margin:"0 0 14px",textAlign:"center"}}>Your 7-day meal plan — Unlock after subscription</h3>
+            <h3 style={{fontFamily:F,fontSize:18,fontWeight:700,color:C.black,margin:"0 0 14px",textAlign:"center"}}>Rencana makan 7 hari Anda — Buka setelah berlangganan</h3>
             <div style={{overflow:"hidden",margin:"0 -16px"}}>
               <div style={{display:"flex",gap:12,paddingLeft:16,paddingRight:16,animation:"mealScroll 20s linear infinite",width:"max-content"}}>
                 {[
@@ -855,15 +855,15 @@ export default function GLP1Quiz(){
           {/* Legal text */}
           <div style={{marginBottom:40,textAlign:"center"}}>
             <p style={{fontFamily:F,fontSize:12,color:C.muted,lineHeight:1.6,margin:"0 0 12px"}}>
-              By continuing, I accept the <span style={{textDecoration:"underline",color:C.sub}}>Privacy Policy</span> and <span style={{textDecoration:"underline",color:C.sub}}>Terms of Use</span>
+              Dengan melanjutkan, saya menerima <span style={{textDecoration:"underline",color:C.sub}}>Kebijakan Privasi</span> and <span style={{textDecoration:"underline",color:C.sub}}>Ketentuan Penggunaan</span>
             </p>
             <p style={{fontFamily:F,fontSize:11,color:C.muted,lineHeight:1.6,margin:0}}>
-              Monthly plan lasts 30 days. Today you will be charged $1 for a 3-day trial, then $14.99/month after trial ends. Cancel anytime — next payment won't be charged. See Terms of Use for cancellation and refund details. To cancel contact: support@foodzee.tech
+              Bulanan plan lasts 30 days. Today you will be charged $1 for a 3-day trial, then $14.99/month after trial ends. Cancel anytime — next payment won't be charged. See Ketentuan Penggunaan for cancellation and refund details. To cancel contact: support@foodzee.tech
             </p>
           </div>
           {/* Diagram */}
           <div style={{background:C.white,borderRadius:20,padding:"28px 20px 20px",marginBottom:40,boxShadow:"0 4px 16px rgba(0,0,0,0.1)"}}>
-            <p style={{fontFamily:F,fontSize:15,color:C.sub,textAlign:"center",margin:"0 0 6px"}}>You can reach your goal of</p>
+            <p style={{fontFamily:F,fontSize:15,color:C.sub,textAlign:"center",margin:"0 0 6px"}}>Anda bisa mencapai tujuan</p>
             <p style={{fontFamily:F,fontSize:24,fontWeight:800,textAlign:"center",margin:"0 0 24px"}}><span style={{color:C.green}}>{gwDisplay} {unitLabel}</span> <span style={{color:C.black}}>by {targetMonth}</span></p>
             <svg viewBox="0 0 340 200" style={{width:"100%",height:"auto",display:"block"}}>
               <line x1="50" y1="30" x2="50" y2="170" stroke="#E8E8E8" strokeWidth="1" strokeDasharray="4,4"/>
@@ -882,13 +882,13 @@ export default function GLP1Quiz(){
           </div>
           {/* Trust block - 5 items with centered title */}
           <div style={{marginBottom:40}}>
-            <h2 style={{...tCss,fontSize:22,marginBottom:24}}>{"What's inside your\npersonal plan"}</h2>
+            <h2 style={{...tCss,fontSize:22,marginBottom:24}}>{"Apa yang ada di dalam\nrencana personal Anda"}</h2>
             {[
-              {e:"💡",t:"Science-based nutrition",d:"Our method analyzes your habits, energy, and metabolism to create the perfect plan."},
-              {e:"🌿",t:"100% personalization",d:"No templates — your plan is built around your unique GLP-1 needs."},
-              {e:"💫",t:"Designed to restore balance",d:"Combining nutrition science and body understanding, we help achieve harmony with your body."},
-              {e:"🎯",t:"Smart protein tracker",d:"Track protein intake in every meal — 30g+ to protect muscle mass."},
-              {e:"🤖",t:"AI nutritionist 24/7",d:"Ask any GLP-1 nutrition question and get an instant personalized answer."},
+              {e:"💡",t:"Nutrisi berbasis sains",d:"Metode kami menganalisis kebiasaan, energi, dan metabolisme Anda untuk membuat rencana sempurna."},
+              {e:"🌿",t:"100% personalisasi",d:"Tanpa template — rencana Anda dibangun seputar kebutuhan GLP-1 unik Anda."},
+              {e:"💫",t:"Dirancang untuk memulihkan keseimbangan",d:"Menggabungkan ilmu nutrisi dan pemahaman tubuh, kami membantu mencapai harmoni dengan tubuh Anda."},
+              {e:"🎯",t:"Pelacak protein pintar",d:"Lacak asupan protein di setiap makan — 30g+ untuk melindungi massa otot."},
+              {e:"🤖",t:"Ahli gizi AI 24/7",d:"Tanyakan pertanyaan nutrisi GLP-1 apa pun dan dapatkan jawaban personal instan."},
             ].map((item,i)=>(
               <div key={i} style={{display:"flex",gap:14,marginBottom:20,alignItems:"flex-start"}}>
                 <span style={{fontSize:32,lineHeight:1,flexShrink:0}}>{item.e}</span>
@@ -901,11 +901,11 @@ export default function GLP1Quiz(){
           </div>
           {/* Reviews block on green bg */}
           <div style={{background:"#A5F3A5",borderRadius:24,padding:"32px 16px",marginBottom:40}}>
-            <h2 style={{...tCss,fontSize:24,marginBottom:24}}>Users love our plans</h2>
+            <h2 style={{...tCss,fontSize:24,marginBottom:24}}>Pengguna menyukai rencana kami</h2>
             {[
-              {text:"\"Effective and convenient! The GLP-1 meal plan fit perfectly into my busy schedule. Ozempic side effects became minimal, protein is always on track. Highly recommend!\" 💪",name:"Sara.Tara11"},
-              {text:"\"A lifesaver for women on GLP-1! I used to not know what to eat on Mounjaro — nausea was constant. With FoodZee I found the right foods and side effects vanished. Energy improved. Love it!\" 💖",name:"Lindsey56"},
-              {text:"\"FoodZee exceeded expectations! As a 40+ woman on Wegovy I was losing muscle. This app showed how to get 100g+ protein daily. Precise recipes, handy tracker, impressive results. Now my must-have.\" 😊✨",name:"Dora Miller"},
+              {text:"\"Effective and convenient! The GLP-1 meal plan fit perfectly into my busy schedule. Ozempic efek samping became minimal, protein is always on track. Highly recommend!\" 💪",name:"Sara.Tara11"},
+              {text:"\"A lifesaver for women on GLP-1! I used to not know what to eat on Mounjaro — nausea was constant. With FoodZee I found the right foods and efek samping vanished. Energy improved. Love it!\" 💖",name:"Lindsey56"},
+              {text:"\"FoodZee exceeded expectations! As a 40+ woman on Wegovy I was losing muscle. This app showed how to get 100g+ protein daily. Precise recipes, handy tracker, impressive hasil. Now my must-have.\" 😊✨",name:"Dora Miller"},
             ].map((r,i)=>(
               <div key={i} style={{background:C.white,borderRadius:16,padding:"20px 18px",marginBottom:16,boxShadow:"0 2px 8px rgba(0,0,0,0.04)"}}>
                 <div style={{marginBottom:10}}>
@@ -920,7 +920,7 @@ export default function GLP1Quiz(){
           <div style={{background:"#F1F1F1",borderRadius:20,padding:"20px 24px",marginBottom:40,display:"flex",gap:16,alignItems:"flex-start"}}>
             <div style={{flex:1}}>
               <p style={{fontFamily:F,fontSize:22,fontWeight:700,color:C.black,margin:"0 0 4px"}}>50,000+</p>
-              <p style={{fontFamily:F,fontSize:14,color:C.sub,margin:0}}>women track nutrition on GLP-1</p>
+              <p style={{fontFamily:F,fontSize:14,color:C.sub,margin:0}}>wanita melacak nutrisi pada GLP-1</p>
             </div>
             <img src={FACES_IMG} alt="" style={{width:130,height:"auto",objectFit:"contain",flexShrink:0}}/>
           </div>
@@ -931,15 +931,15 @@ export default function GLP1Quiz(){
             </div>
             <h3 style={{fontFamily:F,fontSize:24,fontWeight:800,color:C.black,lineHeight:1.2,margin:"0 0 16px"}}>100% money-back{"\n"}guarantee</h3>
             <p style={{fontFamily:F,fontSize:14,color:C.sub,lineHeight:1.6,margin:"0 0 16px"}}>
-              At FoodZee we carefully designed our product. If you don't see progress after using the app for a week, we offer a full refund within 21 days.
+              Di FoodZee kami merancang produk dengan hati-hati. Jika Anda tidak melihat kemajuan setelah menggunakan aplikasi selama seminggu, kami menawarkan pengembalian dana penuh dalam 21 hari.
             </p>
             <p style={{fontFamily:F,fontSize:13,color:C.sub,lineHeight:1.5,margin:0}}>
-              More details in our Terms of Use.
+              Detail lebih lanjut di Ketentuan Penggunaan kami.
             </p>
           </div>
           {/* Green footer */}
           <div style={{background:"#A5F3A5",margin:"0 -16px",padding:"28px 24px",textAlign:"center"}}>
-            <p style={{fontFamily:F,fontSize:15,color:C.green,fontWeight:600,textDecoration:"underline",margin:"0 0 16px",cursor:"pointer"}}>Contact us</p>
+            <p style={{fontFamily:F,fontSize:15,color:C.green,fontWeight:600,textDecoration:"underline",margin:"0 0 16px",cursor:"pointer"}}>Hubungi kami</p>
             <p style={{fontFamily:F,fontSize:14,color:C.black,lineHeight:1.5,margin:"0 0 16px"}}>
               Thessalonikis 43, office/flat 301{"\n"}Thessaloniki Court, 3025 Limassol, Cyprus
             </p>
