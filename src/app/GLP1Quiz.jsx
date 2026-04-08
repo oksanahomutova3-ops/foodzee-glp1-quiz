@@ -176,23 +176,67 @@ function WeightScreen({title,sub,value,unit,min,max,onChange,onUnit,showBmi,heig
   const displayVal=isKg?value:Math.round(value*2.205);
   const displayMin=isKg?min:Math.round(min*2.205);
   const displayMax=isKg?max:Math.round(max*2.205);
+  const scrollMin=isKg?min:Math.round(min*2.205);
+  const scrollMax=isKg?max:Math.round(max*2.205);
+  const ITEM_W=60;
+  const wRef=useRef(null);
 
   const bmi=showBmi&&height?Math.round(value/((height/100)**2)):null;
   const isUnder=bmi&&bmi<18.5;
 
+  // Center on current value on mount / unit change
+  useEffect(()=>{
+    if(!wRef.current)return;
+    const idx=displayVal-scrollMin;
+    wRef.current.scrollTo({left:idx*ITEM_W,behavior:"instant"});
+  },[unit]);
+
+  // Initial center
+  useEffect(()=>{
+    if(!wRef.current)return;
+    const idx=displayVal-scrollMin;
+    wRef.current.scrollTo({left:idx*ITEM_W,behavior:"instant"});
+  },[]);
+
+  const handleWScroll=useCallback(()=>{
+    if(!wRef.current)return;
+    const idx=Math.round(wRef.current.scrollLeft/ITEM_W);
+    const raw=idx+scrollMin;
+    const clamped=Math.max(scrollMin,Math.min(scrollMax,raw));
+    const kgVal=isKg?clamped:Math.round(clamped/2.205);
+    if(kgVal!==value)onChange(kgVal);
+  },[scrollMin,scrollMax,isKg,value,onChange]);
+
+  const items=[];
+  for(let i=scrollMin;i<=scrollMax;i++)items.push(i);
+
   return(
     <div style={{paddingTop:80,textAlign:"center"}}>
       <h2 style={{...tCss,fontSize:28}}>{title}</h2>
-      <p style={{fontFamily:F,fontSize:14,color:C.sub,marginBottom:28}}>Please enter a value from {displayMin} to {displayMax} {isKg?"kg":"lbs"}</p>
+      <p style={{fontFamily:F,fontSize:14,color:C.sub,marginBottom:20}}>Please enter a value from {displayMin} to {displayMax} {isKg?"kg":"lbs"}</p>
       {/* Unit toggle */}
-      <div style={{display:"inline-flex",borderRadius:24,overflow:"hidden",border:"1.5px solid #E0E0E0",marginBottom:20,background:"#F2F3F5"}}>
-        <button onClick={()=>onUnit("kg")} style={{padding:"8px 24px",border:"none",fontFamily:F,fontSize:15,fontWeight:600,cursor:"pointer",background:isKg?C.green:"transparent",color:isKg?C.white:C.sub,borderRadius:24,transition:`all .2s ${ease}`}}>kg</button>
-        <button onClick={()=>onUnit("lbs")} style={{padding:"8px 24px",border:"none",fontFamily:F,fontSize:15,fontWeight:600,cursor:"pointer",background:!isKg?C.green:"transparent",color:!isKg?C.white:C.sub,borderRadius:24,transition:`all .2s ${ease}`}}>lbs</button>
+      <div style={{display:"inline-flex",borderRadius:28,overflow:"hidden",border:"1.5px solid #E0E0E0",marginBottom:12,background:"#F2F3F5"}}>
+        <button onClick={()=>onUnit("kg")} style={{padding:"10px 28px",border:"none",fontFamily:F,fontSize:15,fontWeight:600,cursor:"pointer",background:isKg?C.green:"transparent",color:isKg?C.white:C.sub,borderRadius:28,transition:`all .2s ${ease}`}}>kg</button>
+        <button onClick={()=>onUnit("lbs")} style={{padding:"10px 28px",border:"none",fontFamily:F,fontSize:15,fontWeight:600,cursor:"pointer",background:!isKg?C.green:"transparent",color:!isKg?C.white:C.sub,borderRadius:28,transition:`all .2s ${ease}`}}>lbs</button>
       </div>
-      {/* Big number */}
-      <div style={{fontFamily:F,fontSize:72,fontWeight:800,color:C.green,lineHeight:1,marginBottom:8}}>{displayVal}</div>
-      {/* Ruler */}
-      <RulerPicker value={value} min={min} max={max} onChange={onChange}/>
+      {/* Big centered number */}
+      <div style={{fontFamily:F,fontSize:72,fontWeight:800,color:C.green,lineHeight:1,marginBottom:16}}>{displayVal}</div>
+      {/* Scrollable number strip */}
+      <div ref={wRef} onScroll={handleWScroll} style={{width:"100%",overflowX:"auto",WebkitOverflowScrolling:"touch",scrollbarWidth:"none",msOverflowStyle:"none"}}>
+        <div style={{display:"inline-flex",alignItems:"center",height:60,paddingLeft:`calc(50% - ${ITEM_W/2}px)`,paddingRight:`calc(50% - ${ITEM_W/2}px)`}}>
+          {items.map(v=>{
+            const dist=Math.abs(v-displayVal);
+            const opacity=dist===0?1:dist<=2?0.5:dist<=4?0.3:0.12;
+            const sz=dist===0?28:dist<=2?22:18;
+            return(
+              <div key={v} style={{width:ITEM_W,flexShrink:0,textAlign:"center",cursor:"pointer",userSelect:"none"}} onClick={()=>{const kgV=isKg?v:Math.round(v/2.205);onChange(kgV);setTimeout(()=>{if(wRef.current)wRef.current.scrollTo({left:(v-scrollMin)*ITEM_W,behavior:"smooth"});},50);}}>
+                <span style={{fontFamily:F,fontSize:sz,fontWeight:700,color:C.green,opacity,transition:"all .1s ease"}}>{v}</span>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      <style>{`div[class]::-webkit-scrollbar{display:none}`}</style>
       {/* BMI card */}
       {showBmi&&isUnder&&(
         <div style={{background:C.card,borderRadius:16,padding:18,marginTop:24,textAlign:"left"}}>
