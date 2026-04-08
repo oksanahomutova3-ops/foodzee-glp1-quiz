@@ -688,12 +688,49 @@ export default function GLP1Quiz(){
 
     /* ═══ PROJECTION ═══ */
     case S.PROJECTION:{
+      const targetDate=new Date();
+      targetDate.setDate(targetDate.getDate()+weeks*7);
+      const monthNames=["January","February","March","April","May","June","July","August","September","October","November","December"];
+      const targetMonth=monthNames[targetDate.getMonth()]+" "+targetDate.getFullYear();
+      const isKgProj=(ans.weightUnit||"kg")==="kg";
+      const wDisplay=isKgProj?w:Math.round(w*2.205);
+      const gwDisplay=isKgProj?gw:Math.round(gw*2.205);
+      const unitLabel=isKgProj?"kg":"lbs";
       return(
         <div style={{paddingTop:52,paddingBottom:100}}>
           <h2 style={{...tCss,fontSize:36,marginBottom:16}}>{"Your projection\nwith FoodZee"}</h2>
           <p style={{fontFamily:F,fontSize:16,color:C.black,textAlign:"center",marginBottom:28}}>Based on your data{"\n"}and clinical research</p>
-          {/* Chart card - static image */}
-          <img src={DIAGRAM_IMG} alt="" style={{width:"100%",borderRadius:20,display:"block"}}/>
+          <div style={{background:C.white,borderRadius:20,padding:"28px 20px 20px",boxShadow:"0 2px 16px rgba(0,0,0,.06)"}}>
+            <p style={{fontFamily:F,fontSize:15,color:C.sub,textAlign:"center",margin:"0 0 6px"}}>You can reach your goal of</p>
+            <p style={{fontFamily:F,fontSize:24,fontWeight:800,textAlign:"center",margin:"0 0 24px"}}><span style={{color:C.green}}>{gwDisplay} {unitLabel}</span> <span style={{color:C.black}}>by {targetMonth}</span></p>
+            <svg viewBox="0 0 340 200" style={{width:"100%",height:"auto",display:"block"}}>
+              {/* Grid lines */}
+              <line x1="50" y1="30" x2="50" y2="170" stroke="#E8E8E8" strokeWidth="1" strokeDasharray="4,4"/>
+              <line x1="145" y1="30" x2="145" y2="170" stroke="#E8E8E8" strokeWidth="1" strokeDasharray="4,4"/>
+              <line x1="240" y1="30" x2="240" y2="170" stroke="#E8E8E8" strokeWidth="1" strokeDasharray="4,4"/>
+              <line x1="320" y1="30" x2="320" y2="170" stroke="#00CE00" strokeWidth="1.5" strokeDasharray="4,4"/>
+              {/* Curve path */}
+              <defs>
+                <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor="#FF6B35"/>
+                  <stop offset="40%" stopColor="#FFB800"/>
+                  <stop offset="100%" stopColor="#00CE00"/>
+                </linearGradient>
+              </defs>
+              <path d="M50,40 C120,42 160,80 200,100 C240,120 290,148 320,150" fill="none" stroke="url(#lineGrad)" strokeWidth="3.5" strokeLinecap="round"
+                style={{strokeDasharray:400,strokeDashoffset:400,animation:"drawLine 2s ease-out forwards .3s"}}/>
+              {/* Start dot */}
+              <circle cx="50" cy="40" r="7" fill="#FF6B35" style={{opacity:0,animation:"fadeIn .3s ease forwards .2s"}}/>
+              {/* End dot */}
+              <circle cx="320" cy="150" r="7" fill="#00CE00" style={{opacity:0,animation:"fadeIn .3s ease forwards 2.2s"}}/>
+              {/* Labels */}
+              <text x="50" y="25" textAnchor="middle" style={{fontFamily:"Inter",fontSize:13,fontWeight:700,fill:"#1A1A1A"}}>{wDisplay} {unitLabel}</text>
+              <text x="320" y="148" textAnchor="end" style={{fontFamily:"Inter",fontSize:13,fontWeight:700,fill:"#00CE00",opacity:0,animation:"fadeIn .3s ease forwards 2.2s"}}>{gwDisplay} {unitLabel}</text>
+              <text x="50" y="190" textAnchor="middle" style={{fontFamily:"Inter",fontSize:12,fill:"#888"}}>Now</text>
+              <text x="320" y="190" textAnchor="end" style={{fontFamily:"Inter",fontSize:12,fill:"#888"}}>{targetMonth.split(" ")[0].slice(0,3)} {targetDate.getFullYear()}</text>
+            </svg>
+          </div>
+          <style>{`@keyframes drawLine{to{stroke-dashoffset:0}}@keyframes fadeIn{to{opacity:1}}`}</style>
         </div>
       );
     }
