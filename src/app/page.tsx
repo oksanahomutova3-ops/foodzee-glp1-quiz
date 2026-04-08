@@ -1,7 +1,5 @@
-'use client';
+import { redirect } from 'next/navigation';
 
-import GLP1Quiz from './GLP1Quiz.jsx';
-
-export default function Page() {
-  return <GLP1Quiz />;
+export default function RootPage() {
+  redirect('/en');
 }
