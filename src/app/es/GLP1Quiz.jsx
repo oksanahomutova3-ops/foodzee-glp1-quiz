@@ -737,6 +737,7 @@ export default function GLP1Quiz(){
 
     /* ═══ PAYWALL ═══ */
     case S.PAYWALL:{
+      if(typeof window!=="undefined"&&window.fbq)window.fbq("track","Lead");
       const targetDate=new Date();
       targetDate.setDate(targetDate.getDate()+weeks*7);
       const monthNames=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
@@ -977,7 +978,7 @@ export default function GLP1Quiz(){
         </div>
       </div>
 
-      {showSticky&&<StickyBtn onClick={step===S.PAYWALL?()=>alert("→ Payment"):next}>{stickyLabel()}</StickyBtn>}
+      {showSticky&&<StickyBtn onClick={step===S.PAYWALL?()=>{if(typeof window!=="undefined"&&window.fbq)window.fbq("track","Purchase",{currency:"USD",value:0});alert("→ Payment");}:next}>{stickyLabel()}</StickyBtn>}
     </div>
       <style>{`@keyframes rainbowShift{0%{background-position:0% 50%}100%{background-position:200% 50%}}@keyframes dotPulse{0%,80%,100%{opacity:.3;transform:scale(.8)}40%{opacity:1;transform:scale(1.1)}}@keyframes mealScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}`}</style>
     </div>
