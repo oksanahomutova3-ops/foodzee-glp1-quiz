@@ -278,7 +278,7 @@ export default function GLP1Quiz(){
   const ageRef=useRef(null);
 
   const goTo=useCallback(s=>{setFade(false);setTimeout(()=>{setStep(s);setFade(true);scrollRef.current?.scrollTo({top:0,behavior:"instant"});},200);},[]);
-  const next=useCallback(()=>{if(step<LAST)goTo(step+1);},[step,goTo]);
+  const next=useCallback(()=>{if(step===S.WELCOME&&typeof window!=="undefined"&&window.fbq)window.fbq("track","ViewContent");if(step<LAST)goTo(step+1);},[step,goTo]);
   const prev=useCallback(()=>{if(step>0)goTo(step-1);},[step,goTo]);
   const set=useCallback((k,v)=>setAns(p=>({...p,[k]:v})),[]);
   const selNext=useCallback((k,v)=>{set(k,v);setTimeout(()=>next(),350);},[set,next]);
@@ -737,7 +737,7 @@ export default function GLP1Quiz(){
 
     /* ═══ PAYWALL ═══ */
     case S.PAYWALL:{
-      if(typeof window!=="undefined"&&window.fbq)window.fbq("track","Lead");
+      if(typeof window!=="undefined"&&window.fbq)window.fbq("track","CompleteRegistration");
       const targetDate=new Date();
       targetDate.setDate(targetDate.getDate()+weeks*7);
       const monthNames=["Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"];
@@ -978,7 +978,7 @@ export default function GLP1Quiz(){
         </div>
       </div>
 
-      {showSticky&&<StickyBtn onClick={step===S.PAYWALL?()=>{if(typeof window!=="undefined"&&window.fbq)window.fbq("track","Purchase",{currency:"USD",value:0});alert("→ Payment");}:next}>{stickyLabel()}</StickyBtn>}
+      {showSticky&&<StickyBtn onClick={step===S.PAYWALL?()=>{if(typeof window!=="undefined"&&window.fbq)window.fbq("track","InitiateCheckout");alert("→ Payment");}:next}>{stickyLabel()}</StickyBtn>}
     </div>
       <style>{`@keyframes rainbowShift{0%{background-position:0% 50%}100%{background-position:200% 50%}}@keyframes dotPulse{0%,80%,100%{opacity:.3;transform:scale(.8)}40%{opacity:1;transform:scale(1.1)}}@keyframes mealScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}`}</style>
     </div>
