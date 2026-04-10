@@ -978,7 +978,7 @@ export default function GLP1Quiz(){
         </div>
       </div>
 
-      {showSticky&&<StickyBtn onClick={step===S.PAYWALL?()=>{if(typeof window!=="undefined"&&window.fbq){window.fbq("track","Purchase",{value:30.00,currency:"USD"});}alert("→ Payment");}:next}>{stickyLabel()}</StickyBtn>}
+      {showSticky&&<StickyBtn onClick={step===S.PAYWALL?async()=>{if(typeof window!=="undefined"&&window.fbq){window.fbq("track","InitiateCheckout");}try{const r=await fetch("/api/checkout",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({locale:"es"})});const d=await r.json();if(d&&d.url){window.location.href=d.url;}else{alert((d&&d.error)||"Checkout error");}}catch(e){alert("Checkout error");}}:next}>{stickyLabel()}</StickyBtn>}
     </div>
       <style>{`@keyframes rainbowShift{0%{background-position:0% 50%}100%{background-position:200% 50%}}@keyframes dotPulse{0%,80%,100%{opacity:.3;transform:scale(.8)}40%{opacity:1;transform:scale(1.1)}}@keyframes mealScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}`}</style>
     </div>
