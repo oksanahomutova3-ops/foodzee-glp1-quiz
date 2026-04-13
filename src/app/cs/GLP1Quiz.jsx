@@ -478,9 +478,9 @@ export default function GLP1Quiz(){
             {[
               {id:"protein",e:"🥩",l:"Nedostatek bílkovin"},
               {id:"nausea",e:"🤢",l:"Nevolnost a zažívací problémy"},
-              {id:"portions",e:"🍽️",l:"Nevím, co jíst in small portions"},
+              {id:"portions",e:"🍽️",l:"Nevím, co jíst v malých porcích"},
               {id:"fatigue",e:"😴",l:"Únava a nízká energie"},
-              {id:"hair",e:"💇‍♀️",l:"Vypadávání vlasů / deficiencies"},
+              {id:"hair",e:"💇‍♀️",l:"Vypadávání vlasů / nedostatky živin"},
             ].map(s=><OptCard key={s.id} emoji={s.e} label={s.l} selected={ans.br2===s.id} onClick={()=>selNext("br2",s.id)}/>)}
           </div>
         </div>
@@ -551,10 +551,10 @@ export default function GLP1Quiz(){
     }
 
     /* ═══ WEIGHT ═══ */
-    case S.WEIGHT: return(<WeightScreen key="weight" title="Jaká je vaše váha?" sub="Enter a value from 30 to 200 kg" value={ans.weight||60} unit={ans.weightUnit||"kg"} min={30} max={200} onChange={v=>set("weight",v)} onUnit={u=>set("weightUnit",u)} showBmi height={ans.height}/>);
+    case S.WEIGHT: return(<WeightScreen key="weight" title="Jaká je vaše váha?" sub="Zadejte hodnotu od 30 do 200 kg" value={ans.weight||60} unit={ans.weightUnit||"kg"} min={30} max={200} onChange={v=>set("weight",v)} onUnit={u=>set("weightUnit",u)} showBmi height={ans.height}/>);
 
     /* ═══ GOAL WEIGHT ═══ */
-    case S.GOAL_W: return(<WeightScreen key="goalw" title="Vaše cílová váha?" sub="What weight do you want to reach?" value={ans.goalW||55} unit={ans.weightUnit||"kg"} min={30} max={200} onChange={v=>set("goalW",v)} onUnit={u=>set("weightUnit",u)}/>);
+    case S.GOAL_W: return(<WeightScreen key="goalw" title="Vaše cílová váha?" sub="Jakou váhu chcete dosáhnout?" value={ans.goalW||55} unit={ans.weightUnit||"kg"} min={30} max={200} onChange={v=>set("goalW",v)} onUnit={u=>set("weightUnit",u)}/>);
 
     /* ═══ ACTIVITY ═══ */
     case S.ACTIVITY: return(
@@ -575,7 +575,7 @@ export default function GLP1Quiz(){
     case S.WATER: return(
       <div style={{paddingTop:80}}>
         <h2 style={{...tCss,fontSize:24}}>{"Kolik vody vypijete\nza den?"}</h2>
-        <p style={{fontFamily:F,fontSize:14,color:C.sub,marginTop:8,marginBottom:24,lineHeight:1.5,textAlign:"center"}}>On GLP-1 it's important to drink enough water to support metabolism and reduce vedlejších účinků</p>
+        <p style={{fontFamily:F,fontSize:14,color:C.sub,marginTop:8,marginBottom:24,lineHeight:1.5,textAlign:"center"}}>Na GLP-1 je důležité pít dostatek vody pro podporu metabolismu a snížení vedlejších účinků</p>
         <div style={{display:"flex",flexDirection:"column",gap:10}}>
           {[
             {id:"low",e:"😕",l:"Méně než 4 sklenice"},
@@ -702,7 +702,7 @@ export default function GLP1Quiz(){
           <p style={{fontFamily:F,fontSize:16,color:C.black,textAlign:"center",marginBottom:28}}>Na základě vašich dat{"\n"}a klinického výzkumu</p>
           <div style={{background:C.white,borderRadius:20,padding:"28px 20px 20px",boxShadow:"0 2px 16px rgba(0,0,0,.06)"}}>
             <p style={{fontFamily:F,fontSize:15,color:C.sub,textAlign:"center",margin:"0 0 6px"}}>Svého cíle můžete dosáhnout</p>
-            <p style={{fontFamily:F,fontSize:24,fontWeight:800,textAlign:"center",margin:"0 0 24px"}}><span style={{color:C.green}}>{gwDisplay} {unitLabel}</span> <span style={{color:C.black}}>by {targetMonth}</span></p>
+            <p style={{fontFamily:F,fontSize:24,fontWeight:800,textAlign:"center",margin:"0 0 24px"}}><span style={{color:C.green}}>{gwDisplay} {unitLabel}</span> <span style={{color:C.black}}>do {targetMonth}</span></p>
             <svg viewBox="0 0 340 200" style={{width:"100%",height:"auto",display:"block"}}>
               {/* Grid lines */}
               <line x1="50" y1="30" x2="50" y2="170" stroke="#E8E8E8" strokeWidth="1" strokeDasharray="4,4"/>
@@ -762,10 +762,10 @@ export default function GLP1Quiz(){
               <h3 style={{fontFamily:F,fontSize:16,fontWeight:700,color:C.black,margin:"0 0 12px"}}>Vaše osobní cíle</h3>
               {[
                 {label:"Kalorie",value:`${calories} kcal`},
-                {label:"Bílkoviny",value:`${protein}g/day`},
+                {label:"Bílkoviny",value:`${protein}g/den`},
                 {label:"Metabolický typ",value:"Průměrný"},
                 {label:"Klíčové živiny",value:"D, B12, Mg"},
-                {label:"Hydratace",value:"2.4L/day"},
+                {label:"Hydratace",value:"2.4L/den"},
               ].map((t,i)=>(
                 <div key={i} style={{marginBottom:8}}>
                   <span style={{fontFamily:F,fontSize:11,color:C.sub,display:"block"}}>{t.label}</span>
@@ -777,9 +777,9 @@ export default function GLP1Quiz(){
           {/* Plan cards */}
           <div style={{marginBottom:40}}>
           {[
-            {id:"week",nm:"Týdenní",pr:"$7.99",ps:"/week",sb:"~$416/year",bd:null},
-            {id:"year",nm:"Roční",pr:"$49.99",ps:"/year",sb:"$4.17/mo • Ušetřete 65%",bd:"🏆 Nejlepší hodnota"},
-            {id:"month",nm:"Měsíční",pr:"$14.99",ps:"/month",sb:"$180/year",bd:null},
+            {id:"week",nm:"Týdenní",pr:"$7.99",ps:"/týden",sb:"~$416/rok",bd:null},
+            {id:"year",nm:"Roční",pr:"$49.99",ps:"/rok",sb:"$4.17/měs • Ušetřete 65%",bd:"🏆 Nejlepší hodnota"},
+            {id:"month",nm:"Měsíční",pr:"$14.99",ps:"/měsíc",sb:"$180/rok",bd:null},
           ].map(p=>{
             const sel=plan===p.id;
             return(
@@ -822,20 +822,20 @@ export default function GLP1Quiz(){
             <div style={{overflow:"hidden",margin:"0 -16px"}}>
               <div style={{display:"flex",gap:12,paddingLeft:16,paddingRight:16,animation:"mealScroll 20s linear infinite",width:"max-content"}}>
                 {[
-                  {img:EAT1_IMG,meal:"Greek yogurt with chia seeds, berries",type:"Breakfast",cal:"400 kcal"},
-                  {img:EAT2_IMG,meal:"Beef stroganoff with pearl barley",type:"Lunch",cal:"500 kcal"},
-                  {img:EAT3_IMG,meal:"Toast with berries and cream",type:"Snack",cal:"320 kcal"},
-                  {img:EAT4_IMG,meal:"Turkey wrap with cucumber",type:"Dinner",cal:"420 kcal"},
-                  {img:EAT1_IMG,meal:"Overnight oats with banana",type:"Breakfast",cal:"380 kcal"},
-                  {img:EAT2_IMG,meal:"Chicken bowl with quinoa",type:"Lunch",cal:"480 kcal"},
-                  {img:EAT3_IMG,meal:"Avocado toast with egg",type:"Snack",cal:"350 kcal"},
-                  {img:EAT1_IMG,meal:"Greek yogurt with chia seeds, berries",type:"Breakfast",cal:"400 kcal"},
-                  {img:EAT2_IMG,meal:"Beef stroganoff with pearl barley",type:"Lunch",cal:"500 kcal"},
-                  {img:EAT3_IMG,meal:"Toast with berries and cream",type:"Snack",cal:"320 kcal"},
-                  {img:EAT4_IMG,meal:"Turkey wrap with cucumber",type:"Dinner",cal:"420 kcal"},
-                  {img:EAT1_IMG,meal:"Overnight oats with banana",type:"Breakfast",cal:"380 kcal"},
-                  {img:EAT2_IMG,meal:"Chicken bowl with quinoa",type:"Lunch",cal:"480 kcal"},
-                  {img:EAT3_IMG,meal:"Avocado toast with egg",type:"Snack",cal:"350 kcal"},
+                  {img:EAT1_IMG,meal:"Řecký jogurt s chia semínky a bobulemi",type:"Snídaně",cal:"400 kcal"},
+                  {img:EAT2_IMG,meal:"Beef stroganoff s kroupami",type:"Oběd",cal:"500 kcal"},
+                  {img:EAT3_IMG,meal:"Toast s bobulemi a smetanou",type:"Svačina",cal:"320 kcal"},
+                  {img:EAT4_IMG,meal:"Krůtí wrap s okurkou",type:"Večeře",cal:"420 kcal"},
+                  {img:EAT1_IMG,meal:"Overnight ovesná kaše s banánem",type:"Snídaně",cal:"380 kcal"},
+                  {img:EAT2_IMG,meal:"Kuřecí bowl s quinoou",type:"Oběd",cal:"480 kcal"},
+                  {img:EAT3_IMG,meal:"Avokádový toast s vejcem",type:"Svačina",cal:"350 kcal"},
+                  {img:EAT1_IMG,meal:"Řecký jogurt s chia semínky a bobulemi",type:"Snídaně",cal:"400 kcal"},
+                  {img:EAT2_IMG,meal:"Beef stroganoff s kroupami",type:"Oběd",cal:"500 kcal"},
+                  {img:EAT3_IMG,meal:"Toast s bobulemi a smetanou",type:"Svačina",cal:"320 kcal"},
+                  {img:EAT4_IMG,meal:"Krůtí wrap s okurkou",type:"Večeře",cal:"420 kcal"},
+                  {img:EAT1_IMG,meal:"Overnight ovesná kaše s banánem",type:"Snídaně",cal:"380 kcal"},
+                  {img:EAT2_IMG,meal:"Kuřecí bowl s quinoou",type:"Oběd",cal:"480 kcal"},
+                  {img:EAT3_IMG,meal:"Avokádový toast s vejcem",type:"Svačina",cal:"350 kcal"},
                 ].map((m,i)=>(
                   <div key={i} style={{width:170,flexShrink:0,borderRadius:16,overflow:"hidden",background:C.card,padding:"16px 12px 14px",boxSizing:"border-box",boxShadow:"0 2px 8px rgba(0,0,0,0.06)"}}>
                     <div style={{display:"flex",justifyContent:"center",marginBottom:12}}>
@@ -856,16 +856,16 @@ export default function GLP1Quiz(){
           {/* Legal text */}
           <div style={{marginBottom:40,textAlign:"center"}}>
             <p style={{fontFamily:F,fontSize:12,color:C.muted,lineHeight:1.6,margin:"0 0 12px"}}>
-              Pokračováním přijímám <span style={{textDecoration:"underline",color:C.sub}}>Zásady ochrany osobních údajů</span> and <span style={{textDecoration:"underline",color:C.sub}}>Podmínky použití</span>
+              Pokračováním přijímám <span style={{textDecoration:"underline",color:C.sub}}>Zásady ochrany osobních údajů</span> a <span style={{textDecoration:"underline",color:C.sub}}>Podmínky použití</span>
             </p>
             <p style={{fontFamily:F,fontSize:11,color:C.muted,lineHeight:1.6,margin:0}}>
-              Měsíční plan lasts 30 days. Today you will be charged $1 for a 3-day trial, then $14.99/month after trial ends. Cancel anytime — next payment won't be charged. See Podmínky použití for cancellation and refund details. To cancel contact: support@foodzee.tech
+              Měsíční plán trvá 30 dní. Dnes vám bude účtován $1 za 3denní zkušební období, poté $14.99/měsíc po skončení zkušební doby. Zrušte kdykoli — další platba nebude stržena. Podrobnosti o zrušení a vrácení peněz naleznete v Podmínkách použití. Pro zrušení kontaktujte: support@foodzee.tech
             </p>
           </div>
           {/* Diagram */}
           <div style={{background:C.white,borderRadius:20,padding:"28px 20px 20px",marginBottom:40,boxShadow:"0 4px 16px rgba(0,0,0,0.1)"}}>
             <p style={{fontFamily:F,fontSize:15,color:C.sub,textAlign:"center",margin:"0 0 6px"}}>Svého cíle můžete dosáhnout</p>
-            <p style={{fontFamily:F,fontSize:24,fontWeight:800,textAlign:"center",margin:"0 0 24px"}}><span style={{color:C.green}}>{gwDisplay} {unitLabel}</span> <span style={{color:C.black}}>by {targetMonth}</span></p>
+            <p style={{fontFamily:F,fontSize:24,fontWeight:800,textAlign:"center",margin:"0 0 24px"}}><span style={{color:C.green}}>{gwDisplay} {unitLabel}</span> <span style={{color:C.black}}>do {targetMonth}</span></p>
             <svg viewBox="0 0 340 200" style={{width:"100%",height:"auto",display:"block"}}>
               <line x1="50" y1="30" x2="50" y2="170" stroke="#E8E8E8" strokeWidth="1" strokeDasharray="4,4"/>
               <line x1="145" y1="30" x2="145" y2="170" stroke="#E8E8E8" strokeWidth="1" strokeDasharray="4,4"/>
@@ -904,9 +904,9 @@ export default function GLP1Quiz(){
           <div style={{background:"#A5F3A5",borderRadius:24,padding:"32px 16px",marginBottom:40}}>
             <h2 style={{...tCss,fontSize:24,marginBottom:24}}>Uživatelé milují naše plány</h2>
             {[
-              {text:"\"Effective and convenient! The GLP-1 meal plan fit perfectly into my busy schedule. Ozempic vedlejších účinků became minimal, protein is always on track. Highly recommend!\" 💪",name:"Sara.Tara11"},
-              {text:"\"A lifesaver for women on GLP-1! I used to not know what to eat on Mounjaro — nausea was constant. With FoodZee I found the right foods and vedlejších účinků vanished. Energy improved. Love it!\" 💖",name:"Lindsey56"},
-              {text:"\"FoodZee exceeded expectations! As a 40+ woman on Wegovy I was losing muscle. This app showed how to get 100g+ protein daily. Precise recipes, handy tracker, impressive výsledků. Now my must-have.\" 😊✨",name:"Dora Miller"},
+              {text:"\"Efektivní a pohodlné! GLP-1 jídelníček perfektně zapadl do mého náročného rozvrhu. Vedlejší účinky Ozempicu se minimalizovaly, bílkoviny mám vždy pod kontrolou. Vřele doporučuji!\" 💪",name:"Sara.Tara11"},
+              {text:"\"Záchrana pro ženy na GLP-1! Dříve jsem nevěděla, co jíst na Mounjaro — nevolnost byla neustálá. S FoodZee jsem našla správné potraviny a vedlejší účinky zmizely. Energie se zlepšila. Miluji to!\" 💖",name:"Lindsey56"},
+              {text:"\"FoodZee předčil očekávání! Jako 40+ žena na Wegovy jsem ztrácela svaly. Tato aplikace mi ukázala, jak získat 100g+ bílkovin denně. Přesné recepty, praktický sledovač, úžasné výsledky. Teď můj must-have.\" 😊✨",name:"Dora Miller"},
             ].map((r,i)=>(
               <div key={i} style={{background:C.white,borderRadius:16,padding:"20px 18px",marginBottom:16,boxShadow:"0 2px 8px rgba(0,0,0,0.04)"}}>
                 <div style={{marginBottom:10}}>
